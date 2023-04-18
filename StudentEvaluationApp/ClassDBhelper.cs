@@ -114,12 +114,9 @@ namespace StudentEvaluationApp
             try
             {
                 OpenCon();
-                cmd = new OleDbCommand("update tblProgram set programCode = @c where programID = @id"
+                cmd = new OleDbCommand("update tblProgram set programCode = '"+ code +"', programName = '"+ p_name +"' where programID ="+id
                     , con);
 
-                cmd.Parameters.AddWithValue("@id", id);
-                cmd.Parameters.AddWithValue("@code", code);
-                cmd.Parameters.AddWithValue("@p_name", p_name);
 
                 cmd.ExecuteNonQuery();
             }

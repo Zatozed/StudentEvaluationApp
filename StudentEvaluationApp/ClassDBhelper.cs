@@ -1,17 +1,19 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Common;
 using System.Data.OleDb;
 
 namespace StudentEvaluationApp
 {
     internal class ClassDBhelper
     {
-        private OleDbConnection con = new OleDbConnection("C:\\Users\\Loui\\Documents\\VS\\DB\\TestDB.accdb");
+        private OleDbConnection con = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users\\Loui\\Documents\\VS\\DB\\TestDB.accdb");
 
         private OleDbCommand cmd;
         private OleDbDataReader r;
-        private OleDbDataAdapter adp;
+        private OleDbDataAdapter dataAdapter;
 
         public void OpenCon()
         {
@@ -61,26 +63,27 @@ namespace StudentEvaluationApp
 
             return s;
         }
-
-        public string GetStudentName(string studNum)
+        public DataTable ShowProgramList()
         {
-            string s = "";
+            DataTable dt = new DataTable();
 
-            try
+            try 
             {
-                con.Open();
-                cmd = new OleDbCommand("select [First Name], [Last Name], [Middle Name] from tblStudent where [Student No] = '" + studNum + "' ", con);
-                r = cmd.ExecuteReader();
-
-                if (r.Read())
-                {
-                    s = r.GetString(0) + r.GetString(1) + r.GetString(2);
-                }
+                OpenCon();
+                cmd = new OleDbCommand("select * from tblProgram", con);
+                dataAdapter = new OleDbDataAdapter(cmd);
+                dataAdapter.Fill(dt);
             }
-            catch (Exception e) { MessageBox.Show("GetStudentName: " + e.Message.ToString()); }
-            finally { con.Close(); }
+            catch(Exception e)
+            { 
+                MessageBox.Show(e.ToString()); 
+            }
+            finally
+            {
+                CloseCon();
+            }
 
-            return s;
+            return dt;
         }
     }
 }

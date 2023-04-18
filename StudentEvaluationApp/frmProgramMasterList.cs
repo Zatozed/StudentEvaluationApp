@@ -12,9 +12,13 @@ namespace StudentEvaluationApp
 {
     public partial class frmProgramMasterList : Form
     {
+        ClassDBhelper dbh = new ClassDBhelper();
+
         public frmProgramMasterList()
         {
             InitializeComponent();
+
+            dgvPrograms.DataSource = dbh.ShowProgramList();
         }
     }
 }

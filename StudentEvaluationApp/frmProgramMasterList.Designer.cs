@@ -34,14 +34,14 @@
             label1 = new Label();
             tbProgramName = new TextBox();
             btnSave = new Button();
-            dataGridView1 = new DataGridView();
+            dgvPrograms = new DataGridView();
             colID = new DataGridViewTextBoxColumn();
             colProgCode = new DataGridViewTextBoxColumn();
             colProgName = new DataGridViewTextBoxColumn();
             colAdd = new DataGridViewImageColumn();
             colDel = new DataGridViewImageColumn();
             tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvPrograms).BeginInit();
             SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -55,7 +55,7 @@
             tableLayoutPanel1.Controls.Add(label1, 0, 0);
             tableLayoutPanel1.Controls.Add(tbProgramName, 1, 1);
             tableLayoutPanel1.Controls.Add(btnSave, 2, 1);
-            tableLayoutPanel1.Controls.Add(dataGridView1, 0, 2);
+            tableLayoutPanel1.Controls.Add(dgvPrograms, 0, 2);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -107,32 +107,35 @@
             btnSave.Text = "Save";
             btnSave.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dgvPrograms
             // 
-            dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { colID, colProgCode, colProgName, colAdd, colDel });
-            tableLayoutPanel1.SetColumnSpan(dataGridView1, 3);
-            dataGridView1.Dock = DockStyle.Fill;
-            dataGridView1.Location = new Point(3, 47);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(794, 400);
-            dataGridView1.TabIndex = 5;
+            dgvPrograms.AllowUserToDeleteRows = false;
+            dgvPrograms.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvPrograms.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvPrograms.Columns.AddRange(new DataGridViewColumn[] { colID, colProgCode, colProgName, colAdd, colDel });
+            tableLayoutPanel1.SetColumnSpan(dgvPrograms, 3);
+            dgvPrograms.Dock = DockStyle.Fill;
+            dgvPrograms.Location = new Point(3, 47);
+            dgvPrograms.Name = "dgvPrograms";
+            dgvPrograms.RowTemplate.Height = 25;
+            dgvPrograms.Size = new Size(794, 400);
+            dgvPrograms.TabIndex = 5;
             // 
             // colID
             // 
+            colID.DataPropertyName = "programID";
             colID.HeaderText = "ID";
             colID.Name = "colID";
             // 
             // colProgCode
             // 
+            colProgCode.DataPropertyName = "programCode";
             colProgCode.HeaderText = "Program Code";
             colProgCode.Name = "colProgCode";
             // 
             // colProgName
             // 
+            colProgName.DataPropertyName = "programName";
             colProgName.HeaderText = "Program Name";
             colProgName.Name = "colProgName";
             // 
@@ -140,12 +143,14 @@
             // 
             colAdd.HeaderText = "Add";
             colAdd.Image = R_icons1.icons8_add_new_50;
+            colAdd.ImageLayout = DataGridViewImageCellLayout.Zoom;
             colAdd.Name = "colAdd";
             // 
             // colDel
             // 
             colDel.HeaderText = "Del";
             colDel.Image = R_icons1.icons8_delete_48;
+            colDel.ImageLayout = DataGridViewImageCellLayout.Zoom;
             colDel.Name = "colDel";
             // 
             // frmProgramMasterList
@@ -159,7 +164,7 @@
             WindowState = FormWindowState.Maximized;
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvPrograms).EndInit();
             ResumeLayout(false);
         }
 
@@ -171,7 +176,7 @@
         private Label label1;
         private TextBox tbProgramName;
         private Button btnSave;
-        private DataGridView dataGridView1;
+        private DataGridView dgvPrograms;
         private DataGridViewTextBoxColumn colID;
         private DataGridViewTextBoxColumn colProgCode;
         private DataGridViewTextBoxColumn colProgName;

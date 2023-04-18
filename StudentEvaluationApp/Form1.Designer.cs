@@ -59,9 +59,9 @@
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 3;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 85F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 5F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle());
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 94.44444F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 5.55555534F));
             tableLayoutPanel1.Size = new Size(800, 450);
             tableLayoutPanel1.TabIndex = 0;
             // 
@@ -74,21 +74,21 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { eToolStripMenuItem, fileMaintenanceToolStripMenuItem, utilityToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(800, 45);
+            menuStrip1.Size = new Size(800, 28);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
             // eToolStripMenuItem
             // 
             eToolStripMenuItem.Name = "eToolStripMenuItem";
-            eToolStripMenuItem.Size = new Size(93, 41);
+            eToolStripMenuItem.Size = new Size(93, 24);
             eToolStripMenuItem.Text = "Evaluation";
             // 
             // fileMaintenanceToolStripMenuItem
             // 
             fileMaintenanceToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { programMasterListToolStripMenuItem, courseMasterListToolStripMenuItem });
             fileMaintenanceToolStripMenuItem.Name = "fileMaintenanceToolStripMenuItem";
-            fileMaintenanceToolStripMenuItem.Size = new Size(138, 41);
+            fileMaintenanceToolStripMenuItem.Size = new Size(138, 24);
             fileMaintenanceToolStripMenuItem.Text = "File Maintenance";
             // 
             // programMasterListToolStripMenuItem
@@ -107,7 +107,7 @@
             // utilityToolStripMenuItem
             // 
             utilityToolStripMenuItem.Name = "utilityToolStripMenuItem";
-            utilityToolStripMenuItem.Size = new Size(72, 41);
+            utilityToolStripMenuItem.Size = new Size(72, 24);
             utilityToolStripMenuItem.Text = "Utilities";
             utilityToolStripMenuItem.Click += utilityToolStripMenuItem_Click;
             // 
@@ -115,7 +115,7 @@
             // 
             statusStrip1.Dock = DockStyle.None;
             statusStrip1.Items.AddRange(new ToolStripItem[] { toolStripStatusLabel1 });
-            statusStrip1.Location = new Point(0, 427);
+            statusStrip1.Location = new Point(0, 426);
             statusStrip1.Name = "statusStrip1";
             statusStrip1.Size = new Size(135, 22);
             statusStrip1.TabIndex = 1;
@@ -131,7 +131,7 @@
             // 
             statusStrip2.Dock = DockStyle.None;
             statusStrip2.Items.AddRange(new ToolStripItem[] { toolStripStatusLabel2 });
-            statusStrip2.Location = new Point(400, 427);
+            statusStrip2.Location = new Point(400, 426);
             statusStrip2.Name = "statusStrip2";
             statusStrip2.Size = new Size(135, 22);
             statusStrip2.TabIndex = 2;
@@ -148,9 +148,9 @@
             panel1.BackColor = Color.White;
             tableLayoutPanel1.SetColumnSpan(panel1, 2);
             panel1.Dock = DockStyle.Fill;
-            panel1.Location = new Point(3, 48);
+            panel1.Location = new Point(3, 31);
             panel1.Name = "panel1";
-            panel1.Size = new Size(794, 376);
+            panel1.Size = new Size(794, 392);
             panel1.TabIndex = 3;
             // 
             // Form1

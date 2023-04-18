@@ -25,17 +25,30 @@ namespace StudentEvaluationApp
         {
             if (lbGotID.Text.Equals("") || lbGotID.Text.Equals("hidden"))
             {
-                dbh.InsertToProgram(tbProgramCode.Text, tbProgramName.Text);
-                //MessageBox.Show("inser pag");
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                DialogResult result = MessageBox.Show("Are you sure you want to save this?", "Save", buttons);
+                if (result == DialogResult.Yes)
+                {
+                    dbh.InsertToProgram(tbProgramCode.Text, tbProgramName.Text);
+
+                    tbProgramCode.Clear();
+                    tbProgramName.Clear();
+                    lbGotID.Text = "";
+                }
+                    
             }
             else 
             {
-                dbh.EditAtProgram(tbProgramCode.Text, tbProgramName.Text, lbGotID.Text);
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                DialogResult result = MessageBox.Show("Do you want to save this changes?", "Save", buttons);
+                if (result == DialogResult.Yes)
+                {
+                    dbh.EditAtProgram(tbProgramCode.Text, tbProgramName.Text, lbGotID.Text);
 
-                tbProgramCode.Clear();
-                tbProgramName.Clear();
-                lbGotID.Text = "";
-                //MessageBox.Show("pag number laber");
+                    tbProgramCode.Clear();
+                    tbProgramName.Clear();
+                    lbGotID.Text = "";
+                }
             }
 
             dgvPrograms.DataSource = dbh.ShowProgramList();
@@ -51,9 +64,15 @@ namespace StudentEvaluationApp
             }
             else if (dgvPrograms.Columns[e.ColumnIndex].Name.Equals("colDel"))
             {
-                dbh.DeleteAtProgram(dgvPrograms.Rows[e.RowIndex].Cells["colID"].Value.ToString());
-                dgvPrograms.DataSource = dbh.ShowProgramList();
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                DialogResult result = MessageBox.Show("Are you sure you want to Delete this?", "Delete", buttons);
+                if (result == DialogResult.Yes)
+                {
+                    dbh.DeleteAtProgram(dgvPrograms.Rows[e.RowIndex].Cells["colID"].Value.ToString());
+                    dgvPrograms.DataSource = dbh.ShowProgramList();
+                }
             }
+            //
         }
     }
 }

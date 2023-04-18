@@ -117,7 +117,6 @@ namespace StudentEvaluationApp
                 cmd = new OleDbCommand("update tblProgram set programCode = '"+ code +"', programName = '"+ p_name +"' where programID ="+id
                     , con);
 
-
                 cmd.ExecuteNonQuery();
             }
             catch (Exception e)

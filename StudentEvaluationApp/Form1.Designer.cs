@@ -30,16 +30,16 @@
         {
             tableLayoutPanel1 = new TableLayoutPanel();
             menuStrip1 = new MenuStrip();
-            statusStrip1 = new StatusStrip();
-            statusStrip2 = new StatusStrip();
-            toolStripStatusLabel1 = new ToolStripStatusLabel();
-            toolStripStatusLabel2 = new ToolStripStatusLabel();
-            panel1 = new Panel();
             eToolStripMenuItem = new ToolStripMenuItem();
             fileMaintenanceToolStripMenuItem = new ToolStripMenuItem();
-            utilityToolStripMenuItem = new ToolStripMenuItem();
             programMasterListToolStripMenuItem = new ToolStripMenuItem();
             courseMasterListToolStripMenuItem = new ToolStripMenuItem();
+            utilityToolStripMenuItem = new ToolStripMenuItem();
+            statusStrip1 = new StatusStrip();
+            toolStripStatusLabel1 = new ToolStripStatusLabel();
+            statusStrip2 = new StatusStrip();
+            toolStripStatusLabel2 = new ToolStripStatusLabel();
+            panel1 = new Panel();
             tableLayoutPanel1.SuspendLayout();
             menuStrip1.SuspendLayout();
             statusStrip1.SuspendLayout();
@@ -78,6 +78,39 @@
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
+            // eToolStripMenuItem
+            // 
+            eToolStripMenuItem.Name = "eToolStripMenuItem";
+            eToolStripMenuItem.Size = new Size(93, 41);
+            eToolStripMenuItem.Text = "Evaluation";
+            // 
+            // fileMaintenanceToolStripMenuItem
+            // 
+            fileMaintenanceToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { programMasterListToolStripMenuItem, courseMasterListToolStripMenuItem });
+            fileMaintenanceToolStripMenuItem.Name = "fileMaintenanceToolStripMenuItem";
+            fileMaintenanceToolStripMenuItem.Size = new Size(138, 41);
+            fileMaintenanceToolStripMenuItem.Text = "File Maintenance";
+            // 
+            // programMasterListToolStripMenuItem
+            // 
+            programMasterListToolStripMenuItem.Name = "programMasterListToolStripMenuItem";
+            programMasterListToolStripMenuItem.Size = new Size(215, 24);
+            programMasterListToolStripMenuItem.Text = "Program Master List";
+            programMasterListToolStripMenuItem.Click += programMasterListToolStripMenuItem_Click;
+            // 
+            // courseMasterListToolStripMenuItem
+            // 
+            courseMasterListToolStripMenuItem.Name = "courseMasterListToolStripMenuItem";
+            courseMasterListToolStripMenuItem.Size = new Size(215, 24);
+            courseMasterListToolStripMenuItem.Text = "Course Master List";
+            // 
+            // utilityToolStripMenuItem
+            // 
+            utilityToolStripMenuItem.Name = "utilityToolStripMenuItem";
+            utilityToolStripMenuItem.Size = new Size(72, 41);
+            utilityToolStripMenuItem.Text = "Utilities";
+            utilityToolStripMenuItem.Click += utilityToolStripMenuItem_Click;
+            // 
             // statusStrip1
             // 
             statusStrip1.Dock = DockStyle.None;
@@ -88,6 +121,12 @@
             statusStrip1.TabIndex = 1;
             statusStrip1.Text = "statusStrip1";
             // 
+            // toolStripStatusLabel1
+            // 
+            toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            toolStripStatusLabel1.Size = new Size(118, 17);
+            toolStripStatusLabel1.Text = "toolStripStatusLabel1";
+            // 
             // statusStrip2
             // 
             statusStrip2.Dock = DockStyle.None;
@@ -97,12 +136,6 @@
             statusStrip2.Size = new Size(135, 22);
             statusStrip2.TabIndex = 2;
             statusStrip2.Text = "statusStrip2";
-            // 
-            // toolStripStatusLabel1
-            // 
-            toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            toolStripStatusLabel1.Size = new Size(118, 17);
-            toolStripStatusLabel1.Text = "toolStripStatusLabel1";
             // 
             // toolStripStatusLabel2
             // 
@@ -119,38 +152,6 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(794, 376);
             panel1.TabIndex = 3;
-            // 
-            // eToolStripMenuItem
-            // 
-            eToolStripMenuItem.Name = "eToolStripMenuItem";
-            eToolStripMenuItem.Size = new Size(74, 41);
-            eToolStripMenuItem.Text = "Evaluation";
-            // 
-            // fileMaintenanceToolStripMenuItem
-            // 
-            fileMaintenanceToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { programMasterListToolStripMenuItem, courseMasterListToolStripMenuItem });
-            fileMaintenanceToolStripMenuItem.Name = "fileMaintenanceToolStripMenuItem";
-            fileMaintenanceToolStripMenuItem.Size = new Size(109, 41);
-            fileMaintenanceToolStripMenuItem.Text = "File Maintenance";
-            // 
-            // utilityToolStripMenuItem
-            // 
-            utilityToolStripMenuItem.Name = "utilityToolStripMenuItem";
-            utilityToolStripMenuItem.Size = new Size(50, 41);
-            utilityToolStripMenuItem.Text = "Utility";
-            // 
-            // programMasterListToolStripMenuItem
-            // 
-            programMasterListToolStripMenuItem.Name = "programMasterListToolStripMenuItem";
-            programMasterListToolStripMenuItem.Size = new Size(180, 22);
-            programMasterListToolStripMenuItem.Text = "Program Master List";
-            programMasterListToolStripMenuItem.Click += programMasterListToolStripMenuItem_Click;
-            // 
-            // courseMasterListToolStripMenuItem
-            // 
-            courseMasterListToolStripMenuItem.Name = "courseMasterListToolStripMenuItem";
-            courseMasterListToolStripMenuItem.Size = new Size(180, 22);
-            courseMasterListToolStripMenuItem.Text = "Course Master List";
             // 
             // Form1
             // 

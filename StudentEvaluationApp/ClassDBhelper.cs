@@ -7,7 +7,7 @@ namespace StudentEvaluationApp
 {
     internal class ClassDBhelper
     {
-        private OleDbConnection con = new OleDbConnection();
+        private OleDbConnection con = new OleDbConnection("C:\\Users\\Loui\\Documents\\VS\\DB\\TestDB.accdb");
 
         private OleDbCommand cmd;
         private OleDbDataReader r;

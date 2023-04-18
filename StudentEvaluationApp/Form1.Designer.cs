@@ -40,6 +40,7 @@
             statusStrip2 = new StatusStrip();
             toolStripStatusLabel2 = new ToolStripStatusLabel();
             panel1 = new Panel();
+            curriculumVersionsToolStripMenuItem = new ToolStripMenuItem();
             tableLayoutPanel1.SuspendLayout();
             menuStrip1.SuspendLayout();
             statusStrip1.SuspendLayout();
@@ -86,7 +87,7 @@
             // 
             // fileMaintenanceToolStripMenuItem
             // 
-            fileMaintenanceToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { programMasterListToolStripMenuItem, courseMasterListToolStripMenuItem });
+            fileMaintenanceToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { curriculumVersionsToolStripMenuItem, programMasterListToolStripMenuItem, courseMasterListToolStripMenuItem });
             fileMaintenanceToolStripMenuItem.Name = "fileMaintenanceToolStripMenuItem";
             fileMaintenanceToolStripMenuItem.Size = new Size(138, 24);
             fileMaintenanceToolStripMenuItem.Text = "File Maintenance";
@@ -153,6 +154,13 @@
             panel1.Size = new Size(794, 392);
             panel1.TabIndex = 3;
             // 
+            // curriculumVersionsToolStripMenuItem
+            // 
+            curriculumVersionsToolStripMenuItem.Name = "curriculumVersionsToolStripMenuItem";
+            curriculumVersionsToolStripMenuItem.Size = new Size(215, 24);
+            curriculumVersionsToolStripMenuItem.Text = "Curriculum Versions";
+            curriculumVersionsToolStripMenuItem.Click += curriculumVersionsToolStripMenuItem_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -187,5 +195,6 @@
         private ToolStripMenuItem utilityToolStripMenuItem;
         private ToolStripMenuItem programMasterListToolStripMenuItem;
         private ToolStripMenuItem courseMasterListToolStripMenuItem;
+        private ToolStripMenuItem curriculumVersionsToolStripMenuItem;
     }
 }

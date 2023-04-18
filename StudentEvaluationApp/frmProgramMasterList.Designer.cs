@@ -134,6 +134,7 @@
             colID.HeaderText = "ID";
             colID.Name = "colID";
             colID.ReadOnly = true;
+            colID.Visible = false;
             // 
             // colProgCode
             // 
@@ -177,6 +178,7 @@
             lbGotID.Size = new Size(44, 15);
             lbGotID.TabIndex = 6;
             lbGotID.Text = "hidden";
+            lbGotID.Visible = false;
             // 
             // frmProgramMasterList
             // 

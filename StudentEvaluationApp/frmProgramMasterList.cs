@@ -35,9 +35,9 @@ namespace StudentEvaluationApp
                     tbProgramName.Clear();
                     lbGotID.Text = "";
                 }
-                    
+
             }
-            else 
+            else
             {
                 MessageBoxButtons buttons = MessageBoxButtons.YesNo;
                 DialogResult result = MessageBox.Show("Do you want to save this changes?", "Save", buttons);

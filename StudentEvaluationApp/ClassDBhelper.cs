@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
 using System.Data.OleDb;
+using System.Xml.Linq;
 
 namespace StudentEvaluationApp
 {
@@ -63,6 +64,7 @@ namespace StudentEvaluationApp
 
             return s;
         }
+        //---------------------------------------------------------------- Program form
         public DataTable ShowProgramList()
         {
             DataTable dt = new DataTable();
@@ -70,7 +72,7 @@ namespace StudentEvaluationApp
             try 
             {
                 OpenCon();
-                cmd = new OleDbCommand("select * from tblProgram", con);
+                cmd = new OleDbCommand("select programID, programCode, programName from tblProgram where isDel = false", con);
                 dataAdapter = new OleDbDataAdapter(cmd);
                 dataAdapter.Fill(dt);
             }
@@ -85,5 +87,72 @@ namespace StudentEvaluationApp
 
             return dt;
         }
+        public void InsertToProgram(string code, string p_name)
+        {
+            try
+            {
+                OpenCon();
+                cmd = new OleDbCommand("insert into tblProgram(programCode, ProgramName) values(code, p_name)"
+                    , con);
+
+                cmd.Parameters.AddWithValue("@code", code);
+                cmd.Parameters.AddWithValue("@p_name", p_name);
+
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+            }
+            finally
+            {
+                CloseCon();
+            }
+        }
+        public void EditAtProgram(string code, string p_name, string id) 
+        {
+            try
+            {
+                OpenCon();
+                cmd = new OleDbCommand("update tblProgram set programCode = @c where programID = @id"
+                    , con);
+
+                cmd.Parameters.AddWithValue("@id", id);
+                cmd.Parameters.AddWithValue("@code", code);
+                cmd.Parameters.AddWithValue("@p_name", p_name);
+
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+            }
+            finally
+            {
+                CloseCon();
+            }
+        }
+        public void DeleteAtProgram(string id) 
+        {
+            try
+            {
+                OpenCon();
+                cmd = new OleDbCommand("update tblProgram set isDel=true where programID = @id"
+                    , con);
+
+                cmd.Parameters.AddWithValue("@id", id);
+
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+            }
+            finally
+            {
+                CloseCon();
+            }
+        }
+        //---------------------------------------------------------------- Program form
     }
 }

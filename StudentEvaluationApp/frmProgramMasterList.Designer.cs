@@ -38,8 +38,9 @@
             colID = new DataGridViewTextBoxColumn();
             colProgCode = new DataGridViewTextBoxColumn();
             colProgName = new DataGridViewTextBoxColumn();
-            colAdd = new DataGridViewImageColumn();
+            colEdit = new DataGridViewImageColumn();
             colDel = new DataGridViewImageColumn();
+            lbGotID = new Label();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvPrograms).BeginInit();
             SuspendLayout();
@@ -56,6 +57,7 @@
             tableLayoutPanel1.Controls.Add(tbProgramName, 1, 1);
             tableLayoutPanel1.Controls.Add(btnSave, 2, 1);
             tableLayoutPanel1.Controls.Add(dgvPrograms, 0, 2);
+            tableLayoutPanel1.Controls.Add(lbGotID, 2, 0);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -100,58 +102,81 @@
             // 
             // btnSave
             // 
+            btnSave.FlatStyle = FlatStyle.Flat;
             btnSave.Location = new Point(534, 18);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(75, 23);
             btnSave.TabIndex = 4;
             btnSave.Text = "Save";
             btnSave.UseVisualStyleBackColor = true;
+            btnSave.Click += btnSave_Click;
             // 
             // dgvPrograms
             // 
+            dgvPrograms.AllowUserToAddRows = false;
             dgvPrograms.AllowUserToDeleteRows = false;
             dgvPrograms.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvPrograms.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvPrograms.Columns.AddRange(new DataGridViewColumn[] { colID, colProgCode, colProgName, colAdd, colDel });
+            dgvPrograms.Columns.AddRange(new DataGridViewColumn[] { colID, colProgCode, colProgName, colEdit, colDel });
             tableLayoutPanel1.SetColumnSpan(dgvPrograms, 3);
             dgvPrograms.Dock = DockStyle.Fill;
             dgvPrograms.Location = new Point(3, 47);
             dgvPrograms.Name = "dgvPrograms";
+            dgvPrograms.ReadOnly = true;
             dgvPrograms.RowTemplate.Height = 25;
             dgvPrograms.Size = new Size(794, 400);
             dgvPrograms.TabIndex = 5;
+            dgvPrograms.CellContentClick += dgvPrograms_CellContentClick;
             // 
             // colID
             // 
             colID.DataPropertyName = "programID";
             colID.HeaderText = "ID";
             colID.Name = "colID";
+            colID.ReadOnly = true;
             // 
             // colProgCode
             // 
             colProgCode.DataPropertyName = "programCode";
             colProgCode.HeaderText = "Program Code";
             colProgCode.Name = "colProgCode";
+            colProgCode.ReadOnly = true;
             // 
             // colProgName
             // 
             colProgName.DataPropertyName = "programName";
             colProgName.HeaderText = "Program Name";
             colProgName.Name = "colProgName";
+            colProgName.ReadOnly = true;
             // 
-            // colAdd
+            // colEdit
             // 
-            colAdd.HeaderText = "Add";
-            colAdd.Image = R_icons1.icons8_add_new_50;
-            colAdd.ImageLayout = DataGridViewImageCellLayout.Zoom;
-            colAdd.Name = "colAdd";
+            colEdit.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            colEdit.HeaderText = "";
+            colEdit.Image = R_icons1.icons8_edit_50;
+            colEdit.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            colEdit.Name = "colEdit";
+            colEdit.ReadOnly = true;
+            colEdit.Width = 5;
             // 
             // colDel
             // 
-            colDel.HeaderText = "Del";
+            colDel.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            colDel.HeaderText = "";
             colDel.Image = R_icons1.icons8_delete_48;
             colDel.ImageLayout = DataGridViewImageCellLayout.Zoom;
             colDel.Name = "colDel";
+            colDel.ReadOnly = true;
+            colDel.Width = 5;
+            // 
+            // lbGotID
+            // 
+            lbGotID.AutoSize = true;
+            lbGotID.Location = new Point(534, 0);
+            lbGotID.Name = "lbGotID";
+            lbGotID.Size = new Size(44, 15);
+            lbGotID.TabIndex = 6;
+            lbGotID.Text = "hidden";
             // 
             // frmProgramMasterList
             // 
@@ -161,6 +186,8 @@
             ControlBox = false;
             Controls.Add(tableLayoutPanel1);
             Name = "frmProgramMasterList";
+            SizeGripStyle = SizeGripStyle.Hide;
+            StartPosition = FormStartPosition.CenterScreen;
             WindowState = FormWindowState.Maximized;
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
@@ -177,10 +204,11 @@
         private TextBox tbProgramName;
         private Button btnSave;
         private DataGridView dgvPrograms;
+        private Label lbGotID;
         private DataGridViewTextBoxColumn colID;
         private DataGridViewTextBoxColumn colProgCode;
         private DataGridViewTextBoxColumn colProgName;
-        private DataGridViewImageColumn colAdd;
+        private DataGridViewImageColumn colEdit;
         private DataGridViewImageColumn colDel;
     }
 }

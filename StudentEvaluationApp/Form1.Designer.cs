@@ -32,6 +32,7 @@
             menuStrip1 = new MenuStrip();
             eToolStripMenuItem = new ToolStripMenuItem();
             fileMaintenanceToolStripMenuItem = new ToolStripMenuItem();
+            curriculumVersionsToolStripMenuItem = new ToolStripMenuItem();
             programMasterListToolStripMenuItem = new ToolStripMenuItem();
             courseMasterListToolStripMenuItem = new ToolStripMenuItem();
             utilityToolStripMenuItem = new ToolStripMenuItem();
@@ -40,7 +41,6 @@
             statusStrip2 = new StatusStrip();
             toolStripStatusLabel2 = new ToolStripStatusLabel();
             panel1 = new Panel();
-            curriculumVersionsToolStripMenuItem = new ToolStripMenuItem();
             tableLayoutPanel1.SuspendLayout();
             menuStrip1.SuspendLayout();
             statusStrip1.SuspendLayout();
@@ -91,6 +91,13 @@
             fileMaintenanceToolStripMenuItem.Name = "fileMaintenanceToolStripMenuItem";
             fileMaintenanceToolStripMenuItem.Size = new Size(138, 24);
             fileMaintenanceToolStripMenuItem.Text = "File Maintenance";
+            // 
+            // curriculumVersionsToolStripMenuItem
+            // 
+            curriculumVersionsToolStripMenuItem.Name = "curriculumVersionsToolStripMenuItem";
+            curriculumVersionsToolStripMenuItem.Size = new Size(215, 24);
+            curriculumVersionsToolStripMenuItem.Text = "Curriculum Versions";
+            curriculumVersionsToolStripMenuItem.Click += curriculumVersionsToolStripMenuItem_Click;
             // 
             // programMasterListToolStripMenuItem
             // 
@@ -154,13 +161,6 @@
             panel1.Size = new Size(794, 392);
             panel1.TabIndex = 3;
             // 
-            // curriculumVersionsToolStripMenuItem
-            // 
-            curriculumVersionsToolStripMenuItem.Name = "curriculumVersionsToolStripMenuItem";
-            curriculumVersionsToolStripMenuItem.Size = new Size(215, 24);
-            curriculumVersionsToolStripMenuItem.Text = "Curriculum Versions";
-            curriculumVersionsToolStripMenuItem.Click += curriculumVersionsToolStripMenuItem_Click;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -169,7 +169,7 @@
             Controls.Add(tableLayoutPanel1);
             MainMenuStrip = menuStrip1;
             Name = "Form1";
-            Text = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             menuStrip1.ResumeLayout(false);

@@ -5,6 +5,18 @@ namespace StudentEvaluationApp
         private bool isProgramFormVisible = false;
         private bool isCurriculumFormVisible = false;
 
+        frmProgramMasterList fpml = new frmProgramMasterList()
+        {
+            Dock = DockStyle.Fill,
+            TopLevel = false
+        };
+
+        frmCurriculum fc = new frmCurriculum()
+        {
+            Dock = DockStyle.Fill,
+            TopLevel = false
+        };
+
         public Form1()
         {
             InitializeComponent();
@@ -12,7 +24,7 @@ namespace StudentEvaluationApp
 
         private void ShowProgramForm()
         {
-            frmProgramMasterList fpml = new frmProgramMasterList();
+
 
             if (isProgramFormVisible == true)
             {
@@ -20,9 +32,10 @@ namespace StudentEvaluationApp
             }
             else
             {
-                fpml.TopLevel = false;
+                fpml.AutoScroll = true;
                 panel1.Controls.Add(fpml);
                 fpml.Show();
+                fpml.BringToFront();
                 isProgramFormVisible = true;
             }
         }
@@ -38,16 +51,16 @@ namespace StudentEvaluationApp
 
         private void curriculumVersionsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmCurriculum fc = new frmCurriculum();
             if (isCurriculumFormVisible == true)
             {
                 fc.BringToFront();
             }
-            else 
+            else
             {
-                fc.TopLevel = false;
+                fc.AutoScroll = true;
                 panel1.Controls.Add(fc);
                 fc.Show();
+                fc.BringToFront();
                 isCurriculumFormVisible = true;
             }
         }

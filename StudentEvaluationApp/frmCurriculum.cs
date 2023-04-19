@@ -12,14 +12,18 @@ namespace StudentEvaluationApp
 {
     public partial class frmCurriculum : Form
     {
+        ClassDBhelper dbh = new ClassDBhelper();
+
         public frmCurriculum()
         {
             InitializeComponent();
+
+            dgvCurricuVer.DataSource = dbh.ShowCurricuVerList();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            dbh.InsertToCurricuVer(tbCurricuVer.Text);
         }
     }
 }

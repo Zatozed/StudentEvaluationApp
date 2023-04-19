@@ -92,7 +92,7 @@ namespace StudentEvaluationApp
             try
             {
                 OpenCon();
-                cmd = new OleDbCommand("insert into tblProgram(programCode, ProgramName) values(code, p_name)"
+                cmd = new OleDbCommand("insert into tblProgram(programCode, ProgramName) values(@code, @p_name)"
                     , con);
 
                 cmd.Parameters.AddWithValue("@code", code);
@@ -150,5 +150,82 @@ namespace StudentEvaluationApp
             }
         }
         //---------------------------------------------------------------- Program form
+
+        //---------------------------------------------------------------- Curriculum form
+        public DataTable ShowCurricuVerList()
+        {
+            DataTable dt = new DataTable();
+
+            try
+            {
+                OpenCon();
+                cmd = new OleDbCommand("select curricuVerID, curricuDescription from tblCurriculumVer where isDel = false", con);
+                dataAdapter = new OleDbDataAdapter(cmd);
+                dataAdapter.Fill(dt);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+            }
+            finally
+            {
+                CloseCon();
+            }
+
+            return dt;
+        }
+        public void InsertToCurricuVer(string cv) 
+        {
+            try 
+            {
+                OpenCon();
+
+                cmd = new OleDbCommand("insert into tblCurriculumVer(curricuDescription) values(@cv)"
+                    , con);
+
+                cmd.Parameters.AddWithValue("@cv", cv);
+
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception e) 
+            {
+                MessageBox.Show(e.Message.ToString());
+            }
+            finally 
+            {
+                CloseCon();
+            }
+        }
+        public void EditAtCurricuVer() 
+        {
+            try
+            {
+                OpenCon();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message.ToString());
+            }
+            finally
+            {
+                CloseCon();
+            }
+        }
+        public void DelAtCurricuver() 
+        {
+            try
+            {
+                OpenCon();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message.ToString());
+            }
+            finally
+            {
+                CloseCon();
+            }
+        }
+        //---------------------------------------------------------------- Curriculum form
     }
 }

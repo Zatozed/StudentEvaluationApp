@@ -29,12 +29,16 @@
         private void InitializeComponent()
         {
             tableLayoutPanel1 = new TableLayoutPanel();
-            textBox1 = new TextBox();
+            tbCurricuVer = new TextBox();
             label1 = new Label();
             button1 = new Button();
-            dataGridView1 = new DataGridView();
+            dgvCurricuVer = new DataGridView();
+            colID = new DataGridViewTextBoxColumn();
+            colCurricuDes = new DataGridViewTextBoxColumn();
+            colEdit = new DataGridViewImageColumn();
+            colDel = new DataGridViewImageColumn();
             tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvCurricuVer).BeginInit();
             SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -43,10 +47,10 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
-            tableLayoutPanel1.Controls.Add(textBox1, 0, 1);
+            tableLayoutPanel1.Controls.Add(tbCurricuVer, 0, 1);
             tableLayoutPanel1.Controls.Add(label1, 0, 0);
             tableLayoutPanel1.Controls.Add(button1, 2, 1);
-            tableLayoutPanel1.Controls.Add(dataGridView1, 0, 2);
+            tableLayoutPanel1.Controls.Add(dgvCurricuVer, 0, 2);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -57,12 +61,12 @@
             tableLayoutPanel1.Size = new Size(800, 450);
             tableLayoutPanel1.TabIndex = 0;
             // 
-            // textBox1
+            // tbCurricuVer
             // 
-            textBox1.Location = new Point(3, 18);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 23);
-            textBox1.TabIndex = 0;
+            tbCurricuVer.Location = new Point(3, 18);
+            tbCurricuVer.Name = "tbCurricuVer";
+            tbCurricuVer.Size = new Size(100, 23);
+            tbCurricuVer.TabIndex = 0;
             // 
             // label1
             // 
@@ -83,17 +87,56 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
-            // dataGridView1
+            // dgvCurricuVer
             // 
-            dataGridView1.BackgroundColor = Color.White;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            tableLayoutPanel1.SetColumnSpan(dataGridView1, 3);
-            dataGridView1.Dock = DockStyle.Fill;
-            dataGridView1.Location = new Point(3, 47);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(794, 400);
-            dataGridView1.TabIndex = 3;
+            dgvCurricuVer.AllowUserToAddRows = false;
+            dgvCurricuVer.AllowUserToDeleteRows = false;
+            dgvCurricuVer.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvCurricuVer.BackgroundColor = Color.White;
+            dgvCurricuVer.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvCurricuVer.Columns.AddRange(new DataGridViewColumn[] { colID, colCurricuDes, colEdit, colDel });
+            tableLayoutPanel1.SetColumnSpan(dgvCurricuVer, 3);
+            dgvCurricuVer.Dock = DockStyle.Fill;
+            dgvCurricuVer.Location = new Point(3, 47);
+            dgvCurricuVer.Name = "dgvCurricuVer";
+            dgvCurricuVer.ReadOnly = true;
+            dgvCurricuVer.RowTemplate.Height = 25;
+            dgvCurricuVer.Size = new Size(794, 400);
+            dgvCurricuVer.TabIndex = 3;
+            // 
+            // colID
+            // 
+            colID.DataPropertyName = "curricuVerID";
+            colID.HeaderText = "ID";
+            colID.Name = "colID";
+            colID.ReadOnly = true;
+            // 
+            // colCurricuDes
+            // 
+            colCurricuDes.DataPropertyName = "curricuDescription";
+            colCurricuDes.HeaderText = "Curriculum Version";
+            colCurricuDes.Name = "colCurricuDes";
+            colCurricuDes.ReadOnly = true;
+            // 
+            // colEdit
+            // 
+            colEdit.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            colEdit.HeaderText = "";
+            colEdit.Image = R_icons1.icons8_edit_50;
+            colEdit.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            colEdit.Name = "colEdit";
+            colEdit.ReadOnly = true;
+            colEdit.Width = 5;
+            // 
+            // colDel
+            // 
+            colDel.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            colDel.HeaderText = "";
+            colDel.Image = R_icons1.icons8_delete_48;
+            colDel.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            colDel.Name = "colDel";
+            colDel.ReadOnly = true;
+            colDel.Width = 5;
             // 
             // frmCurriculum
             // 
@@ -103,18 +146,25 @@
             ControlBox = false;
             Controls.Add(tableLayoutPanel1);
             Name = "frmCurriculum";
+            SizeGripStyle = SizeGripStyle.Hide;
+            StartPosition = FormStartPosition.CenterScreen;
+            WindowState = FormWindowState.Maximized;
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvCurricuVer).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
         private TableLayoutPanel tableLayoutPanel1;
-        private TextBox textBox1;
+        private TextBox tbCurricuVer;
         private Label label1;
         private Button button1;
-        private DataGridView dataGridView1;
+        private DataGridView dgvCurricuVer;
+        private DataGridViewTextBoxColumn colID;
+        private DataGridViewTextBoxColumn colCurricuDes;
+        private DataGridViewImageColumn colEdit;
+        private DataGridViewImageColumn colDel;
     }
 }

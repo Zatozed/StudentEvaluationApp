@@ -92,8 +92,7 @@ namespace StudentEvaluationApp
             try
             {
                 OpenCon();
-                cmd = new OleDbCommand("insert into tblProgram(programCode, ProgramName) values(@code, @p_name)"
-                    , con);
+                cmd = new OleDbCommand("insert into tblProgram(programCode, ProgramName) values(@code, @p_name)", con);
 
                 cmd.Parameters.AddWithValue("@code", code);
                 cmd.Parameters.AddWithValue("@p_name", p_name);
@@ -114,8 +113,7 @@ namespace StudentEvaluationApp
             try
             {
                 OpenCon();
-                cmd = new OleDbCommand("update tblProgram set programCode = '"+ code +"', programName = '"+ p_name +"' where programID ="+id
-                    , con);
+                cmd = new OleDbCommand("update tblProgram set programCode = '"+ code +"', programName = '"+ p_name +"' where programID ="+id, con);
 
                 cmd.ExecuteNonQuery();
             }
@@ -133,8 +131,7 @@ namespace StudentEvaluationApp
             try
             {
                 OpenCon();
-                cmd = new OleDbCommand("update tblProgram set isDel=true where programID = @id"
-                    , con);
+                cmd = new OleDbCommand("update tblProgram set isDel=true where programID = @id" , con);
 
                 cmd.Parameters.AddWithValue("@id", id);
 
@@ -180,8 +177,7 @@ namespace StudentEvaluationApp
             {
                 OpenCon();
 
-                cmd = new OleDbCommand("insert into tblCurriculumVer(curricuDescription) values(@cv)"
-                    , con);
+                cmd = new OleDbCommand("insert into tblCurriculumVer(curricuDescription) values(@cv)", con);
 
                 cmd.Parameters.AddWithValue("@cv", cv);
 
@@ -196,11 +192,15 @@ namespace StudentEvaluationApp
                 CloseCon();
             }
         }
-        public void EditAtCurricuVer() 
+        public void EditAtCurricuVer(string id, string cv) 
         {
             try
             {
                 OpenCon();
+
+                cmd = new OleDbCommand("update tblCurriculumVer set curricuDescription = '"+ cv +"' where curricuVerID = " + id, con);
+
+                cmd.ExecuteNonQuery();
             }
             catch (Exception e)
             {
@@ -211,11 +211,16 @@ namespace StudentEvaluationApp
                 CloseCon();
             }
         }
-        public void DelAtCurricuver() 
+        public void DelAtCurricuver(string id) 
         {
             try
             {
                 OpenCon();
+
+                cmd = new OleDbCommand("update tblCurriculumVer set isDel = true where curricuVerID = @id", con);
+                cmd.Parameters.AddWithValue("@id", id);
+
+                cmd.ExecuteNonQuery();
             }
             catch (Exception e)
             {

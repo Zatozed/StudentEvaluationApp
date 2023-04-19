@@ -141,7 +141,7 @@
             statusStrip2.Items.AddRange(new ToolStripItem[] { toolStripStatusLabel2 });
             statusStrip2.Location = new Point(400, 426);
             statusStrip2.Name = "statusStrip2";
-            statusStrip2.Size = new Size(166, 22);
+            statusStrip2.Size = new Size(135, 22);
             statusStrip2.TabIndex = 2;
             statusStrip2.Text = "statusStrip2";
             // 
@@ -160,6 +160,7 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(794, 392);
             panel1.TabIndex = 3;
+            panel1.SizeChanged += panel1_SizeChanged;
             // 
             // Form1
             // 

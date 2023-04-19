@@ -31,12 +31,13 @@
             tableLayoutPanel1 = new TableLayoutPanel();
             tbCurricuVer = new TextBox();
             label1 = new Label();
-            button1 = new Button();
+            bSave = new Button();
             dgvCurricuVer = new DataGridView();
             colID = new DataGridViewTextBoxColumn();
             colCurricuDes = new DataGridViewTextBoxColumn();
             colEdit = new DataGridViewImageColumn();
             colDel = new DataGridViewImageColumn();
+            lbGotID = new Label();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvCurricuVer).BeginInit();
             SuspendLayout();
@@ -49,8 +50,9 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
             tableLayoutPanel1.Controls.Add(tbCurricuVer, 0, 1);
             tableLayoutPanel1.Controls.Add(label1, 0, 0);
-            tableLayoutPanel1.Controls.Add(button1, 2, 1);
+            tableLayoutPanel1.Controls.Add(bSave, 2, 1);
             tableLayoutPanel1.Controls.Add(dgvCurricuVer, 0, 2);
+            tableLayoutPanel1.Controls.Add(lbGotID, 2, 0);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -77,15 +79,15 @@
             label1.TabIndex = 1;
             label1.Text = "Curriculum Version";
             // 
-            // button1
+            // bSave
             // 
-            button1.Location = new Point(535, 18);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 2;
-            button1.Text = "Save";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            bSave.Location = new Point(535, 18);
+            bSave.Name = "bSave";
+            bSave.Size = new Size(75, 23);
+            bSave.TabIndex = 2;
+            bSave.Text = "Save";
+            bSave.UseVisualStyleBackColor = true;
+            bSave.Click += button1_Click;
             // 
             // dgvCurricuVer
             // 
@@ -103,6 +105,7 @@
             dgvCurricuVer.RowTemplate.Height = 25;
             dgvCurricuVer.Size = new Size(794, 400);
             dgvCurricuVer.TabIndex = 3;
+            dgvCurricuVer.CellContentClick += dgvCurricuVer_CellContentClick;
             // 
             // colID
             // 
@@ -138,6 +141,15 @@
             colDel.ReadOnly = true;
             colDel.Width = 5;
             // 
+            // lbGotID
+            // 
+            lbGotID.AutoSize = true;
+            lbGotID.Location = new Point(535, 0);
+            lbGotID.Name = "lbGotID";
+            lbGotID.Size = new Size(47, 15);
+            lbGotID.TabIndex = 4;
+            lbGotID.Text = "hidden ";
+            // 
             // frmCurriculum
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -160,11 +172,12 @@
         private TableLayoutPanel tableLayoutPanel1;
         private TextBox tbCurricuVer;
         private Label label1;
-        private Button button1;
+        private Button bSave;
         private DataGridView dgvCurricuVer;
         private DataGridViewTextBoxColumn colID;
         private DataGridViewTextBoxColumn colCurricuDes;
         private DataGridViewImageColumn colEdit;
         private DataGridViewImageColumn colDel;
+        private Label lbGotID;
     }
 }

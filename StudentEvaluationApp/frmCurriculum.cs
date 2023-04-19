@@ -23,6 +23,9 @@ namespace StudentEvaluationApp
 
         private void button1_Click(object sender, EventArgs e)
         {
+
+
+
             if (lbGotID.Text.Equals("") || lbGotID.Text.Equals("hidden"))
             {
                 MessageBoxButtons buttons = MessageBoxButtons.YesNo;
@@ -34,8 +37,13 @@ namespace StudentEvaluationApp
                 }
 
             }
+            else if (tbCurricuVer.Text.Equals(""))
+            {
+                errorProvider1.SetError(tbCurricuVer, "Insert Curriculum version first!");
+            }
             else
             {
+
                 MessageBoxButtons buttons = MessageBoxButtons.YesNo;
                 DialogResult result = MessageBox.Show("Do you want to save this changes?", "Save", buttons);
                 if (result == DialogResult.Yes)
@@ -45,7 +53,11 @@ namespace StudentEvaluationApp
                     lbGotID.Text = "";
                 }
             }
-            dgvCurricuVer.DataSource = dbh.ShowCurricuVerList();
+                dgvCurricuVer.DataSource = dbh.ShowCurricuVerList();
+            
+            
+                
+            
 
         }
 

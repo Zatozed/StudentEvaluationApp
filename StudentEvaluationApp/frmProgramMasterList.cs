@@ -23,7 +23,13 @@ namespace StudentEvaluationApp
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (lbGotID.Text.Equals("") || lbGotID.Text.Equals("hidden"))
+           
+            if(tbProgramCode.Text.Equals(null) || tbProgramCode.Text.Equals(""))
+            {
+                errorProvider1.SetError(tbProgramCode, "Enter a Program code!");
+                errorProvider1.SetError(tbProgramName, "Enter a Program name!");
+            } 
+            else if (lbGotID.Text.Equals("") || lbGotID.Text.Equals("hidden"))
             {
                 MessageBoxButtons buttons = MessageBoxButtons.YesNo;
                 DialogResult result = MessageBox.Show("Are you sure you want to save this?", "Save", buttons);

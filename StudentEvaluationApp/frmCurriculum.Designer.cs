@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             tableLayoutPanel1 = new TableLayoutPanel();
             tbCurricuVer = new TextBox();
             label1 = new Label();
@@ -38,8 +39,10 @@
             colEdit = new DataGridViewImageColumn();
             colDel = new DataGridViewImageColumn();
             lbGotID = new Label();
+            errorProvider1 = new ErrorProvider(components);
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvCurricuVer).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -150,6 +153,10 @@
             lbGotID.TabIndex = 4;
             lbGotID.Text = "hidden ";
             // 
+            // errorProvider1
+            // 
+            errorProvider1.ContainerControl = this;
+            // 
             // frmCurriculum
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -164,6 +171,7 @@
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvCurricuVer).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ResumeLayout(false);
         }
 
@@ -179,5 +187,6 @@
         private DataGridViewImageColumn colEdit;
         private DataGridViewImageColumn colDel;
         private Label lbGotID;
+        private ErrorProvider errorProvider1;
     }
 }

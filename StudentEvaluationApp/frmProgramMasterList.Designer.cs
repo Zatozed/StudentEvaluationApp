@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             tableLayoutPanel1 = new TableLayoutPanel();
             label2 = new Label();
             tbProgramCode = new TextBox();
@@ -41,8 +42,10 @@
             colEdit = new DataGridViewImageColumn();
             colDel = new DataGridViewImageColumn();
             lbGotID = new Label();
+            errorProvider1 = new ErrorProvider(components);
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvPrograms).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -180,7 +183,10 @@
             lbGotID.Size = new Size(44, 15);
             lbGotID.TabIndex = 6;
             lbGotID.Text = "hidden";
-            lbGotID.Visible = false;
+            // 
+            // errorProvider1
+            // 
+            errorProvider1.ContainerControl = this;
             // 
             // frmProgramMasterList
             // 
@@ -197,6 +203,7 @@
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvPrograms).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -216,5 +223,6 @@
         private DataGridViewTextBoxColumn colProgName;
         private DataGridViewImageColumn colEdit;
         private DataGridViewImageColumn colDel;
+        private ErrorProvider errorProvider1;
     }
 }

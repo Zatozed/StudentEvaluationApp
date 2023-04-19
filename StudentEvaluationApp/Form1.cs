@@ -6,17 +6,16 @@ namespace StudentEvaluationApp
         private bool isCurriculumFormVisible = false;
 
         frmProgramMasterList fpml = new frmProgramMasterList()
-        {
-            Dock = DockStyle.Fill,
-            TopLevel = false
+        { 
+            //Dock = DockStyle.Fill, 
+            TopLevel = false 
         };
 
         frmCurriculum fc = new frmCurriculum()
-        {
-            Dock = DockStyle.Fill,
-            TopLevel = false
+        { 
+            //Dock = DockStyle.Fill, 
+            TopLevel = false 
         };
-
         public Form1()
         {
             InitializeComponent();
@@ -24,11 +23,12 @@ namespace StudentEvaluationApp
 
         private void ShowProgramForm()
         {
-
+            
 
             if (isProgramFormVisible == true)
             {
                 fpml.BringToFront();
+                
             }
             else
             {
@@ -39,18 +39,10 @@ namespace StudentEvaluationApp
                 isProgramFormVisible = true;
             }
         }
-        private void programMasterListToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ShowCurriculumForm()
         {
-            ShowProgramForm();
-        }
+            
 
-        private void utilityToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void curriculumVersionsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
             if (isCurriculumFormVisible == true)
             {
                 fc.BringToFront();
@@ -63,6 +55,20 @@ namespace StudentEvaluationApp
                 fc.BringToFront();
                 isCurriculumFormVisible = true;
             }
+        }
+        private void programMasterListToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowProgramForm();
+        }
+
+        private void utilityToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void curriculumVersionsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowCurriculumForm();
         }
     }
 }

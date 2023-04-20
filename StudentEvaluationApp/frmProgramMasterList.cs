@@ -17,18 +17,18 @@ namespace StudentEvaluationApp
         public frmProgramMasterList()
         {
             InitializeComponent();
-
+            btnSave.Enabled = false;
             dgvPrograms.DataSource = dbh.ShowProgramList();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-           
-            if(tbProgramCode.Text.Equals(null) || tbProgramCode.Text.Equals(""))
+
+            if (tbProgramCode.Text.Equals(null) || tbProgramCode.Text.Equals(""))
             {
                 errorProvider1.SetError(tbProgramCode, "Enter a Program code!");
                 errorProvider1.SetError(tbProgramName, "Enter a Program name!");
-            } 
+            }
             else if (lbGotID.Text.Equals("") || lbGotID.Text.Equals("hidden"))
             {
                 MessageBoxButtons buttons = MessageBoxButtons.YesNo;
@@ -84,6 +84,32 @@ namespace StudentEvaluationApp
         private void frmProgramMasterList_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void tbProgramCode_TextChanged(object sender, EventArgs e)
+        {
+            if (tbProgramCode.Text.Equals("") || tbProgramName.Text.Equals(""))
+            {
+                btnSave.Enabled = false;
+
+            }
+            else
+            {
+                btnSave.Enabled = true;
+            }
+        }
+
+        private void tbProgramName_TextChanged(object sender, EventArgs e)
+        {
+            if (tbProgramCode.Text.Equals("") || tbProgramName.Text.Equals(""))
+            {
+                btnSave.Enabled = false;
+
+            }
+            else
+            {
+                btnSave.Enabled = true;
+            }
         }
     }
 }

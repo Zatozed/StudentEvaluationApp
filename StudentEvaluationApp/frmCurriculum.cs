@@ -17,7 +17,7 @@ namespace StudentEvaluationApp
         public frmCurriculum()
         {
             InitializeComponent();
-
+            bSave.Enabled = false;
             dgvCurricuVer.DataSource = dbh.ShowCurricuVerList();
         }
 
@@ -37,10 +37,6 @@ namespace StudentEvaluationApp
                 }
 
             }
-            else if (tbCurricuVer.Text.Equals(""))
-            {
-                errorProvider1.SetError(tbCurricuVer, "Insert Curriculum version first!");
-            }
             else
             {
 
@@ -53,11 +49,11 @@ namespace StudentEvaluationApp
                     lbGotID.Text = "";
                 }
             }
-                dgvCurricuVer.DataSource = dbh.ShowCurricuVerList();
-            
-            
-                
-            
+            dgvCurricuVer.DataSource = dbh.ShowCurricuVerList();
+
+
+
+
 
         }
 
@@ -78,6 +74,20 @@ namespace StudentEvaluationApp
                 }
             }
             dgvCurricuVer.DataSource = dbh.ShowCurricuVerList();
+        }
+
+        private void tbCurricuVer_TextChanged(object sender, EventArgs e)
+        {
+            if (tbCurricuVer.Text.Equals(""))
+            {
+                bSave.Enabled = false;
+
+            }
+            else
+            {
+                bSave.Enabled = true;
+            }
+
         }
     }
 }

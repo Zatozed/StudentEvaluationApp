@@ -10,11 +10,19 @@ namespace StudentEvaluationApp
 {
     internal class ClassDBhelper
     {
-        private OleDbConnection con = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users\\Loui\\Documents\\VS\\DB\\TestDB.accdb");
+
+        public OleDbConnectionStringBuilder connectionStringBuilder;
+        public OleDbConnection con;
 
         private OleDbCommand cmd;
         private OleDbDataReader r;
         private OleDbDataAdapter dataAdapter;
+
+        public ClassDBhelper()
+        {
+            connectionStringBuilder = new OleDbConnectionStringBuilder(Properties.Settings.Default.ConString);
+            con = new OleDbConnection(connectionStringBuilder.ConnectionString);
+        }
 
         public void OpenCon()
         {

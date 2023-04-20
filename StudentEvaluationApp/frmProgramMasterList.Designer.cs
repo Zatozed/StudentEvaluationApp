@@ -88,6 +88,7 @@
             tbProgramCode.Name = "tbProgramCode";
             tbProgramCode.Size = new Size(100, 23);
             tbProgramCode.TabIndex = 0;
+            tbProgramCode.TextChanged += tbProgramCode_TextChanged;
             // 
             // label1
             // 
@@ -104,6 +105,7 @@
             tbProgramName.Name = "tbProgramName";
             tbProgramName.Size = new Size(100, 23);
             tbProgramName.TabIndex = 3;
+            tbProgramName.TextChanged += tbProgramName_TextChanged;
             // 
             // btnSave
             // 
@@ -192,12 +194,13 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoSizeMode = AutoSizeMode.GrowAndShrink;
             ClientSize = new Size(800, 450);
             ControlBox = false;
             Controls.Add(tableLayoutPanel1);
             Name = "frmProgramMasterList";
             SizeGripStyle = SizeGripStyle.Hide;
-            StartPosition = FormStartPosition.CenterScreen;
+            StartPosition = FormStartPosition.Manual;
             WindowState = FormWindowState.Maximized;
             Load += frmProgramMasterList_Load;
             tableLayoutPanel1.ResumeLayout(false);

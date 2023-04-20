@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             tableLayoutPanel1 = new TableLayoutPanel();
             menuStrip1 = new MenuStrip();
             eToolStripMenuItem = new ToolStripMenuItem();
@@ -36,11 +37,13 @@
             programMasterListToolStripMenuItem = new ToolStripMenuItem();
             courseMasterListToolStripMenuItem = new ToolStripMenuItem();
             utilityToolStripMenuItem = new ToolStripMenuItem();
+            configureDatabaseToolStripMenuItem = new ToolStripMenuItem();
             statusStrip1 = new StatusStrip();
             toolStripStatusLabel1 = new ToolStripStatusLabel();
+            panel1 = new Panel();
             statusStrip2 = new StatusStrip();
             toolStripStatusLabel2 = new ToolStripStatusLabel();
-            panel1 = new Panel();
+            timer1 = new System.Windows.Forms.Timer(components);
             tableLayoutPanel1.SuspendLayout();
             menuStrip1.SuspendLayout();
             statusStrip1.SuspendLayout();
@@ -54,8 +57,8 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel1.Controls.Add(menuStrip1, 0, 0);
             tableLayoutPanel1.Controls.Add(statusStrip1, 0, 2);
-            tableLayoutPanel1.Controls.Add(statusStrip2, 1, 2);
             tableLayoutPanel1.Controls.Add(panel1, 0, 1);
+            tableLayoutPanel1.Controls.Add(statusStrip2, 1, 2);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -114,10 +117,18 @@
             // 
             // utilityToolStripMenuItem
             // 
+            utilityToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { configureDatabaseToolStripMenuItem });
             utilityToolStripMenuItem.Name = "utilityToolStripMenuItem";
             utilityToolStripMenuItem.Size = new Size(72, 24);
             utilityToolStripMenuItem.Text = "Utilities";
             utilityToolStripMenuItem.Click += utilityToolStripMenuItem_Click;
+            // 
+            // configureDatabaseToolStripMenuItem
+            // 
+            configureDatabaseToolStripMenuItem.Name = "configureDatabaseToolStripMenuItem";
+            configureDatabaseToolStripMenuItem.Size = new Size(213, 24);
+            configureDatabaseToolStripMenuItem.Text = "Configure Database";
+            configureDatabaseToolStripMenuItem.Click += configureDatabaseToolStripMenuItem_Click;
             // 
             // statusStrip1
             // 
@@ -126,6 +137,7 @@
             statusStrip1.Location = new Point(0, 426);
             statusStrip1.Name = "statusStrip1";
             statusStrip1.Size = new Size(135, 22);
+            statusStrip1.SizingGrip = false;
             statusStrip1.TabIndex = 1;
             statusStrip1.Text = "statusStrip1";
             // 
@@ -135,25 +147,9 @@
             toolStripStatusLabel1.Size = new Size(118, 17);
             toolStripStatusLabel1.Text = "toolStripStatusLabel1";
             // 
-            // statusStrip2
-            // 
-            statusStrip2.Dock = DockStyle.None;
-            statusStrip2.Items.AddRange(new ToolStripItem[] { toolStripStatusLabel2 });
-            statusStrip2.Location = new Point(400, 426);
-            statusStrip2.Name = "statusStrip2";
-            statusStrip2.Size = new Size(135, 22);
-            statusStrip2.TabIndex = 2;
-            statusStrip2.Text = "statusStrip2";
-            // 
-            // toolStripStatusLabel2
-            // 
-            toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            toolStripStatusLabel2.Size = new Size(118, 17);
-            toolStripStatusLabel2.Text = "toolStripStatusLabel2";
-            // 
             // panel1
             // 
-            panel1.BackColor = Color.White;
+            panel1.BackColor = Color.Black;
             tableLayoutPanel1.SetColumnSpan(panel1, 2);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(3, 31);
@@ -161,6 +157,31 @@
             panel1.Size = new Size(794, 392);
             panel1.TabIndex = 3;
             panel1.SizeChanged += panel1_SizeChanged;
+            // 
+            // statusStrip2
+            // 
+            statusStrip2.Dock = DockStyle.Fill;
+            statusStrip2.Items.AddRange(new ToolStripItem[] { toolStripStatusLabel2 });
+            statusStrip2.Location = new Point(400, 426);
+            statusStrip2.Name = "statusStrip2";
+            statusStrip2.RightToLeft = RightToLeft.Yes;
+            statusStrip2.Size = new Size(400, 24);
+            statusStrip2.SizingGrip = false;
+            statusStrip2.TabIndex = 2;
+            statusStrip2.Text = "statusStrip2";
+            // 
+            // toolStripStatusLabel2
+            // 
+            toolStripStatusLabel2.Name = "toolStripStatusLabel2";
+            toolStripStatusLabel2.RightToLeft = RightToLeft.No;
+            toolStripStatusLabel2.Size = new Size(118, 19);
+            toolStripStatusLabel2.Text = "toolStripStatusLabel2";
+            // 
+            // timer1
+            // 
+            timer1.Enabled = true;
+            timer1.Interval = 1000;
+            timer1.Tick += timer1_Tick;
             // 
             // Form1
             // 
@@ -171,6 +192,8 @@
             MainMenuStrip = menuStrip1;
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
+            Load += Form1_Load;
+            SizeChanged += Form1_SizeChanged;
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             menuStrip1.ResumeLayout(false);
@@ -197,5 +220,7 @@
         private ToolStripMenuItem programMasterListToolStripMenuItem;
         private ToolStripMenuItem courseMasterListToolStripMenuItem;
         private ToolStripMenuItem curriculumVersionsToolStripMenuItem;
+        private System.Windows.Forms.Timer timer1;
+        private ToolStripMenuItem configureDatabaseToolStripMenuItem;
     }
 }

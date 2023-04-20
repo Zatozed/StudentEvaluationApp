@@ -9,7 +9,7 @@ namespace StudentEvaluationApp
         private bool isProgramFormVisible = false;
         private bool isCurriculumFormVisible = false;
 
-        Form onTopForm;
+        private string onTopForm;
 
         ClassDBhelper cs = new ClassDBhelper();
 
@@ -75,7 +75,7 @@ namespace StudentEvaluationApp
         private void programMasterListToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ShowProgramForm();
-            onTopForm = fpml;
+            onTopForm = fpml.Name;
         }
 
         private void utilityToolStripMenuItem_Click(object sender, EventArgs e)
@@ -86,7 +86,7 @@ namespace StudentEvaluationApp
         private void curriculumVersionsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ShowCurriculumForm();
-            onTopForm = fc;
+            onTopForm = fc.Name;
         }
 
         private void panel1_SizeChanged(object sender, EventArgs e)
@@ -127,22 +127,20 @@ namespace StudentEvaluationApp
 
         private void Form1_SizeChanged(object sender, EventArgs e)
         {
-            //if (onTopForm == fpml) 
-            //{
-            //    fc.Controls.Remove(fc);
-            //    fc.Controls.Add(fc);
+            if (onTopForm.Equals(fpml.Name))
+            {
+                panel1.Controls.Remove(fpml);
+                panel1.Controls.Add(fpml);
 
-            //    fpml.Controls.Remove(fpml);
-            //    fpml.Controls.Add(fpml);
-            //}
-            //else if (onTopForm == fc) 
-            //{
-            //    fpml.Controls.Remove(fpml);
-            //    fpml.Controls.Add(fpml);
+                fpml.BringToFront();
+            }
+            else if (onTopForm.Equals(fc.Name))
+            {
+                panel1.Controls.Remove(fc);
+                panel1.Controls.Add(fc);
 
-            //    fc.Controls.Remove(fc);
-            //    fc.Controls.Add(fc);
-            //}
+                fc.BringToFront();
+            }
         }
     }
 }

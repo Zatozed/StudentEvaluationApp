@@ -39,8 +39,14 @@
             tbSubDes = new TextBox();
             cbCurricuVer = new ComboBox();
             tbLvlTerm = new TextBox();
+            btnSearch = new Button();
+            tbToSearch = new TextBox();
+            bSave = new Button();
+            panel1 = new Panel();
+            dataGridView1 = new DataGridView();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)nUnits).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -62,14 +68,20 @@
             tableLayoutPanel1.Controls.Add(nUnits, 5, 0);
             tableLayoutPanel1.Controls.Add(tbCourseCode, 1, 0);
             tableLayoutPanel1.Controls.Add(cbCurricuVer, 1, 1);
+            tableLayoutPanel1.Controls.Add(btnSearch, 0, 3);
+            tableLayoutPanel1.Controls.Add(tbToSearch, 1, 3);
+            tableLayoutPanel1.Controls.Add(bSave, 5, 1);
+            tableLayoutPanel1.Controls.Add(panel1, 0, 2);
+            tableLayoutPanel1.Controls.Add(dataGridView1, 0, 4);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 4;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            tableLayoutPanel1.RowCount = 5;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle());
+            tableLayoutPanel1.RowStyles.Add(new RowStyle());
+            tableLayoutPanel1.RowStyles.Add(new RowStyle());
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tableLayoutPanel1.Size = new Size(800, 450);
             tableLayoutPanel1.TabIndex = 0;
             // 
@@ -103,7 +115,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(3, 112);
+            label4.Location = new Point(3, 29);
             label4.Name = "label4";
             label4.Size = new Size(108, 15);
             label4.TabIndex = 3;
@@ -112,7 +124,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(269, 112);
+            label5.Location = new Point(269, 29);
             label5.Name = "label5";
             label5.Size = new Size(65, 15);
             label5.TabIndex = 4;
@@ -142,17 +154,63 @@
             // cbCurricuVer
             // 
             cbCurricuVer.FormattingEnabled = true;
-            cbCurricuVer.Location = new Point(136, 115);
+            cbCurricuVer.Location = new Point(136, 32);
             cbCurricuVer.Name = "cbCurricuVer";
             cbCurricuVer.Size = new Size(121, 23);
             cbCurricuVer.TabIndex = 8;
             // 
             // tbLvlTerm
             // 
-            tbLvlTerm.Location = new Point(402, 115);
+            tbLvlTerm.Location = new Point(402, 32);
             tbLvlTerm.Name = "tbLvlTerm";
             tbLvlTerm.Size = new Size(100, 23);
             tbLvlTerm.TabIndex = 9;
+            // 
+            // btnSearch
+            // 
+            btnSearch.Location = new Point(3, 77);
+            btnSearch.Name = "btnSearch";
+            btnSearch.Size = new Size(75, 23);
+            btnSearch.TabIndex = 10;
+            btnSearch.Text = "Search";
+            btnSearch.UseVisualStyleBackColor = true;
+            // 
+            // tbToSearch
+            // 
+            tbToSearch.Location = new Point(136, 77);
+            tbToSearch.Name = "tbToSearch";
+            tbToSearch.Size = new Size(100, 23);
+            tbToSearch.TabIndex = 11;
+            // 
+            // bSave
+            // 
+            bSave.Location = new Point(668, 32);
+            bSave.Name = "bSave";
+            bSave.Size = new Size(75, 23);
+            bSave.TabIndex = 12;
+            bSave.Text = "Save";
+            bSave.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            panel1.BorderStyle = BorderStyle.Fixed3D;
+            tableLayoutPanel1.SetColumnSpan(panel1, 6);
+            panel1.Location = new Point(3, 61);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(794, 10);
+            panel1.TabIndex = 13;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(3, 265);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
+            dataGridView1.RowTemplate.Height = 25;
+            dataGridView1.Size = new Size(127, 150);
+            dataGridView1.TabIndex = 14;
             // 
             // frmCourseMasterList
             // 
@@ -165,6 +223,7 @@
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)nUnits).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
 
@@ -181,5 +240,10 @@
         private NumericUpDown nUnits;
         private TextBox tbCourseCode;
         private ComboBox cbCurricuVer;
+        private Button btnSearch;
+        private TextBox tbToSearch;
+        private Button bSave;
+        private Panel panel1;
+        private DataGridView dataGridView1;
     }
 }

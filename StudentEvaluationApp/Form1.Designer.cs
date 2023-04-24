@@ -44,6 +44,7 @@
             statusStrip2 = new StatusStrip();
             toolStripStatusLabel2 = new ToolStripStatusLabel();
             timer1 = new System.Windows.Forms.Timer(components);
+            studentMasterListToolStripMenuItem = new ToolStripMenuItem();
             tableLayoutPanel1.SuspendLayout();
             menuStrip1.SuspendLayout();
             statusStrip1.SuspendLayout();
@@ -90,7 +91,7 @@
             // 
             // fileMaintenanceToolStripMenuItem
             // 
-            fileMaintenanceToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { curriculumVersionsToolStripMenuItem, programMasterListToolStripMenuItem, courseMasterListToolStripMenuItem });
+            fileMaintenanceToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { curriculumVersionsToolStripMenuItem, programMasterListToolStripMenuItem, courseMasterListToolStripMenuItem, studentMasterListToolStripMenuItem });
             fileMaintenanceToolStripMenuItem.Name = "fileMaintenanceToolStripMenuItem";
             fileMaintenanceToolStripMenuItem.Size = new Size(138, 24);
             fileMaintenanceToolStripMenuItem.Text = "File Maintenance";
@@ -114,6 +115,7 @@
             courseMasterListToolStripMenuItem.Name = "courseMasterListToolStripMenuItem";
             courseMasterListToolStripMenuItem.Size = new Size(215, 24);
             courseMasterListToolStripMenuItem.Text = "Course Master List";
+            courseMasterListToolStripMenuItem.Click += courseMasterListToolStripMenuItem_Click;
             // 
             // utilityToolStripMenuItem
             // 
@@ -183,6 +185,13 @@
             timer1.Interval = 1000;
             timer1.Tick += timer1_Tick;
             // 
+            // studentMasterListToolStripMenuItem
+            // 
+            studentMasterListToolStripMenuItem.Name = "studentMasterListToolStripMenuItem";
+            studentMasterListToolStripMenuItem.Size = new Size(215, 24);
+            studentMasterListToolStripMenuItem.Text = "Student Master List";
+            studentMasterListToolStripMenuItem.Click += studentMasterListToolStripMenuItem_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -222,5 +231,6 @@
         private ToolStripMenuItem curriculumVersionsToolStripMenuItem;
         private System.Windows.Forms.Timer timer1;
         private ToolStripMenuItem configureDatabaseToolStripMenuItem;
+        private ToolStripMenuItem studentMasterListToolStripMenuItem;
     }
 }

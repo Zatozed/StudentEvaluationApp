@@ -82,12 +82,13 @@
             // 
             // bSave
             // 
+            bSave.BackColor = Color.White;
             bSave.Location = new Point(535, 18);
             bSave.Name = "bSave";
             bSave.Size = new Size(75, 23);
             bSave.TabIndex = 2;
             bSave.Text = "Save";
-            bSave.UseVisualStyleBackColor = true;
+            bSave.UseVisualStyleBackColor = false;
             bSave.Click += button1_Click;
             // 
             // dgvCurricuVer
@@ -155,13 +156,14 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            BackColor = Color.White;
             ClientSize = new Size(800, 450);
             ControlBox = false;
             Controls.Add(tableLayoutPanel1);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "frmCurriculum";
             SizeGripStyle = SizeGripStyle.Hide;
-            StartPosition = FormStartPosition.Manual;
+            TopMost = true;
             WindowState = FormWindowState.Maximized;
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();

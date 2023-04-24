@@ -8,23 +8,33 @@ namespace StudentEvaluationApp
     {
         private bool isProgramFormVisible = false;
         private bool isCurriculumFormVisible = false;
+        private bool isCourseMasterListFormVisible = false;
+        private bool isStudentFormVisible = false;
 
-        private string onTopForm;
+        private string onTopForm = "";
 
         ClassDBhelper cs = new ClassDBhelper();
 
         frmProgramMasterList fpml = new frmProgramMasterList()
         {
             Dock = DockStyle.Fill,
-            TopLevel = false,
-            TopMost = true
+            TopLevel = false
         };
 
         frmCurriculum fc = new frmCurriculum()
         {
             Dock = DockStyle.Fill,
             TopLevel = false,
-            TopMost = true
+        };
+        frmCourseMasterList frmCourse = new frmCourseMasterList()
+        {
+            Dock = DockStyle.Fill,
+            TopLevel = false
+        };
+        frmStudentReg frmStudent = new frmStudentReg()
+        {
+            Dock = DockStyle.Fill,
+            TopLevel = false
         };
 
         frmConfigureDb frmConfig = new frmConfigureDb();
@@ -47,7 +57,6 @@ namespace StudentEvaluationApp
             {
                 fpml.AutoScroll = true;
                 panel1.Controls.Add(fpml);
-                fpml.Dock = DockStyle.Fill;
                 fpml.Show();
                 fpml.BringToFront();
                 isProgramFormVisible = true;
@@ -66,10 +75,43 @@ namespace StudentEvaluationApp
             {
                 fc.AutoScroll = true;
                 panel1.Controls.Add(fc);
-                fc.Dock = DockStyle.Fill;
                 fc.Show();
                 fc.BringToFront();
                 isCurriculumFormVisible = true;
+            }
+        }
+        private void ShowCourseMasterListForm()
+        {
+            if (isCourseMasterListFormVisible == true)
+            {
+                panel1.Controls.Remove(frmCourse);
+                panel1.Controls.Add(frmCourse);
+                frmCourse.BringToFront();
+            }
+            else
+            {
+                frmCourse.AutoScroll = true;
+                panel1.Controls.Add(frmCourse);
+                frmCourse.Show();
+                frmCourse.BringToFront();
+                isCourseMasterListFormVisible = true;
+            }
+        }
+        private void ShowStudentRegForm()
+        {
+            if (isStudentFormVisible == true)
+            {
+                panel1.Controls.Remove(frmStudent);
+                panel1.Controls.Add(frmStudent);
+                frmStudent.BringToFront();
+            }
+            else
+            {
+                frmStudent.AutoScroll = true;
+                panel1.Controls.Add(frmStudent);
+                frmStudent.Show();
+                frmStudent.BringToFront();
+                isStudentFormVisible = true;
             }
         }
         private void programMasterListToolStripMenuItem_Click(object sender, EventArgs e)
@@ -88,7 +130,16 @@ namespace StudentEvaluationApp
             ShowCurriculumForm();
             onTopForm = fc.Name;
         }
-
+        private void courseMasterListToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowCourseMasterListForm();
+            onTopForm = frmCourse.Name;
+        }
+        private void studentMasterListToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowStudentRegForm();
+            onTopForm = frmStudent.Name;
+        }
         private void panel1_SizeChanged(object sender, EventArgs e)
         {
 
@@ -141,6 +192,20 @@ namespace StudentEvaluationApp
 
                 fc.BringToFront();
             }
+            else if (onTopForm.Equals(frmCourse.Name))
+            {
+                panel1.Controls.Remove(frmCourse);
+                panel1.Controls.Add(frmCourse);
+
+                frmCourse.BringToFront();
+            }
+            else if (onTopForm.Equals(frmStudent.Name))
+            {
+                panel1.Controls.Remove(frmStudent);
+                panel1.Controls.Add(frmStudent);
+            }
         }
+
+        
     }
 }

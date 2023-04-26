@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             tableLayoutPanel1 = new TableLayoutPanel();
+            label10 = new Label();
             tbPrereq = new TextBox();
             label8 = new Label();
             tbComponets = new TextBox();
@@ -64,9 +65,8 @@
             textBox1 = new TextBox();
             btnOpenCurricuVer = new Button();
             btnOpenProgram = new Button();
-            tbToSearch = new TextBox();
             lbGotCurricuVerID = new Label();
-            label10 = new Label();
+            tbToSearch = new TextBox();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)nUnits).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvCourse).BeginInit();
@@ -121,6 +121,15 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tableLayoutPanel1.Size = new Size(800, 450);
             tableLayoutPanel1.TabIndex = 0;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(675, 0);
+            label10.Name = "label10";
+            label10.Size = new Size(67, 15);
+            label10.TabIndex = 26;
+            label10.Text = "program ID";
             // 
             // tbPrereq
             // 
@@ -434,13 +443,6 @@
             btnOpenProgram.UseVisualStyleBackColor = true;
             btnOpenProgram.Click += btnOpenProgram_Click;
             // 
-            // tbToSearch
-            // 
-            tbToSearch.Location = new Point(269, 192);
-            tbToSearch.Name = "tbToSearch";
-            tbToSearch.Size = new Size(100, 23);
-            tbToSearch.TabIndex = 11;
-            // 
             // lbGotCurricuVerID
             // 
             lbGotCurricuVerID.AutoSize = true;
@@ -450,14 +452,12 @@
             lbGotCurricuVerID.TabIndex = 25;
             lbGotCurricuVerID.Text = "Curriculum version ID";
             // 
-            // label10
+            // tbToSearch
             // 
-            label10.AutoSize = true;
-            label10.Location = new Point(675, 0);
-            label10.Name = "label10";
-            label10.Size = new Size(67, 15);
-            label10.TabIndex = 26;
-            label10.Text = "program ID";
+            tbToSearch.Location = new Point(269, 192);
+            tbToSearch.Name = "tbToSearch";
+            tbToSearch.Size = new Size(100, 23);
+            tbToSearch.TabIndex = 11;
             // 
             // frmCourseMasterList
             // 

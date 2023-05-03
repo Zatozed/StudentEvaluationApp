@@ -36,6 +36,7 @@
             curriculumVersionsToolStripMenuItem = new ToolStripMenuItem();
             programMasterListToolStripMenuItem = new ToolStripMenuItem();
             courseMasterListToolStripMenuItem = new ToolStripMenuItem();
+            studentMasterListToolStripMenuItem = new ToolStripMenuItem();
             utilityToolStripMenuItem = new ToolStripMenuItem();
             configureDatabaseToolStripMenuItem = new ToolStripMenuItem();
             statusStrip1 = new StatusStrip();
@@ -44,7 +45,6 @@
             statusStrip2 = new StatusStrip();
             toolStripStatusLabel2 = new ToolStripStatusLabel();
             timer1 = new System.Windows.Forms.Timer(components);
-            studentMasterListToolStripMenuItem = new ToolStripMenuItem();
             tableLayoutPanel1.SuspendLayout();
             menuStrip1.SuspendLayout();
             statusStrip1.SuspendLayout();
@@ -117,6 +117,13 @@
             courseMasterListToolStripMenuItem.Text = "Course Master List";
             courseMasterListToolStripMenuItem.Click += courseMasterListToolStripMenuItem_Click;
             // 
+            // studentMasterListToolStripMenuItem
+            // 
+            studentMasterListToolStripMenuItem.Name = "studentMasterListToolStripMenuItem";
+            studentMasterListToolStripMenuItem.Size = new Size(215, 24);
+            studentMasterListToolStripMenuItem.Text = "Student Master List";
+            studentMasterListToolStripMenuItem.Click += studentMasterListToolStripMenuItem_Click;
+            // 
             // utilityToolStripMenuItem
             // 
             utilityToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { configureDatabaseToolStripMenuItem });
@@ -185,13 +192,6 @@
             timer1.Interval = 1000;
             timer1.Tick += timer1_Tick;
             // 
-            // studentMasterListToolStripMenuItem
-            // 
-            studentMasterListToolStripMenuItem.Name = "studentMasterListToolStripMenuItem";
-            studentMasterListToolStripMenuItem.Size = new Size(215, 24);
-            studentMasterListToolStripMenuItem.Text = "Student Master List";
-            studentMasterListToolStripMenuItem.Click += studentMasterListToolStripMenuItem_Click;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -201,6 +201,7 @@
             MainMenuStrip = menuStrip1;
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
+            WindowState = FormWindowState.Maximized;
             Load += Form1_Load;
             SizeChanged += Form1_SizeChanged;
             tableLayoutPanel1.ResumeLayout(false);

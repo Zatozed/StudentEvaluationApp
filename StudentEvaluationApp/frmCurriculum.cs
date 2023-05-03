@@ -23,19 +23,15 @@ namespace StudentEvaluationApp
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-
-
             if (lbGotID.Text.Equals("") || lbGotID.Text.Equals("hidden"))
             {
                 MessageBoxButtons buttons = MessageBoxButtons.YesNo;
                 DialogResult result = MessageBox.Show("Are you sure you want to save this?", "Save", buttons);
                 if (result == DialogResult.Yes)
                 {
-                    dbh.InsertToCurricuVer(tbCurricuVer.Text);
+                    dbh.InsertToCurricuVer(tbCurricuVer.Text.TrimStart().TrimEnd());
                     tbCurricuVer.Clear();
                 }
-
             }
             else
             {

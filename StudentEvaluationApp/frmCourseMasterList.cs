@@ -10,13 +10,11 @@ namespace StudentEvaluationApp
         public frmCourseMasterList()
         {
             InitializeComponent();
-            btnSave.Enabled = false;
-            cbCurricuVer.DataSource = dbh.CurriculumVerList();
-            cbProgram.DataSource = dbh.ProgramList();
-
-            nUnits.Value = 3;
 
             dgvCourse.DataSource = dbh.ShowCourseList();
+
+            btnSave.Enabled = false;
+            nUnits.Value = 3;
         }
 
 

@@ -68,6 +68,7 @@
             tbDBpath.Name = "tbDBpath";
             tbDBpath.Size = new Size(439, 23);
             tbDBpath.TabIndex = 0;
+            tbDBpath.TextChanged += tbDBpath_TextChanged;
             // 
             // label1
             // 

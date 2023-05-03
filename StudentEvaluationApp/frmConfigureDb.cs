@@ -54,5 +54,10 @@ namespace StudentEvaluationApp
         {
             tbDBpath.Text = Properties.Settings.Default.ConString;
         }
+
+        private void tbDBpath_TextChanged(object sender, EventArgs e)
+        {
+            tbDBpath.Text.TrimStart().TrimEnd();
+        }
     }
 }

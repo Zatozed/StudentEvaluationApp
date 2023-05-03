@@ -51,7 +51,7 @@ namespace StudentEvaluationApp
                 dr.DisposeAsync();
                 cmd.Dispose();
             }
-            catch (Exception e) { MessageBox.Show(e.Message.ToString()); }
+            catch (Exception e) { MessageBox.Show("Test Con: "+e.Message.ToString()); }
             finally { con.Close(); }
 
             return toReturn;
@@ -122,7 +122,7 @@ namespace StudentEvaluationApp
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.ToString());
+                MessageBox.Show("insert to program"+e.ToString());
             }
             finally
             {
@@ -215,7 +215,7 @@ namespace StudentEvaluationApp
             }
             catch (Exception e) 
             {
-                MessageBox.Show(e.Message.ToString());
+                MessageBox.Show("insert curriculum"+e.Message.ToString());
             }
             finally 
             {
@@ -358,7 +358,7 @@ namespace StudentEvaluationApp
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.Message.ToString());
+                MessageBox.Show("show course list "+e.Message.ToString());
             }
             finally
             {

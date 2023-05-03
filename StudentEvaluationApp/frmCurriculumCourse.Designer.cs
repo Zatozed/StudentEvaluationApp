@@ -34,9 +34,12 @@
             // maskedTextBox1
             // 
             maskedTextBox1.Location = new Point(82, 27);
+            maskedTextBox1.Mask = "00000";
             maskedTextBox1.Name = "maskedTextBox1";
+            maskedTextBox1.PromptChar = '-';
             maskedTextBox1.Size = new Size(100, 23);
             maskedTextBox1.TabIndex = 0;
+            maskedTextBox1.ValidatingType = typeof(int);
             // 
             // frmCurriculumCourse
             // 

@@ -336,20 +336,8 @@ namespace StudentEvaluationApp
                 OpenCon();
 
                 cmd = new OleDbCommand
-                    (@"select 
-                    tblCourse.courseID, 
-                    tblCourse.courseCode, 
-                    tblCourse.courseDescription,
-                    tblCourse.units,
-                    tblCourse.courseComponent,
-                    tblCourse.prereqCourseID,
-                    tblProgram.programID, 
-                    tblProgram.programCode, 
-                    tblCurriculumVer.curricuVerID, 
-                    tblCurriculumVer.curricuDescription
-                    from ((tblCourse 
-                    inner join tblProgram on tblCourse.programID = tblProgram.programID)
-                    inner join tblCurriculumVer on tblCourse.curricuVerID = tblCurriculumVer.curricuVerID)", con);
+                    (@"select courseID, courseCode, courseName, courseDes, unit
+                    from tblCourse where isDel = false", con);
                 dataAdapter = new OleDbDataAdapter(cmd);
                 dataAdapter.Fill(dt);
 
@@ -366,6 +354,88 @@ namespace StudentEvaluationApp
             }
 
             return dt;
+        }
+        public DataTable InsertToCourse
+            (string courseCode, string courseName, string courseDes, int units)
+        {
+            DataTable dt = new DataTable();
+
+            try
+            {
+                OpenCon();
+
+                cmd = new OleDbCommand
+                    (@"insert into tblCourse(courseCode, courseName, courseDes, unit)
+                    values(@courseCode, @courseName, @courseDes, @units)", con);
+
+                cmd.Parameters.AddWithValue("@courseCode", courseCode);
+                cmd.Parameters.AddWithValue("@courseName", courseName);
+                cmd.Parameters.AddWithValue("@courseDes", courseDes);
+                cmd.Parameters.AddWithValue("@units", units);
+
+                cmd.ExecuteNonQuery();
+
+                cmd.Dispose();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("insert curriculum" + e.Message.ToString());
+            }
+            finally
+            {
+                CloseCon();
+            }
+
+            return dt;
+        }
+        public void EditAtCourse
+            (string courseCode, string courseName, string courseDes, int units, int id)
+        {
+            try
+            {
+                OpenCon();
+                
+                cmd = new OleDbCommand
+                    ("update tblCourse set courseCode = '"+courseCode
+                    +"', courseName = '"+courseName
+                    +"', courseDes = '"+courseDes
+                    +"', unit = " + units
+                    +" where courseID = "+id, con);
+
+                cmd.ExecuteNonQuery();
+
+                cmd.Dispose();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message.ToString());
+            }
+            finally
+            {
+                CloseCon();
+            }
+        }
+        public void DelAtCourse(string id)
+        {
+            try
+            {
+                OpenCon();
+
+                cmd = new OleDbCommand("update tblCourse set isDel = true where courseID = @id", con);
+                cmd.Parameters.AddWithValue("@id", id);
+
+                cmd.ExecuteNonQuery();
+
+                cmd.Dispose();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("course del:"+e.Message.ToString());
+            }
+            finally
+            {
+                CloseCon();
+            }
         }
         //---------------------------------------------------------------- Course form
     }

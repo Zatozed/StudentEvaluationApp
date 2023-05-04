@@ -47,10 +47,6 @@ namespace StudentEvaluationApp
             }
             dgvCurricuVer.DataSource = dbh.ShowCurricuVerList();
 
-
-
-
-
         }
 
         private void dgvCurricuVer_CellContentClick(object sender, DataGridViewCellEventArgs e)

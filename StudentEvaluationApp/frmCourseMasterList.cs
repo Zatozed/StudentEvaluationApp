@@ -21,6 +21,10 @@ namespace StudentEvaluationApp
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            tbCourseCode.Text = tbCourseCode.Text.TrimStart().TrimEnd();
+            tbCourseName.Text = tbCourseName.Text.TrimStart().TrimEnd();
+            tbCourseDes.Text = tbCourseDes.Text.TrimStart().TrimEnd();
+
             if (lbGotID.Text.Equals("") || lbGotID.Text.Equals("hidden"))
             {
                 MessageBoxButtons buttons = MessageBoxButtons.YesNo;
@@ -28,6 +32,11 @@ namespace StudentEvaluationApp
                 if (result == DialogResult.Yes)
                 {
                     dbh.InsertToCourse(tbCourseCode.Text, tbCourseName.Text, tbCourseDes.Text, Convert.ToInt32(nUnits.Value));
+
+                    tbCourseCode.Clear();
+                    tbCourseName.Clear();
+                    tbCourseDes.Clear();
+                    nUnits.Value = 3;
                 }
             }
             else
@@ -109,29 +118,6 @@ namespace StudentEvaluationApp
             {
                 btnSave.Enabled = true;
             }
-        }
-
-        private void btnOpenCurricuVer_Click(object sender, EventArgs e)
-        {
-            frmCurriculum fc = new frmCurriculum();
-
-            fc.WindowState = FormWindowState.Normal;
-            fc.FormBorderStyle = FormBorderStyle.FixedSingle;
-            fc.ControlBox = true;
-            fc.MinimizeBox = false;
-            fc.MaximizeBox = false;
-            fc.ShowDialog();
-        }
-
-        private void btnOpenProgram_Click(object sender, EventArgs e)
-        {
-            frmProgramMasterList fp = new frmProgramMasterList();
-            fp.WindowState = FormWindowState.Normal;
-            fp.FormBorderStyle = FormBorderStyle.FixedDialog;
-            fp.ControlBox = true;
-            fp.MinimizeBox = false;
-            fp.MaximizeBox = false;
-            fp.ShowDialog();
         }
 
         private void dgvCourse_CellContentClick(object sender, DataGridViewCellEventArgs e)

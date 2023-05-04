@@ -16,6 +16,8 @@ namespace StudentEvaluationApp
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            tbProgramCode.Text = tbProgramCode.Text.TrimStart().TrimEnd();
+            tbProgramName.Text = tbProgramName.Text.TrimStart().TrimEnd();
 
             if (tbProgramCode.Text.Equals(null) || tbProgramCode.Text.Equals(""))
             {

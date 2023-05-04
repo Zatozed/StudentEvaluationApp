@@ -249,8 +249,7 @@ namespace StudentEvaluationApp
             {
                 OpenCon();
 
-                cmd = new OleDbCommand("update tblCurriculumVer set isDel = true where curricuVerID = @id", con);
-                cmd.Parameters.AddWithValue("@id", id);
+                cmd = new OleDbCommand("update tblCurriculumVer set isDel = true where curricuVerID = " + id, con);
 
                 cmd.ExecuteNonQuery();
 
@@ -421,8 +420,7 @@ namespace StudentEvaluationApp
             {
                 OpenCon();
 
-                cmd = new OleDbCommand("update tblCourse set isDel = true where courseID = @id", con);
-                cmd.Parameters.AddWithValue("@id", id);
+                cmd = new OleDbCommand("update tblCourse set isDel = true where courseID ="+id, con);
 
                 cmd.ExecuteNonQuery();
 

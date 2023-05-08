@@ -9,7 +9,7 @@ namespace StudentEvaluationApp
         private bool isProgramFormVisible = false;
         private bool isCurriculumFormVisible = false;
         private bool isCourseMasterListFormVisible = false;
-        private bool isStudentFormVisible = false;
+        private bool isEvauationFormVisible = false;
 
         private string onTopForm = "";
 
@@ -31,7 +31,7 @@ namespace StudentEvaluationApp
             Dock = DockStyle.Fill,
             TopLevel = false
         };
-        frmStudentReg frmStudent = new frmStudentReg()
+        frmEvaluateOptions frmEvaluateOp = new frmEvaluateOptions()
         {
             Dock = DockStyle.Fill,
             TopLevel = false
@@ -97,21 +97,21 @@ namespace StudentEvaluationApp
                 isCourseMasterListFormVisible = true;
             }
         }
-        private void ShowStudentRegForm()
+        private void ShowEvaluateOpForm()
         {
-            if (isStudentFormVisible == true)
+            if (isEvauationFormVisible == true)
             {
-                panel1.Controls.Remove(frmStudent);
-                panel1.Controls.Add(frmStudent);
-                frmStudent.BringToFront();
+                panel1.Controls.Remove(frmEvaluateOp);
+                panel1.Controls.Add(frmEvaluateOp);
+                frmEvaluateOp.BringToFront();
             }
             else
             {
-                frmStudent.AutoScroll = true;
-                panel1.Controls.Add(frmStudent);
-                frmStudent.Show();
-                frmStudent.BringToFront();
-                isStudentFormVisible = true;
+                frmEvaluateOp.AutoScroll = true;
+                panel1.Controls.Add(frmEvaluateOp);
+                frmEvaluateOp.Show();
+                frmEvaluateOp.BringToFront();
+                isEvauationFormVisible = true;
             }
         }
         private void programMasterListToolStripMenuItem_Click(object sender, EventArgs e)
@@ -137,8 +137,7 @@ namespace StudentEvaluationApp
         }
         private void studentMasterListToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ShowStudentRegForm();
-            onTopForm = frmStudent.Name;
+            
         }
         private void panel1_SizeChanged(object sender, EventArgs e)
         {
@@ -199,13 +198,17 @@ namespace StudentEvaluationApp
 
                 frmCourse.BringToFront();
             }
-            else if (onTopForm.Equals(frmStudent.Name))
+            else if (onTopForm.Equals(frmEvaluateOp.Name))
             {
-                panel1.Controls.Remove(frmStudent);
-                panel1.Controls.Add(frmStudent);
+                panel1.Controls.Remove(frmEvaluateOp);
+                panel1.Controls.Add(frmEvaluateOp);
             }
         }
 
-
+        private void eToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowEvaluateOpForm();
+            onTopForm = frmEvaluateOp.Name;
+        }
     }
 }

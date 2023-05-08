@@ -36,7 +36,6 @@
             curriculumVersionsToolStripMenuItem = new ToolStripMenuItem();
             programMasterListToolStripMenuItem = new ToolStripMenuItem();
             courseMasterListToolStripMenuItem = new ToolStripMenuItem();
-            studentMasterListToolStripMenuItem = new ToolStripMenuItem();
             utilityToolStripMenuItem = new ToolStripMenuItem();
             configureDatabaseToolStripMenuItem = new ToolStripMenuItem();
             statusStrip1 = new StatusStrip();
@@ -45,6 +44,7 @@
             statusStrip2 = new StatusStrip();
             toolStripStatusLabel2 = new ToolStripStatusLabel();
             timer1 = new System.Windows.Forms.Timer(components);
+            studentMasterListToolStripMenuItem = new ToolStripMenuItem();
             tableLayoutPanel1.SuspendLayout();
             menuStrip1.SuspendLayout();
             statusStrip1.SuspendLayout();
@@ -88,6 +88,7 @@
             eToolStripMenuItem.Name = "eToolStripMenuItem";
             eToolStripMenuItem.Size = new Size(93, 24);
             eToolStripMenuItem.Text = "Evaluation";
+            eToolStripMenuItem.Click += eToolStripMenuItem_Click;
             // 
             // fileMaintenanceToolStripMenuItem
             // 
@@ -116,13 +117,6 @@
             courseMasterListToolStripMenuItem.Size = new Size(215, 24);
             courseMasterListToolStripMenuItem.Text = "Course Master List";
             courseMasterListToolStripMenuItem.Click += courseMasterListToolStripMenuItem_Click;
-            // 
-            // studentMasterListToolStripMenuItem
-            // 
-            studentMasterListToolStripMenuItem.Name = "studentMasterListToolStripMenuItem";
-            studentMasterListToolStripMenuItem.Size = new Size(215, 24);
-            studentMasterListToolStripMenuItem.Text = "Student Master List";
-            studentMasterListToolStripMenuItem.Click += studentMasterListToolStripMenuItem_Click;
             // 
             // utilityToolStripMenuItem
             // 
@@ -191,6 +185,13 @@
             timer1.Enabled = true;
             timer1.Interval = 1000;
             timer1.Tick += timer1_Tick;
+            // 
+            // studentMasterListToolStripMenuItem
+            // 
+            studentMasterListToolStripMenuItem.Name = "studentMasterListToolStripMenuItem";
+            studentMasterListToolStripMenuItem.Size = new Size(215, 24);
+            studentMasterListToolStripMenuItem.Text = "Student Master List";
+            studentMasterListToolStripMenuItem.Click += studentMasterListToolStripMenuItem_Click;
             // 
             // Form1
             // 

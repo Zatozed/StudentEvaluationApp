@@ -36,6 +36,7 @@
             curriculumVersionsToolStripMenuItem = new ToolStripMenuItem();
             programMasterListToolStripMenuItem = new ToolStripMenuItem();
             courseMasterListToolStripMenuItem = new ToolStripMenuItem();
+            studentMasterListToolStripMenuItem = new ToolStripMenuItem();
             utilityToolStripMenuItem = new ToolStripMenuItem();
             configureDatabaseToolStripMenuItem = new ToolStripMenuItem();
             statusStrip1 = new StatusStrip();
@@ -44,7 +45,6 @@
             statusStrip2 = new StatusStrip();
             toolStripStatusLabel2 = new ToolStripStatusLabel();
             timer1 = new System.Windows.Forms.Timer(components);
-            studentMasterListToolStripMenuItem = new ToolStripMenuItem();
             tableLayoutPanel1.SuspendLayout();
             menuStrip1.SuspendLayout();
             statusStrip1.SuspendLayout();
@@ -67,7 +67,7 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 94.44444F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 5.55555534F));
-            tableLayoutPanel1.Size = new Size(800, 450);
+            tableLayoutPanel1.Size = new Size(814, 421);
             tableLayoutPanel1.TabIndex = 0;
             // 
             // menuStrip1
@@ -79,7 +79,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { eToolStripMenuItem, fileMaintenanceToolStripMenuItem, utilityToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(800, 28);
+            menuStrip1.Size = new Size(814, 28);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -118,6 +118,13 @@
             courseMasterListToolStripMenuItem.Text = "Course Master List";
             courseMasterListToolStripMenuItem.Click += courseMasterListToolStripMenuItem_Click;
             // 
+            // studentMasterListToolStripMenuItem
+            // 
+            studentMasterListToolStripMenuItem.Name = "studentMasterListToolStripMenuItem";
+            studentMasterListToolStripMenuItem.Size = new Size(215, 24);
+            studentMasterListToolStripMenuItem.Text = "Student Master List";
+            studentMasterListToolStripMenuItem.Click += studentMasterListToolStripMenuItem_Click;
+            // 
             // utilityToolStripMenuItem
             // 
             utilityToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { configureDatabaseToolStripMenuItem });
@@ -137,7 +144,7 @@
             // 
             statusStrip1.Dock = DockStyle.None;
             statusStrip1.Items.AddRange(new ToolStripItem[] { toolStripStatusLabel1 });
-            statusStrip1.Location = new Point(0, 426);
+            statusStrip1.Location = new Point(0, 399);
             statusStrip1.Name = "statusStrip1";
             statusStrip1.Size = new Size(135, 22);
             statusStrip1.SizingGrip = false;
@@ -157,7 +164,7 @@
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(3, 31);
             panel1.Name = "panel1";
-            panel1.Size = new Size(794, 392);
+            panel1.Size = new Size(808, 365);
             panel1.TabIndex = 3;
             panel1.SizeChanged += panel1_SizeChanged;
             // 
@@ -165,10 +172,10 @@
             // 
             statusStrip2.Dock = DockStyle.Fill;
             statusStrip2.Items.AddRange(new ToolStripItem[] { toolStripStatusLabel2 });
-            statusStrip2.Location = new Point(400, 426);
+            statusStrip2.Location = new Point(407, 399);
             statusStrip2.Name = "statusStrip2";
             statusStrip2.RightToLeft = RightToLeft.Yes;
-            statusStrip2.Size = new Size(400, 24);
+            statusStrip2.Size = new Size(407, 22);
             statusStrip2.SizingGrip = false;
             statusStrip2.TabIndex = 2;
             statusStrip2.Text = "statusStrip2";
@@ -177,7 +184,7 @@
             // 
             toolStripStatusLabel2.Name = "toolStripStatusLabel2";
             toolStripStatusLabel2.RightToLeft = RightToLeft.No;
-            toolStripStatusLabel2.Size = new Size(118, 19);
+            toolStripStatusLabel2.Size = new Size(118, 17);
             toolStripStatusLabel2.Text = "toolStripStatusLabel2";
             // 
             // timer1
@@ -186,20 +193,14 @@
             timer1.Interval = 1000;
             timer1.Tick += timer1_Tick;
             // 
-            // studentMasterListToolStripMenuItem
-            // 
-            studentMasterListToolStripMenuItem.Name = "studentMasterListToolStripMenuItem";
-            studentMasterListToolStripMenuItem.Size = new Size(215, 24);
-            studentMasterListToolStripMenuItem.Text = "Student Master List";
-            studentMasterListToolStripMenuItem.Click += studentMasterListToolStripMenuItem_Click;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(814, 421);
             Controls.Add(tableLayoutPanel1);
             MainMenuStrip = menuStrip1;
+            MinimumSize = new Size(830, 460);
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             WindowState = FormWindowState.Maximized;

@@ -36,7 +36,7 @@
             // 
             // btnEvNewStud
             // 
-            btnEvNewStud.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            btnEvNewStud.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             btnEvNewStud.BackColor = Color.ForestGreen;
             btnEvNewStud.FlatStyle = FlatStyle.Flat;
             btnEvNewStud.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point);
@@ -51,8 +51,7 @@
             // 
             // label1
             // 
-            label1.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            label1.AutoSize = true;
+            label1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label1.BackColor = Color.White;
             label1.BorderStyle = BorderStyle.FixedSingle;
             label1.Font = new Font("Microsoft Sans Serif", 30F, FontStyle.Bold, GraphicsUnit.Point);
@@ -66,7 +65,7 @@
             // 
             // btnEvExStudent
             // 
-            btnEvExStudent.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            btnEvExStudent.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             btnEvExStudent.BackColor = Color.SteelBlue;
             btnEvExStudent.FlatStyle = FlatStyle.Flat;
             btnEvExStudent.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point);
@@ -80,7 +79,7 @@
             // 
             // btnEvTransfeeStud
             // 
-            btnEvTransfeeStud.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            btnEvTransfeeStud.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             btnEvTransfeeStud.BackColor = Color.DarkOrange;
             btnEvTransfeeStud.FlatStyle = FlatStyle.Flat;
             btnEvTransfeeStud.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point);
@@ -97,20 +96,20 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(831, 469);
+            ClientSize = new Size(830, 460);
             ControlBox = false;
             Controls.Add(btnEvTransfeeStud);
             Controls.Add(btnEvExStudent);
             Controls.Add(label1);
             Controls.Add(btnEvNewStud);
             FormBorderStyle = FormBorderStyle.None;
+            MinimumSize = new Size(830, 460);
             Name = "frmEvaluateOptions";
             SizeGripStyle = SizeGripStyle.Hide;
             Text = "frmEvaluateOptions";
             TopMost = true;
             WindowState = FormWindowState.Maximized;
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion

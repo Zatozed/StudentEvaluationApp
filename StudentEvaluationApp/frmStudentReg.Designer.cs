@@ -416,12 +416,13 @@
             // btnNext
             // 
             btnNext.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnNext.AutoSize = true;
             btnNext.BackColor = Color.ForestGreen;
             btnNext.FlatStyle = FlatStyle.Flat;
             btnNext.ForeColor = Color.White;
-            btnNext.Location = new Point(723, 402);
+            btnNext.Location = new Point(723, 398);
             btnNext.Name = "btnNext";
-            btnNext.Size = new Size(74, 23);
+            btnNext.Size = new Size(74, 27);
             btnNext.TabIndex = 30;
             btnNext.Text = "Next";
             btnNext.UseVisualStyleBackColor = false;

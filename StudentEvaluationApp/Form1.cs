@@ -135,9 +135,14 @@ namespace StudentEvaluationApp
             ShowCourseMasterListForm();
             onTopForm = frmCourse.Name;
         }
+        private void eToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowEvaluateOpForm();
+            onTopForm = frmEvaluateOp.Name;
+        }
         private void studentMasterListToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+
         }
         private void panel1_SizeChanged(object sender, EventArgs e)
         {
@@ -172,7 +177,8 @@ namespace StudentEvaluationApp
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            ShowEvaluateOpForm();
+            onTopForm = frmEvaluateOp.Name;
         }
 
         private void Form1_SizeChanged(object sender, EventArgs e)
@@ -205,10 +211,6 @@ namespace StudentEvaluationApp
             }
         }
 
-        private void eToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ShowEvaluateOpForm();
-            onTopForm = frmEvaluateOp.Name;
-        }
+        
     }
 }

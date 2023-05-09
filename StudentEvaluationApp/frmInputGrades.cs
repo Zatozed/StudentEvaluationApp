@@ -19,7 +19,11 @@ namespace StudentEvaluationApp
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            
+            this.Hide();
+
+            frmEvaluationResult frmEvaluationRes = new frmEvaluationResult();
+            frmEvaluationRes.ShowDialog();
+            frmEvaluationRes.BringToFront();
         }
     }
 }

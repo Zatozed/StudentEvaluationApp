@@ -10,22 +10,16 @@ using System.Windows.Forms;
 
 namespace StudentEvaluationApp
 {
-    public partial class frmStudentReg : Form
+    public partial class frmInputGrades : Form
     {
-        public frmStudentReg()
+        public frmInputGrades()
         {
             InitializeComponent();
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private void btnNext_Click(object sender, EventArgs e)
         {
-            this.Hide();
-
-            frmInputGrades frmInput = new frmInputGrades();
-            frmInput.ShowDialog();
-            frmInput.BringToFront();
-
-
+            
         }
     }
 }

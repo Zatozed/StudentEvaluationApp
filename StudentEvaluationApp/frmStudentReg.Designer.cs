@@ -119,7 +119,7 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
-            tableLayoutPanel1.Size = new Size(800, 450);
+            tableLayoutPanel1.Size = new Size(800, 428);
             tableLayoutPanel1.TabIndex = 0;
             // 
             // textBox8
@@ -415,10 +415,11 @@
             // 
             // btnNext
             // 
+            btnNext.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnNext.BackColor = Color.ForestGreen;
             btnNext.FlatStyle = FlatStyle.Flat;
             btnNext.ForeColor = Color.White;
-            btnNext.Location = new Point(535, 384);
+            btnNext.Location = new Point(723, 402);
             btnNext.Name = "btnNext";
             btnNext.Size = new Size(74, 23);
             btnNext.TabIndex = 30;
@@ -431,7 +432,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(800, 428);
             ControlBox = false;
             Controls.Add(tableLayoutPanel1);
             FormBorderStyle = FormBorderStyle.FixedSingle;

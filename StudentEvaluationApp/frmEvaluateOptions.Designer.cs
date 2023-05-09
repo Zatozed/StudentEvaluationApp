@@ -37,9 +37,11 @@
             // btnEvNewStud
             // 
             btnEvNewStud.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            btnEvNewStud.BackColor = Color.DodgerBlue;
+            btnEvNewStud.BackColor = Color.ForestGreen;
+            btnEvNewStud.FlatStyle = FlatStyle.Flat;
             btnEvNewStud.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            btnEvNewStud.Location = new Point(288, 163);
+            btnEvNewStud.ForeColor = Color.White;
+            btnEvNewStud.Location = new Point(289, 140);
             btnEvNewStud.Name = "btnEvNewStud";
             btnEvNewStud.Size = new Size(254, 50);
             btnEvNewStud.TabIndex = 0;
@@ -52,11 +54,12 @@
             label1.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             label1.AutoSize = true;
             label1.BackColor = Color.White;
+            label1.BorderStyle = BorderStyle.FixedSingle;
             label1.Font = new Font("Microsoft Sans Serif", 30F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.ForeColor = Color.Blue;
-            label1.Location = new Point(324, 91);
+            label1.ForeColor = Color.Black;
+            label1.Location = new Point(324, 49);
             label1.Name = "label1";
-            label1.Size = new Size(182, 46);
+            label1.Size = new Size(184, 48);
             label1.TabIndex = 3;
             label1.Text = "Evaluate";
             label1.TextAlign = ContentAlignment.MiddleCenter;
@@ -64,9 +67,11 @@
             // btnEvExStudent
             // 
             btnEvExStudent.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            btnEvExStudent.BackColor = Color.DodgerBlue;
+            btnEvExStudent.BackColor = Color.SteelBlue;
+            btnEvExStudent.FlatStyle = FlatStyle.Flat;
             btnEvExStudent.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            btnEvExStudent.Location = new Point(288, 219);
+            btnEvExStudent.ForeColor = Color.White;
+            btnEvExStudent.Location = new Point(289, 196);
             btnEvExStudent.Name = "btnEvExStudent";
             btnEvExStudent.Size = new Size(254, 50);
             btnEvExStudent.TabIndex = 4;
@@ -76,9 +81,11 @@
             // btnEvTransfeeStud
             // 
             btnEvTransfeeStud.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            btnEvTransfeeStud.BackColor = Color.DodgerBlue;
+            btnEvTransfeeStud.BackColor = Color.DarkOrange;
+            btnEvTransfeeStud.FlatStyle = FlatStyle.Flat;
             btnEvTransfeeStud.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            btnEvTransfeeStud.Location = new Point(288, 275);
+            btnEvTransfeeStud.ForeColor = Color.White;
+            btnEvTransfeeStud.Location = new Point(289, 252);
             btnEvTransfeeStud.Name = "btnEvTransfeeStud";
             btnEvTransfeeStud.Size = new Size(254, 50);
             btnEvTransfeeStud.TabIndex = 5;

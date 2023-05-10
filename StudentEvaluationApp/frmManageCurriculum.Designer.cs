@@ -101,6 +101,7 @@
             label1.Size = new Size(794, 15);
             label1.TabIndex = 0;
             label1.Text = "Courses";
+            label1.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // label3
             // 
@@ -284,6 +285,7 @@
             Controls.Add(tableLayoutPanel1);
             Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             Name = "frmManageCurriculum";
+            StartPosition = FormStartPosition.CenterScreen;
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();

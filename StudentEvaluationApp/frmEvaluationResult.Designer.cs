@@ -280,6 +280,7 @@
             ClientSize = new Size(800, 450);
             Controls.Add(tableLayoutPanel1);
             Name = "frmEvaluationResult";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "frmEvaluationResult";
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();

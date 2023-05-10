@@ -12,9 +12,15 @@ namespace StudentEvaluationApp
 {
     public partial class frmStudentReg : Form
     {
+        ClassDBhelper dbh = new ClassDBhelper();
+
         public frmStudentReg()
         {
             InitializeComponent();
+
+            cbCurricuVer.DataSource = dbh.CurriculumVerList();
+            cbYear.DataSource = dbh.YearList();
+            cbSem.DataSource = dbh.SemList();
         }
 
         private void btnSave_Click(object sender, EventArgs e)

@@ -67,6 +67,12 @@ namespace StudentEvaluationApp
                     dbh.DelAtCurricuver(dgvCurricuVer.Rows[e.RowIndex].Cells["colID"].Value.ToString());
                 }
             }
+            else if (dgvCurricuVer.Columns[e.ColumnIndex].Name.Equals("colManage"))
+            {
+                frmManageCurriculum manageCurriculum = new frmManageCurriculum();
+                manageCurriculum.ShowDialog();
+                manageCurriculum.BringToFront();
+            }
             dgvCurricuVer.DataSource = dbh.ShowCurricuVerList();
         }
 
@@ -82,6 +88,18 @@ namespace StudentEvaluationApp
                 bSave.Enabled = true;
             }
 
+        }
+
+        private void tbSearch_Enter(object sender, EventArgs e)
+        {
+            //MessageBox.Show("");
+            tbSearch.Clear();
+        }
+
+        private void tbSearch_Leave(object sender, EventArgs e)
+        {
+            if (tbSearch.Text.Equals(""))
+            { tbSearch.Text = "Enter Curriculum to Search"; }
         }
     }
 }

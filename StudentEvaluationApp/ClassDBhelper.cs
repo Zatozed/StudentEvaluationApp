@@ -56,7 +56,7 @@ namespace StudentEvaluationApp
 
             return toReturn;
         }
-
+        //---------------------------------------------------------------- ArrayList form
         public ArrayList StudNoAutoComplete()
         {
             ArrayList s = new ArrayList();
@@ -80,6 +80,127 @@ namespace StudentEvaluationApp
 
             return s;
         }
+        public ArrayList CurriculumVerList()
+        {
+            ArrayList list = new ArrayList();
+
+            try
+            {
+                OpenCon();
+
+                cmd = new OleDbCommand("select curricuDescription from tblCurriculumVer where isDel = false", con);
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    list.Add(dr.GetString(0));
+                }
+
+                dr.DisposeAsync();
+                dr.Close();
+                cmd.Dispose();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message.ToString());
+            }
+            finally
+            {
+                CloseCon();
+            }
+
+            return list;
+        }
+        public ArrayList ProgramList()
+        {
+            ArrayList list = new ArrayList();
+
+            try
+            {
+                OpenCon();
+
+                cmd = new OleDbCommand("select programCode from tblProgram where isDel = false", con);
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    list.Add(dr.GetString(0));
+                }
+
+                dr.DisposeAsync();
+                dr.Close();
+                cmd.Dispose();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message.ToString());
+            }
+            finally
+            {
+                CloseCon();
+            }
+
+            return list;
+        }
+        public ArrayList YearList()
+        {
+            ArrayList list = new ArrayList();
+
+            try
+            {
+                OpenCon();
+
+                cmd = new OleDbCommand("select yearDes from tblYear where isDel = false", con);
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    list.Add(dr.GetString(0));
+                }
+
+                dr.DisposeAsync();
+                dr.Close();
+                cmd.Dispose();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message.ToString());
+            }
+            finally
+            {
+                CloseCon();
+            }
+
+            return list;
+        }
+        public ArrayList SemList()
+        {
+            ArrayList list = new ArrayList();
+
+            try
+            {
+                OpenCon();
+
+                cmd = new OleDbCommand("select semDes from tblSem where isDel = false", con);
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    list.Add(dr.GetString(0));
+                }
+
+                dr.DisposeAsync();
+                dr.Close();
+                cmd.Dispose();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message.ToString());
+            }
+            finally
+            {
+                CloseCon();
+            }
+
+            return list;
+        }
+        //---------------------------------------------------------------- ArrayList form
         //---------------------------------------------------------------- Program form
         public DataTable ShowProgramList()
         {
@@ -266,66 +387,7 @@ namespace StudentEvaluationApp
         }
         //---------------------------------------------------------------- Curriculum form
         //---------------------------------------------------------------- Course form
-        public ArrayList CurriculumVerList() 
-        {
-            ArrayList list = new ArrayList();
-
-            try
-            {
-                OpenCon();
-
-                cmd = new OleDbCommand("select curricuDescription from tblCurriculumVer", con);
-                dr = cmd.ExecuteReader();
-                while(dr.Read()) 
-                {
-                    list.Add(dr.GetString(0));
-                }
-
-                dr.DisposeAsync();
-                dr.Close();
-                cmd.Dispose();
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.Message.ToString());
-            }
-            finally
-            {
-                CloseCon();
-            }
-
-            return list;
-        }
-        public ArrayList ProgramList()
-        {
-            ArrayList list = new ArrayList();
-
-            try
-            {
-                OpenCon();
-
-                cmd = new OleDbCommand("select programCode from tblProgram", con);
-                dr = cmd.ExecuteReader();
-                while (dr.Read())
-                {
-                    list.Add(dr.GetString(0));
-                }
-
-                dr.DisposeAsync();
-                dr.Close();
-                cmd.Dispose();
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.Message.ToString());
-            }
-            finally
-            {
-                CloseCon();
-            }
-
-            return list;
-        }
+        
         public DataTable ShowCourseList()
         {
             DataTable dt = new DataTable();
@@ -436,5 +498,8 @@ namespace StudentEvaluationApp
             }
         }
         //---------------------------------------------------------------- Course form
+        //---------------------------------------------------------------- Student Reg form
+        
+        //---------------------------------------------------------------- Student Reg form
     }
 }

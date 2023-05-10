@@ -40,7 +40,7 @@
             colDel = new DataGridViewImageColumn();
             lbGotID = new Label();
             button1 = new Button();
-            textBox1 = new TextBox();
+            tbSearch = new TextBox();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvCurricuVer).BeginInit();
             SuspendLayout();
@@ -57,7 +57,7 @@
             tableLayoutPanel1.Controls.Add(dgvCurricuVer, 0, 3);
             tableLayoutPanel1.Controls.Add(lbGotID, 2, 0);
             tableLayoutPanel1.Controls.Add(button1, 1, 2);
-            tableLayoutPanel1.Controls.Add(textBox1, 0, 2);
+            tableLayoutPanel1.Controls.Add(tbSearch, 2, 2);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -177,21 +177,26 @@
             // 
             button1.BackgroundImage = R_icons1.icons8_search_50;
             button1.BackgroundImageLayout = ImageLayout.Zoom;
+            button1.Dock = DockStyle.Right;
             button1.FlatStyle = FlatStyle.Flat;
             button1.ForeColor = Color.White;
-            button1.Location = new Point(269, 51);
+            button1.Location = new Point(504, 51);
             button1.Name = "button1";
+            button1.RightToLeft = RightToLeft.No;
             button1.Size = new Size(25, 25);
             button1.TabIndex = 5;
+            button1.TextAlign = ContentAlignment.TopLeft;
             button1.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // tbSearch
             // 
-            textBox1.Dock = DockStyle.Fill;
-            textBox1.Location = new Point(3, 51);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(260, 23);
-            textBox1.TabIndex = 6;
+            tbSearch.Location = new Point(535, 51);
+            tbSearch.Name = "tbSearch";
+            tbSearch.Size = new Size(260, 23);
+            tbSearch.TabIndex = 6;
+            tbSearch.Text = "Enter Curriculum to Search";
+            tbSearch.Enter += tbSearch_Enter;
+            tbSearch.Leave += tbSearch_Leave;
             // 
             // frmCurriculum
             // 
@@ -221,7 +226,7 @@
         private DataGridView dgvCurricuVer;
         private Label lbGotID;
         private Button button1;
-        private TextBox textBox1;
+        private TextBox tbSearch;
         private DataGridViewTextBoxColumn colID;
         private DataGridViewTextBoxColumn colCurricuDes;
         private DataGridViewImageColumn colManage;

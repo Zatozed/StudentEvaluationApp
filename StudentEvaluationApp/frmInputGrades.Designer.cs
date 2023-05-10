@@ -52,6 +52,7 @@
             colGrade2 = new DataGridViewTextBoxColumn();
             colGrade3 = new DataGridViewTextBoxColumn();
             btnNext = new Button();
+            textBox1 = new TextBox();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvCourseGrade).BeginInit();
             SuspendLayout();
@@ -63,28 +64,30 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.33333F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
-            tableLayoutPanel1.Controls.Add(label2, 1, 0);
-            tableLayoutPanel1.Controls.Add(label1, 0, 0);
-            tableLayoutPanel1.Controls.Add(label5, 2, 1);
-            tableLayoutPanel1.Controls.Add(label4, 1, 1);
-            tableLayoutPanel1.Controls.Add(label3, 0, 1);
-            tableLayoutPanel1.Controls.Add(label6, 0, 2);
-            tableLayoutPanel1.Controls.Add(label8, 2, 2);
-            tableLayoutPanel1.Controls.Add(label7, 1, 2);
-            tableLayoutPanel1.Controls.Add(label9, 0, 3);
-            tableLayoutPanel1.Controls.Add(label10, 1, 3);
-            tableLayoutPanel1.Controls.Add(label11, 2, 3);
-            tableLayoutPanel1.Controls.Add(label13, 1, 5);
-            tableLayoutPanel1.Controls.Add(label12, 0, 5);
-            tableLayoutPanel1.Controls.Add(label14, 0, 4);
-            tableLayoutPanel1.Controls.Add(label15, 1, 4);
-            tableLayoutPanel1.Controls.Add(label16, 2, 4);
-            tableLayoutPanel1.Controls.Add(dgvCourseGrade, 0, 6);
-            tableLayoutPanel1.Controls.Add(btnNext, 2, 7);
+            tableLayoutPanel1.Controls.Add(label2, 1, 1);
+            tableLayoutPanel1.Controls.Add(label1, 0, 1);
+            tableLayoutPanel1.Controls.Add(label5, 2, 2);
+            tableLayoutPanel1.Controls.Add(label4, 1, 2);
+            tableLayoutPanel1.Controls.Add(label3, 0, 2);
+            tableLayoutPanel1.Controls.Add(label6, 0, 3);
+            tableLayoutPanel1.Controls.Add(label8, 2, 3);
+            tableLayoutPanel1.Controls.Add(label7, 1, 3);
+            tableLayoutPanel1.Controls.Add(label9, 0, 4);
+            tableLayoutPanel1.Controls.Add(label10, 1, 4);
+            tableLayoutPanel1.Controls.Add(label11, 2, 4);
+            tableLayoutPanel1.Controls.Add(label13, 1, 6);
+            tableLayoutPanel1.Controls.Add(label12, 0, 6);
+            tableLayoutPanel1.Controls.Add(label14, 0, 5);
+            tableLayoutPanel1.Controls.Add(label15, 1, 5);
+            tableLayoutPanel1.Controls.Add(label16, 2, 5);
+            tableLayoutPanel1.Controls.Add(dgvCourseGrade, 0, 7);
+            tableLayoutPanel1.Controls.Add(btnNext, 2, 8);
+            tableLayoutPanel1.Controls.Add(textBox1, 0, 0);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 8;
+            tableLayoutPanel1.RowCount = 9;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle());
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
@@ -93,14 +96,13 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
             tableLayoutPanel1.Size = new Size(800, 450);
             tableLayoutPanel1.TabIndex = 0;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(269, 0);
+            label2.Location = new Point(269, 29);
             label2.Margin = new Padding(3, 0, 3, 10);
             label2.Name = "label2";
             label2.Size = new Size(84, 15);
@@ -111,7 +113,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(3, 0);
+            label1.Location = new Point(3, 29);
             label1.Margin = new Padding(3, 0, 3, 10);
             label1.Name = "label1";
             label1.Size = new Size(82, 15);
@@ -122,7 +124,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(535, 25);
+            label5.Location = new Point(535, 54);
             label5.Margin = new Padding(3, 0, 3, 10);
             label5.Name = "label5";
             label5.Size = new Size(93, 15);
@@ -133,7 +135,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(269, 25);
+            label4.Location = new Point(269, 54);
             label4.Margin = new Padding(3, 0, 3, 10);
             label4.Name = "label4";
             label4.Size = new Size(76, 15);
@@ -144,7 +146,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(3, 25);
+            label3.Location = new Point(3, 54);
             label3.Margin = new Padding(3, 0, 3, 10);
             label3.Name = "label3";
             label3.Size = new Size(77, 15);
@@ -154,7 +156,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(3, 50);
+            label6.Location = new Point(3, 79);
             label6.Margin = new Padding(3, 0, 3, 10);
             label6.Name = "label6";
             label6.Size = new Size(49, 15);
@@ -164,7 +166,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(535, 50);
+            label8.Location = new Point(535, 79);
             label8.Margin = new Padding(3, 0, 3, 10);
             label8.Name = "label8";
             label8.Size = new Size(62, 15);
@@ -174,7 +176,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(269, 50);
+            label7.Location = new Point(269, 79);
             label7.Margin = new Padding(3, 0, 3, 10);
             label7.Name = "label7";
             label7.Size = new Size(49, 15);
@@ -185,7 +187,7 @@
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label9.Location = new Point(3, 75);
+            label9.Location = new Point(3, 104);
             label9.Margin = new Padding(3, 0, 3, 10);
             label9.Name = "label9";
             label9.Size = new Size(62, 15);
@@ -196,7 +198,7 @@
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label10.Location = new Point(269, 75);
+            label10.Location = new Point(269, 104);
             label10.Margin = new Padding(3, 0, 3, 10);
             label10.Name = "label10";
             label10.Size = new Size(36, 15);
@@ -207,7 +209,7 @@
             // 
             label11.AutoSize = true;
             label11.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label11.Location = new Point(535, 75);
+            label11.Location = new Point(535, 104);
             label11.Margin = new Padding(3, 0, 3, 10);
             label11.Name = "label11";
             label11.Size = new Size(68, 15);
@@ -217,7 +219,7 @@
             // label13
             // 
             label13.AutoSize = true;
-            label13.Location = new Point(269, 125);
+            label13.Location = new Point(269, 154);
             label13.Margin = new Padding(3, 0, 3, 10);
             label13.Name = "label13";
             label13.Size = new Size(49, 15);
@@ -228,7 +230,7 @@
             // 
             label12.AutoSize = true;
             label12.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label12.Location = new Point(3, 125);
+            label12.Location = new Point(3, 154);
             label12.Margin = new Padding(3, 0, 3, 10);
             label12.Name = "label12";
             label12.Size = new Size(129, 15);
@@ -238,7 +240,7 @@
             // label14
             // 
             label14.AutoSize = true;
-            label14.Location = new Point(3, 100);
+            label14.Location = new Point(3, 129);
             label14.Margin = new Padding(3, 0, 3, 10);
             label14.Name = "label14";
             label14.Size = new Size(35, 15);
@@ -248,7 +250,7 @@
             // label15
             // 
             label15.AutoSize = true;
-            label15.Location = new Point(269, 100);
+            label15.Location = new Point(269, 129);
             label15.Margin = new Padding(3, 0, 3, 10);
             label15.Name = "label15";
             label15.Size = new Size(21, 15);
@@ -258,7 +260,7 @@
             // label16
             // 
             label16.AutoSize = true;
-            label16.Location = new Point(535, 100);
+            label16.Location = new Point(535, 129);
             label16.Margin = new Padding(3, 0, 3, 10);
             label16.Name = "label16";
             label16.Size = new Size(25, 15);
@@ -275,11 +277,11 @@
             dgvCourseGrade.Columns.AddRange(new DataGridViewColumn[] { colID, colCourse, colGrade, colGrade2, colGrade3 });
             tableLayoutPanel1.SetColumnSpan(dgvCourseGrade, 3);
             dgvCourseGrade.Dock = DockStyle.Fill;
-            dgvCourseGrade.Location = new Point(3, 153);
+            dgvCourseGrade.Location = new Point(3, 182);
             dgvCourseGrade.Name = "dgvCourseGrade";
             dgvCourseGrade.ReadOnly = true;
             dgvCourseGrade.RowTemplate.Height = 25;
-            dgvCourseGrade.Size = new Size(794, 261);
+            dgvCourseGrade.Size = new Size(794, 232);
             dgvCourseGrade.TabIndex = 16;
             // 
             // colID
@@ -327,6 +329,13 @@
             btnNext.UseVisualStyleBackColor = false;
             btnNext.Click += btnNext_Click;
             // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(3, 3);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(100, 23);
+            textBox1.TabIndex = 18;
+            // 
             // frmInputGrades
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -334,6 +343,7 @@
             ClientSize = new Size(800, 450);
             Controls.Add(tableLayoutPanel1);
             Name = "frmInputGrades";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Input Grades";
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
@@ -367,5 +377,6 @@
         private DataGridViewTextBoxColumn colGrade;
         private DataGridViewTextBoxColumn colGrade2;
         private DataGridViewTextBoxColumn colGrade3;
+        private TextBox textBox1;
     }
 }

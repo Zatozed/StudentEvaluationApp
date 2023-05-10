@@ -32,7 +32,15 @@
             label1 = new Label();
             label3 = new Label();
             dataGridView1 = new DataGridView();
+            colCourseID = new DataGridViewTextBoxColumn();
+            colCourseName = new DataGridViewTextBoxColumn();
+            colCourseDes = new DataGridViewTextBoxColumn();
+            colUnits = new DataGridViewTextBoxColumn();
             dataGridView2 = new DataGridView();
+            colIDToCv = new DataGridViewTextBoxColumn();
+            colCourseToCv = new DataGridViewTextBoxColumn();
+            colDesToCv = new DataGridViewTextBoxColumn();
+            colUnitsToCv = new DataGridViewTextBoxColumn();
             textBox1 = new TextBox();
             label5 = new Label();
             label4 = new Label();
@@ -83,11 +91,16 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.BackColor = Color.SteelBlue;
+            tableLayoutPanel1.SetColumnSpan(label1, 7);
+            label1.Dock = DockStyle.Fill;
+            label1.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.White;
             label1.Location = new Point(3, 0);
             label1.Name = "label1";
-            label1.Size = new Size(34, 15);
+            label1.Size = new Size(794, 15);
             label1.TabIndex = 0;
-            label1.Text = "Filter";
+            label1.Text = "Courses";
             // 
             // label3
             // 
@@ -100,29 +113,87 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.AllowUserToOrderColumns = true;
             dataGridView1.BackgroundColor = Color.White;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { colCourseID, colCourseName, colCourseDes, colUnits });
             tableLayoutPanel1.SetColumnSpan(dataGridView1, 3);
             dataGridView1.Dock = DockStyle.Fill;
             dataGridView1.Location = new Point(3, 47);
             dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
             tableLayoutPanel1.SetRowSpan(dataGridView1, 4);
             dataGridView1.RowTemplate.Height = 25;
             dataGridView1.Size = new Size(378, 366);
             dataGridView1.TabIndex = 6;
             // 
+            // colCourseID
+            // 
+            colCourseID.HeaderText = "ID";
+            colCourseID.Name = "colCourseID";
+            colCourseID.ReadOnly = true;
+            // 
+            // colCourseName
+            // 
+            colCourseName.HeaderText = "Course";
+            colCourseName.Name = "colCourseName";
+            colCourseName.ReadOnly = true;
+            // 
+            // colCourseDes
+            // 
+            colCourseDes.HeaderText = "Description";
+            colCourseDes.Name = "colCourseDes";
+            colCourseDes.ReadOnly = true;
+            // 
+            // colUnits
+            // 
+            colUnits.HeaderText = "Units";
+            colUnits.Name = "colUnits";
+            colUnits.ReadOnly = true;
+            // 
             // dataGridView2
             // 
+            dataGridView2.AllowUserToAddRows = false;
+            dataGridView2.AllowUserToDeleteRows = false;
+            dataGridView2.AllowUserToOrderColumns = true;
             dataGridView2.BackgroundColor = Color.White;
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView2.Columns.AddRange(new DataGridViewColumn[] { colIDToCv, colCourseToCv, colDesToCv, colUnitsToCv });
             tableLayoutPanel1.SetColumnSpan(dataGridView2, 3);
             dataGridView2.Dock = DockStyle.Fill;
             dataGridView2.Location = new Point(416, 47);
             dataGridView2.Name = "dataGridView2";
+            dataGridView2.ReadOnly = true;
             tableLayoutPanel1.SetRowSpan(dataGridView2, 4);
             dataGridView2.RowTemplate.Height = 25;
             dataGridView2.Size = new Size(381, 366);
             dataGridView2.TabIndex = 7;
+            // 
+            // colIDToCv
+            // 
+            colIDToCv.HeaderText = "ID";
+            colIDToCv.Name = "colIDToCv";
+            colIDToCv.ReadOnly = true;
+            // 
+            // colCourseToCv
+            // 
+            colCourseToCv.HeaderText = "Course";
+            colCourseToCv.Name = "colCourseToCv";
+            colCourseToCv.ReadOnly = true;
+            // 
+            // colDesToCv
+            // 
+            colDesToCv.HeaderText = "Description";
+            colDesToCv.Name = "colDesToCv";
+            colDesToCv.ReadOnly = true;
+            // 
+            // colUnitsToCv
+            // 
+            colUnitsToCv.HeaderText = "Units";
+            colUnitsToCv.Name = "colUnitsToCv";
+            colUnitsToCv.ReadOnly = true;
             // 
             // textBox1
             // 
@@ -146,9 +217,9 @@
             label4.AutoSize = true;
             label4.Location = new Point(416, 15);
             label4.Name = "label4";
-            label4.Size = new Size(111, 15);
+            label4.Size = new Size(114, 15);
             label4.TabIndex = 3;
-            label4.Text = "Curriculum Version";
+            label4.Text = "Curriculum Version:";
             // 
             // button1
             // 
@@ -234,5 +305,13 @@
         private Button button2;
         private Button button3;
         private Button btnSearch;
+        private DataGridViewTextBoxColumn colCourseID;
+        private DataGridViewTextBoxColumn colCourseName;
+        private DataGridViewTextBoxColumn colCourseDes;
+        private DataGridViewTextBoxColumn colUnits;
+        private DataGridViewTextBoxColumn colIDToCv;
+        private DataGridViewTextBoxColumn colCourseToCv;
+        private DataGridViewTextBoxColumn colDesToCv;
+        private DataGridViewTextBoxColumn colUnitsToCv;
     }
 }

@@ -33,14 +33,14 @@
             label1 = new Label();
             bSave = new Button();
             dgvCurricuVer = new DataGridView();
-            lbGotID = new Label();
-            button1 = new Button();
-            textBox1 = new TextBox();
             colID = new DataGridViewTextBoxColumn();
             colCurricuDes = new DataGridViewTextBoxColumn();
             colManage = new DataGridViewImageColumn();
             colEdit = new DataGridViewImageColumn();
             colDel = new DataGridViewImageColumn();
+            lbGotID = new Label();
+            button1 = new Button();
+            textBox1 = new TextBox();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvCurricuVer).BeginInit();
             SuspendLayout();
@@ -71,9 +71,10 @@
             // 
             // tbCurricuVer
             // 
+            tbCurricuVer.Dock = DockStyle.Fill;
             tbCurricuVer.Location = new Point(3, 18);
             tbCurricuVer.Name = "tbCurricuVer";
-            tbCurricuVer.Size = new Size(100, 23);
+            tbCurricuVer.Size = new Size(260, 23);
             tbCurricuVer.TabIndex = 0;
             tbCurricuVer.TextChanged += tbCurricuVer_TextChanged;
             // 
@@ -104,44 +105,20 @@
             // 
             dgvCurricuVer.AllowUserToAddRows = false;
             dgvCurricuVer.AllowUserToDeleteRows = false;
+            dgvCurricuVer.AllowUserToOrderColumns = true;
             dgvCurricuVer.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvCurricuVer.BackgroundColor = Color.White;
             dgvCurricuVer.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvCurricuVer.Columns.AddRange(new DataGridViewColumn[] { colID, colCurricuDes, colManage, colEdit, colDel });
             tableLayoutPanel1.SetColumnSpan(dgvCurricuVer, 3);
             dgvCurricuVer.Dock = DockStyle.Fill;
-            dgvCurricuVer.Location = new Point(3, 80);
+            dgvCurricuVer.Location = new Point(3, 82);
             dgvCurricuVer.Name = "dgvCurricuVer";
             dgvCurricuVer.ReadOnly = true;
             dgvCurricuVer.RowTemplate.Height = 25;
-            dgvCurricuVer.Size = new Size(794, 367);
+            dgvCurricuVer.Size = new Size(794, 365);
             dgvCurricuVer.TabIndex = 3;
             dgvCurricuVer.CellContentClick += dgvCurricuVer_CellContentClick;
-            // 
-            // lbGotID
-            // 
-            lbGotID.AutoSize = true;
-            lbGotID.Location = new Point(535, 0);
-            lbGotID.Name = "lbGotID";
-            lbGotID.Size = new Size(47, 15);
-            lbGotID.TabIndex = 4;
-            lbGotID.Text = "hidden ";
-            // 
-            // button1
-            // 
-            button1.Location = new Point(269, 51);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 5;
-            button1.Text = "Search";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(3, 51);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 23);
-            textBox1.TabIndex = 6;
             // 
             // colID
             // 
@@ -159,9 +136,13 @@
             // 
             // colManage
             // 
+            colManage.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             colManage.HeaderText = "";
+            colManage.Image = R_icons1.icons8_configure_64;
+            colManage.ImageLayout = DataGridViewImageCellLayout.Zoom;
             colManage.Name = "colManage";
             colManage.ReadOnly = true;
+            colManage.Width = 5;
             // 
             // colEdit
             // 
@@ -182,6 +163,35 @@
             colDel.Name = "colDel";
             colDel.ReadOnly = true;
             colDel.Width = 5;
+            // 
+            // lbGotID
+            // 
+            lbGotID.AutoSize = true;
+            lbGotID.Location = new Point(535, 0);
+            lbGotID.Name = "lbGotID";
+            lbGotID.Size = new Size(47, 15);
+            lbGotID.TabIndex = 4;
+            lbGotID.Text = "hidden ";
+            // 
+            // button1
+            // 
+            button1.BackgroundImage = R_icons1.icons8_search_50;
+            button1.BackgroundImageLayout = ImageLayout.Zoom;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.ForeColor = Color.White;
+            button1.Location = new Point(269, 51);
+            button1.Name = "button1";
+            button1.Size = new Size(25, 25);
+            button1.TabIndex = 5;
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            textBox1.Dock = DockStyle.Fill;
+            textBox1.Location = new Point(3, 51);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(260, 23);
+            textBox1.TabIndex = 6;
             // 
             // frmCurriculum
             // 

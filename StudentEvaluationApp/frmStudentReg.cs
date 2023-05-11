@@ -36,7 +36,7 @@ namespace StudentEvaluationApp
                     (
                     mtbStudentNum.Text, tbFname.Text, tbLname.Text, tbMname.Text,
                     cbSuffix.Text, cbGender.Text, tbAddress.Text, tbContactNum.Text,
-                    tbPgName.Text, tbPgConNum.Text, tbLastSchoolAt.Text, dtpBdate.Text,
+                    tbPgName.Text, tbPgConNum.Text, tbLastSchoolAt.Text, dtpBdate.Text.ToString(),
                     cvID, programID, yearID, semID
                     );
 
@@ -64,6 +64,39 @@ namespace StudentEvaluationApp
         private void cbProgram_SelectedIndexChanged(object sender, EventArgs e)
         {
             programID = dbh.GetProgramID(cbProgram.Text);
+        }
+
+        private void cbSem_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            semID = dbh.GetSemID(cbSem.Text);
+        }
+
+        private void mtbStudentNum_Leave(object sender, EventArgs e)
+        {
+            if (mtbStudentNum.Text.Length != 11)
+            {
+                MessageBox.Show("Student number must be 11 digits");
+                this.ActiveControl = mtbStudentNum;
+            }
+
+        }
+
+        private void tbFname_Leave(object sender, EventArgs e)
+        {
+            if (tbFname.Text.Equals(""))
+            {
+                MessageBox.Show("First Name is required.");
+                this.ActiveControl = tbFname;
+            }
+        }
+
+        private void tbLname_Leave(object sender, EventArgs e)
+        {
+            if (tbLname.Text.Equals(""))
+            {
+                MessageBox.Show("Last Name is required.");
+                this.ActiveControl = tbLname;
+            }
         }
     }
 }

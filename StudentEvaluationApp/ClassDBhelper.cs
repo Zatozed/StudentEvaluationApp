@@ -550,7 +550,7 @@ namespace StudentEvaluationApp
             }
             catch (Exception e)
             {
-                MessageBox.Show("");
+                MessageBox.Show("Something went wrong when selecting the program.");
             }
             finally
             {
@@ -582,7 +582,7 @@ namespace StudentEvaluationApp
             }
             catch (Exception e)
             {
-                MessageBox.Show("");
+                MessageBox.Show("Something went wrong when selecting the program.");
             }
             finally
             {
@@ -591,10 +591,38 @@ namespace StudentEvaluationApp
 
             return programID;
         }
-        //public string GetSemID() 
-        //{
+        public string GetSemID(string semDes)
+        {
+            string semID = "";
 
-        //}
+            try
+            {
+                OpenCon();
+
+                cmd = new OleDbCommand("select semID from tblSem where semDes = '" + semDes + "'", con);
+
+                dr = cmd.ExecuteReader();
+
+                if (dr.Read())
+                {
+                    semID = dr.GetInt32(0).ToString();
+                }
+
+                dr.Close();
+                dr.DisposeAsync();
+                cmd.Dispose();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("");
+            }
+            finally
+            {
+                CloseCon();
+            }
+
+            return semID;
+        }
         public void InsertToStudent
             (
                 string studNum, string fname, string lname, string mname,
@@ -620,7 +648,7 @@ namespace StudentEvaluationApp
                         @studentNum, @firstName, @lastName, @middleName,
                         @suffix, @gender, @address, @contactNum,
                         @parentGuardinaName, @parentGuardianContactNum, @lastSchoolAttended, @birthDate,
-                        @curricuVerID, @programID, @yearID, @semID,
+                        @curricuVerID, @programID, @yearID, @semID
                     )", con);
 
                 cmd.Parameters.AddWithValue("@studentNum", studNum);
@@ -646,10 +674,12 @@ namespace StudentEvaluationApp
                 cmd.ExecuteNonQuery();
 
                 cmd.Dispose();
+
+                MessageBox.Show("Student information saved.");
             }
             catch (Exception e)
             {
-                MessageBox.Show("insert curriculum" + e.Message.ToString());
+                MessageBox.Show("Insert to studentInfo: " + e.ToString());
             }
             finally
             {

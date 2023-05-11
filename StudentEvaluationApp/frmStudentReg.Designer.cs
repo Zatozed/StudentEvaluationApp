@@ -157,6 +157,7 @@
             tbFname.Name = "tbFname";
             tbFname.Size = new Size(260, 21);
             tbFname.TabIndex = 3;
+            tbFname.Leave += tbFname_Leave;
             // 
             // label2
             // 
@@ -169,6 +170,7 @@
             // 
             // mtbStudentNum
             // 
+            mtbStudentNum.BorderStyle = BorderStyle.FixedSingle;
             mtbStudentNum.Dock = DockStyle.Fill;
             mtbStudentNum.Location = new Point(3, 48);
             mtbStudentNum.Margin = new Padding(3, 3, 3, 20);
@@ -177,6 +179,7 @@
             mtbStudentNum.Size = new Size(260, 21);
             mtbStudentNum.TabIndex = 1;
             mtbStudentNum.ValidatingType = typeof(int);
+            mtbStudentNum.Leave += mtbStudentNum_Leave;
             // 
             // label3
             // 
@@ -196,6 +199,7 @@
             tbLname.Name = "tbLname";
             tbLname.Size = new Size(260, 21);
             tbLname.TabIndex = 5;
+            tbLname.Leave += tbLname_Leave;
             // 
             // label4
             // 
@@ -274,7 +278,9 @@
             // dtpBdate
             // 
             dtpBdate.CalendarMonthBackground = Color.White;
+            dtpBdate.CustomFormat = "MM/dd/yyyy";
             dtpBdate.Dock = DockStyle.Fill;
+            dtpBdate.Format = DateTimePickerFormat.Custom;
             dtpBdate.Location = new Point(535, 166);
             dtpBdate.Margin = new Padding(3, 3, 3, 20);
             dtpBdate.Name = "dtpBdate";
@@ -388,6 +394,7 @@
             cbSem.Name = "cbSem";
             cbSem.Size = new Size(262, 23);
             cbSem.TabIndex = 29;
+            cbSem.SelectedIndexChanged += cbSem_SelectedIndexChanged;
             // 
             // label9
             // 
@@ -487,7 +494,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(800, 448);
-            ControlBox = false;
             Controls.Add(tableLayoutPanel1);
             Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             FormBorderStyle = FormBorderStyle.FixedSingle;

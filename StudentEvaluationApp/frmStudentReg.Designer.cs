@@ -29,25 +29,25 @@
         private void InitializeComponent()
         {
             tableLayoutPanel1 = new TableLayoutPanel();
-            textBox8 = new TextBox();
+            tbLastSchoolAt = new TextBox();
             label1 = new Label();
-            textBox1 = new TextBox();
+            tbFname = new TextBox();
             label2 = new Label();
-            maskedTextBox1 = new MaskedTextBox();
+            mtbStudentNum = new MaskedTextBox();
             label3 = new Label();
-            textBox2 = new TextBox();
+            tbLname = new TextBox();
             label4 = new Label();
-            textBox3 = new TextBox();
+            tbMname = new TextBox();
             label5 = new Label();
             cbSuffix = new ComboBox();
             label6 = new Label();
             cbGender = new ComboBox();
             label11 = new Label();
-            dateTimePicker1 = new DateTimePicker();
+            dtpBdate = new DateTimePicker();
             label8 = new Label();
             label7 = new Label();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
+            tbContactNum = new TextBox();
+            tbAddress = new TextBox();
             label13 = new Label();
             cbCurricuVer = new ComboBox();
             label15 = new Label();
@@ -56,11 +56,13 @@
             cbSem = new ComboBox();
             label9 = new Label();
             label10 = new Label();
-            textBox7 = new TextBox();
-            textBox6 = new TextBox();
+            tbPgName = new TextBox();
+            tbPgConNum = new TextBox();
             label12 = new Label();
             btnNext = new Button();
             label16 = new Label();
+            cbProgram = new ComboBox();
+            label17 = new Label();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -71,25 +73,25 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.33333F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
-            tableLayoutPanel1.Controls.Add(textBox8, 0, 14);
+            tableLayoutPanel1.Controls.Add(tbLastSchoolAt, 0, 14);
             tableLayoutPanel1.Controls.Add(label1, 0, 1);
-            tableLayoutPanel1.Controls.Add(textBox1, 0, 4);
+            tableLayoutPanel1.Controls.Add(tbFname, 0, 4);
             tableLayoutPanel1.Controls.Add(label2, 0, 3);
-            tableLayoutPanel1.Controls.Add(maskedTextBox1, 0, 2);
+            tableLayoutPanel1.Controls.Add(mtbStudentNum, 0, 2);
             tableLayoutPanel1.Controls.Add(label3, 1, 3);
-            tableLayoutPanel1.Controls.Add(textBox2, 1, 4);
+            tableLayoutPanel1.Controls.Add(tbLname, 1, 4);
             tableLayoutPanel1.Controls.Add(label4, 2, 3);
-            tableLayoutPanel1.Controls.Add(textBox3, 2, 4);
+            tableLayoutPanel1.Controls.Add(tbMname, 2, 4);
             tableLayoutPanel1.Controls.Add(label5, 0, 5);
             tableLayoutPanel1.Controls.Add(cbSuffix, 0, 6);
             tableLayoutPanel1.Controls.Add(label6, 1, 5);
             tableLayoutPanel1.Controls.Add(cbGender, 1, 6);
             tableLayoutPanel1.Controls.Add(label11, 2, 5);
-            tableLayoutPanel1.Controls.Add(dateTimePicker1, 2, 6);
+            tableLayoutPanel1.Controls.Add(dtpBdate, 2, 6);
             tableLayoutPanel1.Controls.Add(label8, 0, 7);
             tableLayoutPanel1.Controls.Add(label7, 1, 7);
-            tableLayoutPanel1.Controls.Add(textBox4, 0, 8);
-            tableLayoutPanel1.Controls.Add(textBox5, 1, 8);
+            tableLayoutPanel1.Controls.Add(tbContactNum, 0, 8);
+            tableLayoutPanel1.Controls.Add(tbAddress, 1, 8);
             tableLayoutPanel1.Controls.Add(label13, 0, 9);
             tableLayoutPanel1.Controls.Add(cbCurricuVer, 0, 10);
             tableLayoutPanel1.Controls.Add(label15, 1, 9);
@@ -98,11 +100,13 @@
             tableLayoutPanel1.Controls.Add(cbSem, 2, 10);
             tableLayoutPanel1.Controls.Add(label9, 0, 11);
             tableLayoutPanel1.Controls.Add(label10, 1, 11);
-            tableLayoutPanel1.Controls.Add(textBox7, 0, 12);
-            tableLayoutPanel1.Controls.Add(textBox6, 1, 12);
+            tableLayoutPanel1.Controls.Add(tbPgName, 0, 12);
+            tableLayoutPanel1.Controls.Add(tbPgConNum, 1, 12);
             tableLayoutPanel1.Controls.Add(label12, 0, 13);
             tableLayoutPanel1.Controls.Add(btnNext, 2, 14);
             tableLayoutPanel1.Controls.Add(label16, 0, 0);
+            tableLayoutPanel1.Controls.Add(cbProgram, 1, 2);
+            tableLayoutPanel1.Controls.Add(label17, 1, 1);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -122,18 +126,19 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
             tableLayoutPanel1.Size = new Size(800, 448);
             tableLayoutPanel1.TabIndex = 0;
             // 
-            // textBox8
+            // tbLastSchoolAt
             // 
-            tableLayoutPanel1.SetColumnSpan(textBox8, 2);
-            textBox8.Dock = DockStyle.Fill;
-            textBox8.Location = new Point(3, 406);
-            textBox8.Margin = new Padding(3, 3, 3, 20);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(526, 21);
-            textBox8.TabIndex = 35;
+            tableLayoutPanel1.SetColumnSpan(tbLastSchoolAt, 2);
+            tbLastSchoolAt.Dock = DockStyle.Fill;
+            tbLastSchoolAt.Location = new Point(3, 406);
+            tbLastSchoolAt.Margin = new Padding(3, 3, 3, 20);
+            tbLastSchoolAt.Name = "tbLastSchoolAt";
+            tbLastSchoolAt.Size = new Size(526, 21);
+            tbLastSchoolAt.TabIndex = 35;
             // 
             // label1
             // 
@@ -144,14 +149,14 @@
             label1.TabIndex = 0;
             label1.Text = "Student No.";
             // 
-            // textBox1
+            // tbFname
             // 
-            textBox1.Dock = DockStyle.Fill;
-            textBox1.Location = new Point(3, 107);
-            textBox1.Margin = new Padding(3, 3, 3, 20);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(260, 21);
-            textBox1.TabIndex = 3;
+            tbFname.Dock = DockStyle.Fill;
+            tbFname.Location = new Point(3, 107);
+            tbFname.Margin = new Padding(3, 3, 3, 20);
+            tbFname.Name = "tbFname";
+            tbFname.Size = new Size(260, 21);
+            tbFname.TabIndex = 3;
             // 
             // label2
             // 
@@ -162,16 +167,16 @@
             label2.TabIndex = 2;
             label2.Text = "First Name";
             // 
-            // maskedTextBox1
+            // mtbStudentNum
             // 
-            maskedTextBox1.Dock = DockStyle.Fill;
-            maskedTextBox1.Location = new Point(3, 48);
-            maskedTextBox1.Margin = new Padding(3, 3, 3, 20);
-            maskedTextBox1.Mask = "00000000000";
-            maskedTextBox1.Name = "maskedTextBox1";
-            maskedTextBox1.Size = new Size(260, 21);
-            maskedTextBox1.TabIndex = 1;
-            maskedTextBox1.ValidatingType = typeof(int);
+            mtbStudentNum.Dock = DockStyle.Fill;
+            mtbStudentNum.Location = new Point(3, 48);
+            mtbStudentNum.Margin = new Padding(3, 3, 3, 20);
+            mtbStudentNum.Mask = "00000000000";
+            mtbStudentNum.Name = "mtbStudentNum";
+            mtbStudentNum.Size = new Size(260, 21);
+            mtbStudentNum.TabIndex = 1;
+            mtbStudentNum.ValidatingType = typeof(int);
             // 
             // label3
             // 
@@ -183,14 +188,14 @@
             label3.Text = "Last Name";
             label3.TextAlign = ContentAlignment.TopRight;
             // 
-            // textBox2
+            // tbLname
             // 
-            textBox2.Dock = DockStyle.Fill;
-            textBox2.Location = new Point(269, 107);
-            textBox2.Margin = new Padding(3, 3, 3, 20);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(260, 21);
-            textBox2.TabIndex = 5;
+            tbLname.Dock = DockStyle.Fill;
+            tbLname.Location = new Point(269, 107);
+            tbLname.Margin = new Padding(3, 3, 3, 20);
+            tbLname.Name = "tbLname";
+            tbLname.Size = new Size(260, 21);
+            tbLname.TabIndex = 5;
             // 
             // label4
             // 
@@ -202,14 +207,14 @@
             label4.Text = "Middle Name";
             label4.TextAlign = ContentAlignment.TopRight;
             // 
-            // textBox3
+            // tbMname
             // 
-            textBox3.Dock = DockStyle.Fill;
-            textBox3.Location = new Point(535, 107);
-            textBox3.Margin = new Padding(3, 3, 3, 20);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(262, 21);
-            textBox3.TabIndex = 7;
+            tbMname.Dock = DockStyle.Fill;
+            tbMname.Location = new Point(535, 107);
+            tbMname.Margin = new Padding(3, 3, 3, 20);
+            tbMname.Name = "tbMname";
+            tbMname.Size = new Size(262, 21);
+            tbMname.TabIndex = 7;
             // 
             // label5
             // 
@@ -223,10 +228,9 @@
             // 
             // cbSuffix
             // 
-            cbSuffix.BackColor = Color.White;
-            cbSuffix.Dock = DockStyle.Fill;
+            cbSuffix.BackColor = Color.WhiteSmoke;
             cbSuffix.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbSuffix.FlatStyle = FlatStyle.Flat;
+            cbSuffix.FlatStyle = FlatStyle.Popup;
             cbSuffix.FormattingEnabled = true;
             cbSuffix.Items.AddRange(new object[] { "Jr.", "Sr." });
             cbSuffix.Location = new Point(3, 166);
@@ -246,7 +250,7 @@
             // 
             // cbGender
             // 
-            cbGender.Dock = DockStyle.Fill;
+            cbGender.BackColor = Color.WhiteSmoke;
             cbGender.DropDownStyle = ComboBoxStyle.DropDownList;
             cbGender.FlatStyle = FlatStyle.Flat;
             cbGender.FormattingEnabled = true;
@@ -267,14 +271,15 @@
             label11.Text = "BirthDate";
             label11.TextAlign = ContentAlignment.TopRight;
             // 
-            // dateTimePicker1
+            // dtpBdate
             // 
-            dateTimePicker1.Dock = DockStyle.Fill;
-            dateTimePicker1.Location = new Point(535, 166);
-            dateTimePicker1.Margin = new Padding(3, 3, 3, 20);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(262, 21);
-            dateTimePicker1.TabIndex = 21;
+            dtpBdate.CalendarMonthBackground = Color.White;
+            dtpBdate.Dock = DockStyle.Fill;
+            dtpBdate.Location = new Point(535, 166);
+            dtpBdate.Margin = new Padding(3, 3, 3, 20);
+            dtpBdate.Name = "dtpBdate";
+            dtpBdate.Size = new Size(262, 21);
+            dtpBdate.TabIndex = 21;
             // 
             // label8
             // 
@@ -295,24 +300,24 @@
             label7.TabIndex = 12;
             label7.Text = "Address";
             // 
-            // textBox4
+            // tbContactNum
             // 
-            textBox4.Dock = DockStyle.Fill;
-            textBox4.Location = new Point(3, 227);
-            textBox4.Margin = new Padding(3, 3, 3, 20);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(260, 21);
-            textBox4.TabIndex = 31;
+            tbContactNum.Dock = DockStyle.Fill;
+            tbContactNum.Location = new Point(3, 227);
+            tbContactNum.Margin = new Padding(3, 3, 3, 20);
+            tbContactNum.Name = "tbContactNum";
+            tbContactNum.Size = new Size(260, 21);
+            tbContactNum.TabIndex = 31;
             // 
-            // textBox5
+            // tbAddress
             // 
-            tableLayoutPanel1.SetColumnSpan(textBox5, 2);
-            textBox5.Dock = DockStyle.Fill;
-            textBox5.Location = new Point(269, 227);
-            textBox5.Margin = new Padding(3, 3, 3, 20);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(528, 21);
-            textBox5.TabIndex = 32;
+            tableLayoutPanel1.SetColumnSpan(tbAddress, 2);
+            tbAddress.Dock = DockStyle.Fill;
+            tbAddress.Location = new Point(269, 227);
+            tbAddress.Margin = new Padding(3, 3, 3, 20);
+            tbAddress.Name = "tbAddress";
+            tbAddress.Size = new Size(528, 21);
+            tbAddress.TabIndex = 32;
             // 
             // label13
             // 
@@ -325,7 +330,7 @@
             // 
             // cbCurricuVer
             // 
-            cbCurricuVer.Dock = DockStyle.Fill;
+            cbCurricuVer.BackColor = Color.WhiteSmoke;
             cbCurricuVer.DropDownStyle = ComboBoxStyle.DropDownList;
             cbCurricuVer.FlatStyle = FlatStyle.Flat;
             cbCurricuVer.FormattingEnabled = true;
@@ -335,6 +340,7 @@
             cbCurricuVer.Name = "cbCurricuVer";
             cbCurricuVer.Size = new Size(260, 23);
             cbCurricuVer.TabIndex = 27;
+            cbCurricuVer.SelectedIndexChanged += cbCurricuVer_SelectedIndexChanged;
             // 
             // label15
             // 
@@ -348,7 +354,7 @@
             // 
             // cbYear
             // 
-            cbYear.Dock = DockStyle.Fill;
+            cbYear.BackColor = Color.WhiteSmoke;
             cbYear.DropDownStyle = ComboBoxStyle.DropDownList;
             cbYear.FlatStyle = FlatStyle.Flat;
             cbYear.FormattingEnabled = true;
@@ -358,6 +364,7 @@
             cbYear.Name = "cbYear";
             cbYear.Size = new Size(260, 23);
             cbYear.TabIndex = 28;
+            cbYear.SelectedIndexChanged += cbYear_SelectedIndexChanged;
             // 
             // label14
             // 
@@ -371,7 +378,7 @@
             // 
             // cbSem
             // 
-            cbSem.Dock = DockStyle.Fill;
+            cbSem.BackColor = Color.WhiteSmoke;
             cbSem.DropDownStyle = ComboBoxStyle.DropDownList;
             cbSem.FlatStyle = FlatStyle.Flat;
             cbSem.FormattingEnabled = true;
@@ -400,23 +407,23 @@
             label10.TabIndex = 18;
             label10.Text = "Parent/Guardian Contact No.";
             // 
-            // textBox7
+            // tbPgName
             // 
-            textBox7.Dock = DockStyle.Fill;
-            textBox7.Location = new Point(3, 347);
-            textBox7.Margin = new Padding(3, 3, 3, 20);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(260, 21);
-            textBox7.TabIndex = 34;
+            tbPgName.Dock = DockStyle.Fill;
+            tbPgName.Location = new Point(3, 347);
+            tbPgName.Margin = new Padding(3, 3, 3, 20);
+            tbPgName.Name = "tbPgName";
+            tbPgName.Size = new Size(260, 21);
+            tbPgName.TabIndex = 34;
             // 
-            // textBox6
+            // tbPgConNum
             // 
-            textBox6.Dock = DockStyle.Fill;
-            textBox6.Location = new Point(269, 347);
-            textBox6.Margin = new Padding(3, 3, 3, 20);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(260, 21);
-            textBox6.TabIndex = 33;
+            tbPgConNum.Dock = DockStyle.Fill;
+            tbPgConNum.Location = new Point(269, 347);
+            tbPgConNum.Margin = new Padding(3, 3, 3, 20);
+            tbPgConNum.Name = "tbPgConNum";
+            tbPgConNum.Size = new Size(260, 21);
+            tbPgConNum.TabIndex = 33;
             // 
             // label12
             // 
@@ -429,12 +436,12 @@
             // 
             // btnNext
             // 
-            btnNext.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnNext.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnNext.AutoSize = true;
             btnNext.BackColor = Color.ForestGreen;
             btnNext.FlatStyle = FlatStyle.Flat;
             btnNext.ForeColor = Color.White;
-            btnNext.Location = new Point(723, 418);
+            btnNext.Location = new Point(723, 406);
             btnNext.Name = "btnNext";
             btnNext.Size = new Size(74, 27);
             btnNext.TabIndex = 30;
@@ -452,6 +459,27 @@
             label16.Size = new Size(146, 20);
             label16.TabIndex = 36;
             label16.Text = "Register Student";
+            // 
+            // cbProgram
+            // 
+            cbProgram.BackColor = Color.WhiteSmoke;
+            cbProgram.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbProgram.FlatStyle = FlatStyle.Flat;
+            cbProgram.FormattingEnabled = true;
+            cbProgram.Location = new Point(269, 48);
+            cbProgram.Name = "cbProgram";
+            cbProgram.Size = new Size(260, 23);
+            cbProgram.TabIndex = 37;
+            cbProgram.SelectedIndexChanged += cbProgram_SelectedIndexChanged;
+            // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.Location = new Point(269, 30);
+            label17.Name = "label17";
+            label17.Size = new Size(55, 15);
+            label17.TabIndex = 38;
+            label17.Text = "Program";
             // 
             // frmStudentReg
             // 
@@ -476,13 +504,13 @@
 
         private TableLayoutPanel tableLayoutPanel1;
         private Label label1;
-        private TextBox textBox2;
+        private TextBox tbLname;
         private Label label3;
         private Label label2;
-        private MaskedTextBox maskedTextBox1;
-        private TextBox textBox1;
+        private MaskedTextBox mtbStudentNum;
+        private TextBox tbFname;
         private Label label5;
-        private TextBox textBox3;
+        private TextBox tbMname;
         private Label label4;
         private ComboBox cbSuffix;
         private Label label7;
@@ -492,7 +520,7 @@
         private Label label9;
         private Label label10;
         private Label label11;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker dtpBdate;
         private Label label12;
         private Label label15;
         private Label label14;
@@ -501,11 +529,13 @@
         private ComboBox cbYear;
         private ComboBox cbSem;
         private Button btnNext;
-        private TextBox textBox4;
-        private TextBox textBox5;
-        private TextBox textBox8;
-        private TextBox textBox7;
-        private TextBox textBox6;
+        private TextBox tbContactNum;
+        private TextBox tbAddress;
+        private TextBox tbLastSchoolAt;
+        private TextBox tbPgName;
+        private TextBox tbPgConNum;
         private Label label16;
+        private ComboBox cbProgram;
+        private Label label17;
     }
 }

@@ -424,6 +424,7 @@
             tbPgName.Name = "tbPgName";
             tbPgName.Size = new Size(260, 21);
             tbPgName.TabIndex = 34;
+            tbPgName.Leave += tbPgName_Leave;
             // 
             // tbPgConNum
             // 
@@ -433,6 +434,7 @@
             tbPgConNum.Name = "tbPgConNum";
             tbPgConNum.Size = new Size(260, 21);
             tbPgConNum.TabIndex = 33;
+            tbPgConNum.Leave += tbPgConNum_Leave;
             // 
             // label12
             // 

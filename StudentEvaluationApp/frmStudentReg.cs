@@ -116,5 +116,23 @@ namespace StudentEvaluationApp
             //    this.ActiveControl = tbLname;
             //}
         }
+
+        private void tbPgName_Leave(object sender, EventArgs e)
+        {
+            if (tbPgName.Text.Equals(""))
+            {
+                MessageBox.Show("Parent/Guardian name is required.");
+                this.ActiveControl = tbPgName;
+            }
+        }
+
+        private void tbPgConNum_Leave(object sender, EventArgs e)
+        {
+            if (tbPgConNum.Text.Length < 11 && !tbPgConNum.Text.Equals(""))
+            {
+                MessageBox.Show("Contact number must be 11 digits.");
+                this.ActiveControl = tbPgConNum;
+            }
+        }
     }
 }

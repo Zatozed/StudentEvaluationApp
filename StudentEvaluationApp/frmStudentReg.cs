@@ -98,5 +98,23 @@ namespace StudentEvaluationApp
                 this.ActiveControl = tbLname;
             }
         }
+
+        private void tbContactNum_Leave(object sender, EventArgs e)
+        {
+            if (tbContactNum.Text.Length < 11 && !tbContactNum.Text.Equals(""))
+            {
+                MessageBox.Show("Contact number must be 11 digits.");
+                this.ActiveControl = tbContactNum;
+            }
+        }
+
+        private void tbAddress_Leave(object sender, EventArgs e)
+        {
+            //if (tbAddress.Text.Equals(""))
+            //{
+            //    MessageBox.Show("Address is required.");
+            //    this.ActiveControl = tbLname;
+            //}
+        }
     }
 }

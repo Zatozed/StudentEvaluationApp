@@ -314,6 +314,7 @@
             tbContactNum.Name = "tbContactNum";
             tbContactNum.Size = new Size(260, 21);
             tbContactNum.TabIndex = 31;
+            tbContactNum.Leave += tbContactNum_Leave;
             // 
             // tbAddress
             // 
@@ -324,6 +325,7 @@
             tbAddress.Name = "tbAddress";
             tbAddress.Size = new Size(528, 21);
             tbAddress.TabIndex = 32;
+            tbAddress.Leave += tbAddress_Leave;
             // 
             // label13
             // 

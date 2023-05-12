@@ -34,7 +34,7 @@ namespace StudentEvaluationApp
             {
                 dbh.InsertToStudent
                     (
-                    mtbStudentNum.Text, tbFname.Text, tbLname.Text, tbMname.Text,
+                    tbStudentNum.Text, tbFname.Text, tbLname.Text, tbMname.Text,
                     cbSuffix.Text, cbGender.Text, tbAddress.Text, tbContactNum.Text,
                     tbPgName.Text, tbPgConNum.Text, tbLastSchoolAt.Text, dtpBdate.Text.ToString(),
                     cvID, programID, yearID, semID
@@ -71,16 +71,6 @@ namespace StudentEvaluationApp
             semID = dbh.GetSemID(cbSem.Text);
         }
 
-        private void mtbStudentNum_Leave(object sender, EventArgs e)
-        {
-            if (mtbStudentNum.Text.Length != 11)
-            {
-                MessageBox.Show("Student number must be 11 digits");
-                this.ActiveControl = mtbStudentNum;
-            }
-
-        }
-
         private void tbFname_Leave(object sender, EventArgs e)
         {
             if (tbFname.Text.Equals(""))
@@ -106,15 +96,6 @@ namespace StudentEvaluationApp
                 MessageBox.Show("Contact number must be 11 digits.");
                 this.ActiveControl = tbContactNum;
             }
-        }
-
-        private void tbAddress_Leave(object sender, EventArgs e)
-        {
-            //if (tbAddress.Text.Equals(""))
-            //{
-            //    MessageBox.Show("Address is required.");
-            //    this.ActiveControl = tbLname;
-            //}
         }
 
         private void tbPgName_Leave(object sender, EventArgs e)

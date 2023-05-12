@@ -33,7 +33,6 @@
             label1 = new Label();
             tbFname = new TextBox();
             label2 = new Label();
-            mtbStudentNum = new MaskedTextBox();
             label3 = new Label();
             tbLname = new TextBox();
             label4 = new Label();
@@ -63,6 +62,7 @@
             label16 = new Label();
             cbProgram = new ComboBox();
             label17 = new Label();
+            tbStudentNum = new TextBox();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -77,7 +77,6 @@
             tableLayoutPanel1.Controls.Add(label1, 0, 1);
             tableLayoutPanel1.Controls.Add(tbFname, 0, 4);
             tableLayoutPanel1.Controls.Add(label2, 0, 3);
-            tableLayoutPanel1.Controls.Add(mtbStudentNum, 0, 2);
             tableLayoutPanel1.Controls.Add(label3, 1, 3);
             tableLayoutPanel1.Controls.Add(tbLname, 1, 4);
             tableLayoutPanel1.Controls.Add(label4, 2, 3);
@@ -107,6 +106,7 @@
             tableLayoutPanel1.Controls.Add(label16, 0, 0);
             tableLayoutPanel1.Controls.Add(cbProgram, 1, 2);
             tableLayoutPanel1.Controls.Add(label17, 1, 1);
+            tableLayoutPanel1.Controls.Add(tbStudentNum, 0, 2);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -127,14 +127,14 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.Size = new Size(800, 448);
+            tableLayoutPanel1.Size = new Size(800, 438);
             tableLayoutPanel1.TabIndex = 0;
             // 
             // tbLastSchoolAt
             // 
             tableLayoutPanel1.SetColumnSpan(tbLastSchoolAt, 2);
             tbLastSchoolAt.Dock = DockStyle.Fill;
-            tbLastSchoolAt.Location = new Point(3, 406);
+            tbLastSchoolAt.Location = new Point(3, 391);
             tbLastSchoolAt.Margin = new Padding(3, 3, 3, 20);
             tbLastSchoolAt.Name = "tbLastSchoolAt";
             tbLastSchoolAt.Size = new Size(526, 21);
@@ -152,7 +152,7 @@
             // tbFname
             // 
             tbFname.Dock = DockStyle.Fill;
-            tbFname.Location = new Point(3, 107);
+            tbFname.Location = new Point(3, 92);
             tbFname.Margin = new Padding(3, 3, 3, 20);
             tbFname.Name = "tbFname";
             tbFname.Size = new Size(260, 21);
@@ -162,29 +162,16 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(3, 89);
+            label2.Location = new Point(3, 74);
             label2.Name = "label2";
             label2.Size = new Size(67, 15);
             label2.TabIndex = 2;
             label2.Text = "First Name";
             // 
-            // mtbStudentNum
-            // 
-            mtbStudentNum.BorderStyle = BorderStyle.FixedSingle;
-            mtbStudentNum.Dock = DockStyle.Fill;
-            mtbStudentNum.Location = new Point(3, 48);
-            mtbStudentNum.Margin = new Padding(3, 3, 3, 20);
-            mtbStudentNum.Mask = "00000000000";
-            mtbStudentNum.Name = "mtbStudentNum";
-            mtbStudentNum.Size = new Size(260, 21);
-            mtbStudentNum.TabIndex = 1;
-            mtbStudentNum.ValidatingType = typeof(int);
-            mtbStudentNum.Leave += mtbStudentNum_Leave;
-            // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(269, 89);
+            label3.Location = new Point(269, 74);
             label3.Name = "label3";
             label3.Size = new Size(67, 15);
             label3.TabIndex = 4;
@@ -194,7 +181,7 @@
             // tbLname
             // 
             tbLname.Dock = DockStyle.Fill;
-            tbLname.Location = new Point(269, 107);
+            tbLname.Location = new Point(269, 92);
             tbLname.Margin = new Padding(3, 3, 3, 20);
             tbLname.Name = "tbLname";
             tbLname.Size = new Size(260, 21);
@@ -204,7 +191,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(535, 89);
+            label4.Location = new Point(535, 74);
             label4.Name = "label4";
             label4.Size = new Size(82, 15);
             label4.TabIndex = 6;
@@ -214,7 +201,7 @@
             // tbMname
             // 
             tbMname.Dock = DockStyle.Fill;
-            tbMname.Location = new Point(535, 107);
+            tbMname.Location = new Point(535, 92);
             tbMname.Margin = new Padding(3, 3, 3, 20);
             tbMname.Name = "tbMname";
             tbMname.Size = new Size(262, 21);
@@ -223,7 +210,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(3, 148);
+            label5.Location = new Point(3, 133);
             label5.Name = "label5";
             label5.Size = new Size(37, 15);
             label5.TabIndex = 8;
@@ -236,8 +223,8 @@
             cbSuffix.DropDownStyle = ComboBoxStyle.DropDownList;
             cbSuffix.FlatStyle = FlatStyle.Popup;
             cbSuffix.FormattingEnabled = true;
-            cbSuffix.Items.AddRange(new object[] { "Jr.", "Sr." });
-            cbSuffix.Location = new Point(3, 166);
+            cbSuffix.Items.AddRange(new object[] { "- Select -", "Jr.", "Sr." });
+            cbSuffix.Location = new Point(3, 151);
             cbSuffix.Margin = new Padding(3, 3, 3, 20);
             cbSuffix.Name = "cbSuffix";
             cbSuffix.Size = new Size(260, 23);
@@ -246,7 +233,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(269, 148);
+            label6.Location = new Point(269, 133);
             label6.Name = "label6";
             label6.Size = new Size(48, 15);
             label6.TabIndex = 10;
@@ -258,8 +245,8 @@
             cbGender.DropDownStyle = ComboBoxStyle.DropDownList;
             cbGender.FlatStyle = FlatStyle.Flat;
             cbGender.FormattingEnabled = true;
-            cbGender.Items.AddRange(new object[] { "Male", "Female" });
-            cbGender.Location = new Point(269, 166);
+            cbGender.Items.AddRange(new object[] { "- Select -", "Male", "Female" });
+            cbGender.Location = new Point(269, 151);
             cbGender.Margin = new Padding(3, 3, 3, 20);
             cbGender.Name = "cbGender";
             cbGender.Size = new Size(260, 23);
@@ -268,7 +255,7 @@
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(535, 148);
+            label11.Location = new Point(535, 133);
             label11.Name = "label11";
             label11.Size = new Size(58, 15);
             label11.TabIndex = 20;
@@ -281,7 +268,7 @@
             dtpBdate.CustomFormat = "MM/dd/yyyy";
             dtpBdate.Dock = DockStyle.Fill;
             dtpBdate.Format = DateTimePickerFormat.Custom;
-            dtpBdate.Location = new Point(535, 166);
+            dtpBdate.Location = new Point(535, 151);
             dtpBdate.Margin = new Padding(3, 3, 3, 20);
             dtpBdate.Name = "dtpBdate";
             dtpBdate.Size = new Size(262, 21);
@@ -290,7 +277,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(3, 209);
+            label8.Location = new Point(3, 194);
             label8.Name = "label8";
             label8.Size = new Size(58, 15);
             label8.TabIndex = 14;
@@ -300,7 +287,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(269, 209);
+            label7.Location = new Point(269, 194);
             label7.Name = "label7";
             label7.Size = new Size(51, 15);
             label7.TabIndex = 12;
@@ -309,7 +296,7 @@
             // tbContactNum
             // 
             tbContactNum.Dock = DockStyle.Fill;
-            tbContactNum.Location = new Point(3, 227);
+            tbContactNum.Location = new Point(3, 212);
             tbContactNum.Margin = new Padding(3, 3, 3, 20);
             tbContactNum.Name = "tbContactNum";
             tbContactNum.Size = new Size(260, 21);
@@ -320,17 +307,16 @@
             // 
             tableLayoutPanel1.SetColumnSpan(tbAddress, 2);
             tbAddress.Dock = DockStyle.Fill;
-            tbAddress.Location = new Point(269, 227);
+            tbAddress.Location = new Point(269, 212);
             tbAddress.Margin = new Padding(3, 3, 3, 20);
             tbAddress.Name = "tbAddress";
             tbAddress.Size = new Size(528, 21);
             tbAddress.TabIndex = 32;
-            tbAddress.Leave += tbAddress_Leave;
             // 
             // label13
             // 
             label13.AutoSize = true;
-            label13.Location = new Point(3, 268);
+            label13.Location = new Point(3, 253);
             label13.Name = "label13";
             label13.Size = new Size(111, 15);
             label13.TabIndex = 24;
@@ -342,8 +328,7 @@
             cbCurricuVer.DropDownStyle = ComboBoxStyle.DropDownList;
             cbCurricuVer.FlatStyle = FlatStyle.Flat;
             cbCurricuVer.FormattingEnabled = true;
-            cbCurricuVer.Items.AddRange(new object[] { "Male", "Female" });
-            cbCurricuVer.Location = new Point(3, 286);
+            cbCurricuVer.Location = new Point(3, 271);
             cbCurricuVer.Margin = new Padding(3, 3, 3, 20);
             cbCurricuVer.Name = "cbCurricuVer";
             cbCurricuVer.Size = new Size(260, 23);
@@ -353,7 +338,7 @@
             // label15
             // 
             label15.AutoSize = true;
-            label15.Location = new Point(269, 268);
+            label15.Location = new Point(269, 253);
             label15.Name = "label15";
             label15.Size = new Size(32, 15);
             label15.TabIndex = 26;
@@ -366,8 +351,7 @@
             cbYear.DropDownStyle = ComboBoxStyle.DropDownList;
             cbYear.FlatStyle = FlatStyle.Flat;
             cbYear.FormattingEnabled = true;
-            cbYear.Items.AddRange(new object[] { "Male", "Female" });
-            cbYear.Location = new Point(269, 286);
+            cbYear.Location = new Point(269, 271);
             cbYear.Margin = new Padding(3, 3, 3, 20);
             cbYear.Name = "cbYear";
             cbYear.Size = new Size(260, 23);
@@ -377,7 +361,7 @@
             // label14
             // 
             label14.AutoSize = true;
-            label14.Location = new Point(535, 268);
+            label14.Location = new Point(535, 253);
             label14.Name = "label14";
             label14.Size = new Size(60, 15);
             label14.TabIndex = 25;
@@ -390,8 +374,7 @@
             cbSem.DropDownStyle = ComboBoxStyle.DropDownList;
             cbSem.FlatStyle = FlatStyle.Flat;
             cbSem.FormattingEnabled = true;
-            cbSem.Items.AddRange(new object[] { "Male", "Female" });
-            cbSem.Location = new Point(535, 286);
+            cbSem.Location = new Point(535, 271);
             cbSem.Margin = new Padding(3, 3, 3, 20);
             cbSem.Name = "cbSem";
             cbSem.Size = new Size(262, 23);
@@ -401,7 +384,7 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(3, 329);
+            label9.Location = new Point(3, 314);
             label9.Name = "label9";
             label9.Size = new Size(134, 15);
             label9.TabIndex = 16;
@@ -410,7 +393,7 @@
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(269, 329);
+            label10.Location = new Point(269, 314);
             label10.Name = "label10";
             label10.Size = new Size(163, 15);
             label10.TabIndex = 18;
@@ -419,7 +402,7 @@
             // tbPgName
             // 
             tbPgName.Dock = DockStyle.Fill;
-            tbPgName.Location = new Point(3, 347);
+            tbPgName.Location = new Point(3, 332);
             tbPgName.Margin = new Padding(3, 3, 3, 20);
             tbPgName.Name = "tbPgName";
             tbPgName.Size = new Size(260, 21);
@@ -429,7 +412,7 @@
             // tbPgConNum
             // 
             tbPgConNum.Dock = DockStyle.Fill;
-            tbPgConNum.Location = new Point(269, 347);
+            tbPgConNum.Location = new Point(269, 332);
             tbPgConNum.Margin = new Padding(3, 3, 3, 20);
             tbPgConNum.Name = "tbPgConNum";
             tbPgConNum.Size = new Size(260, 21);
@@ -439,7 +422,7 @@
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(3, 388);
+            label12.Location = new Point(3, 373);
             label12.Name = "label12";
             label12.Size = new Size(122, 15);
             label12.TabIndex = 22;
@@ -452,7 +435,7 @@
             btnNext.BackColor = Color.ForestGreen;
             btnNext.FlatStyle = FlatStyle.Flat;
             btnNext.ForeColor = Color.White;
-            btnNext.Location = new Point(723, 406);
+            btnNext.Location = new Point(723, 391);
             btnNext.Name = "btnNext";
             btnNext.Size = new Size(74, 27);
             btnNext.TabIndex = 30;
@@ -492,12 +475,20 @@
             label17.TabIndex = 38;
             label17.Text = "Program";
             // 
+            // tbStudentNum
+            // 
+            tbStudentNum.Dock = DockStyle.Fill;
+            tbStudentNum.Location = new Point(3, 48);
+            tbStudentNum.Name = "tbStudentNum";
+            tbStudentNum.Size = new Size(260, 21);
+            tbStudentNum.TabIndex = 39;
+            // 
             // frmStudentReg
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(800, 448);
+            ClientSize = new Size(800, 438);
             Controls.Add(tableLayoutPanel1);
             Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -517,7 +508,6 @@
         private TextBox tbLname;
         private Label label3;
         private Label label2;
-        private MaskedTextBox mtbStudentNum;
         private TextBox tbFname;
         private Label label5;
         private TextBox tbMname;
@@ -547,5 +537,6 @@
         private Label label16;
         private ComboBox cbProgram;
         private Label label17;
+        private TextBox tbStudentNum;
     }
 }

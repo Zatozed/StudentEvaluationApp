@@ -582,7 +582,7 @@ namespace StudentEvaluationApp
             }
             catch (Exception e)
             {
-                MessageBox.Show("Something went wrong when selecting the program.");
+                MessageBox.Show("Something went wrong when selecting the year level.");
             }
             finally
             {
@@ -614,7 +614,7 @@ namespace StudentEvaluationApp
             }
             catch (Exception e)
             {
-                MessageBox.Show("");
+                MessageBox.Show("Something went wrong when selecting the sem.");
             }
             finally
             {
@@ -622,6 +622,38 @@ namespace StudentEvaluationApp
             }
 
             return semID;
+        }
+        public string GetStudID()
+        {
+            string studID = "";
+
+            try
+            {
+                OpenCon();
+
+                cmd = new OleDbCommand("select top 1 studentID from tblStudentInfo order by studentID desc", con);
+
+                dr = cmd.ExecuteReader();
+
+                if (dr.Read())
+                {
+                    studID = dr.GetInt32(0).ToString();
+                }
+
+                dr.Close();
+                dr.DisposeAsync();
+                cmd.Dispose();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+            }
+            finally
+            {
+                CloseCon();
+            }
+
+            return studID;
         }
         public void InsertToStudent
             (
@@ -680,6 +712,37 @@ namespace StudentEvaluationApp
             catch (Exception e)
             {
                 MessageBox.Show("Insert to studentInfo: " + e.ToString());
+            }
+            finally
+            {
+                CloseCon();
+            }
+        }
+        public void InsertToStudntPermanentRecord(string studID, string curricuID)
+        {
+            try
+            {
+                OpenCon();
+
+                cmd = new OleDbCommand
+                    (@"insert into tblStudentPermanentRecord
+                    (studentID, course_curricuID)
+                    values
+                    (
+                        @studID, (select ID from tblCourse_Curriculum where curricuVerID = @curricuID)
+                    )"
+                    , con);
+
+                cmd.Parameters.AddWithValue("@studID", studID);
+                cmd.Parameters.AddWithValue("@curricuID", curricuID);
+
+                cmd.ExecuteNonQuery();
+
+                cmd.Dispose();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("insert curriculum" + e.Message.ToString());
             }
             finally
             {

@@ -34,11 +34,14 @@ namespace StudentEvaluationApp
             {
                 dbh.InsertToStudent
                     (
-                    tbStudentNum.Text, tbFname.Text, tbLname.Text, tbMname.Text,
-                    cbSuffix.Text, cbGender.Text, tbAddress.Text, tbContactNum.Text,
-                    tbPgName.Text, tbPgConNum.Text, tbLastSchoolAt.Text, dtpBdate.Text.ToString(),
-                    cvID, programID, yearID, semID
+                        tbStudentNum.Text, tbFname.Text, tbLname.Text, tbMname.Text,
+                        cbSuffix.Text, cbGender.Text, tbAddress.Text, tbContactNum.Text,
+                        tbPgName.Text, tbPgConNum.Text, tbLastSchoolAt.Text, dtpBdate.Text.ToString(),
+                        cvID, programID, yearID, semID
                     );
+
+                dbh.InsertToStudntPermanentRecord(dbh.GetStudID(), cvID);
+                //MessageBox.Show(dbh.GetStudID());
 
                 this.Hide();
 
@@ -114,6 +117,20 @@ namespace StudentEvaluationApp
                 MessageBox.Show("Contact number must be 11 digits.");
                 this.ActiveControl = tbPgConNum;
             }
+        }
+
+        private void tbStudentNum_Leave(object sender, EventArgs e)
+        {
+            if (tbStudentNum.Text.Length < 11 || tbStudentNum.Text.Equals(""))
+            {
+                MessageBox.Show("Student number is required and must be 11 digits.");
+                this.ActiveControl = tbStudentNum;
+            }
+        }
+
+        private void frmStudentReg_Load(object sender, EventArgs e)
+        {
+            this.ActiveControl = tbStudentNum;
         }
     }
 }

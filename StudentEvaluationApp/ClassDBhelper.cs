@@ -101,7 +101,7 @@ namespace StudentEvaluationApp
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.Message.ToString());
+                MessageBox.Show("Something went wrong. Code: CVL01");
             }
             finally
             {
@@ -623,7 +623,7 @@ namespace StudentEvaluationApp
 
             return semID;
         }
-        public string GetStudID()
+        public string GetStudRecentID()
         {
             string studID = "";
 
@@ -655,7 +655,8 @@ namespace StudentEvaluationApp
 
             return studID;
         }
-        public DataTable GetCourseCurricuVerIDList(string cvID, string programID, string semID, string yearID)
+        public DataTable GetCourseCurricuVerIDList
+            (string cvID, string programID, string semID, string yearID)
         {
             DataTable list = new DataTable();
 
@@ -783,5 +784,176 @@ namespace StudentEvaluationApp
             }
         }
         //---------------------------------------------------------------- Student Reg form
+        //---------------------------------------------------------------- Student Input grades form
+        public DataTable GetStudInfo(string studId)
+        {
+            DataTable dt = new DataTable();
+
+            try
+            {
+                OpenCon();
+
+                cmd = new OleDbCommand(
+                    @"select top 1
+                    studentNum, firstName, lastName, middleName,
+                    curricuVerID, programID, yearID, semID
+                    from tblStudentInfo
+                    where studentID = " + studId
+                    , con);
+
+                dataAdapter = new OleDbDataAdapter(cmd);
+
+                dataAdapter.Fill(dt);
+
+                cmd.Dispose();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message.ToString());
+            }
+            finally
+            {
+                CloseCon();
+            }
+
+            return dt;
+        }
+        public string GetCurriculumVersionByID(string cvID)
+        {
+            string s = "";
+
+            try
+            {
+                OpenCon();
+
+                cmd = new OleDbCommand
+                    ("select top 1 curricuDescription from tblCurriculumVer where curricuVerID = "
+                    + cvID, con);
+
+                dr = cmd.ExecuteReader();
+
+                if (dr.Read())
+                {
+                    s = dr.GetString(0);
+                }
+
+                dr.Close();
+                dr.DisposeAsync();
+                cmd.Dispose();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Something went wrong. Error Code: GTCVDES01");
+            }
+            finally
+            {
+                CloseCon();
+            }
+
+            return s;
+        }
+        public string GetProgramDesByID(string programID)
+        {
+            string s = "";
+
+            try
+            {
+                OpenCon();
+
+                cmd = new OleDbCommand
+                    ("select top 1 programCode from tblProgram where programID = "
+                    + programID, con);
+
+                dr = cmd.ExecuteReader();
+
+                if (dr.Read())
+                {
+                    s = dr.GetString(0);
+                }
+
+                dr.Close();
+                dr.DisposeAsync();
+                cmd.Dispose();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Something went wrong. Error Code: GTPDES01");
+            }
+            finally
+            {
+                CloseCon();
+            }
+
+            return s;
+        }
+        public string GetYearDesByID(string yearID)
+        {
+            string s = "";
+
+            try
+            {
+                OpenCon();
+
+                cmd = new OleDbCommand
+                    ("select top 1 yearDes from tblyear where yearID = "
+                    + yearID, con);
+
+                dr = cmd.ExecuteReader();
+
+                if (dr.Read())
+                {
+                    s = dr.GetString(0);
+                }
+
+                dr.Close();
+                dr.DisposeAsync();
+                cmd.Dispose();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Something went wrong. Error Code: GTYDES01");
+            }
+            finally
+            {
+                CloseCon();
+            }
+
+            return s;
+        }
+        public string GetSemDesByID(string semID)
+        {
+            string s = "";
+
+            try
+            {
+                OpenCon();
+
+                cmd = new OleDbCommand
+                    ("select top 1 semDes from tblSem where semID = "
+                    + semID, con);
+
+                dr = cmd.ExecuteReader();
+
+                if (dr.Read())
+                {
+                    s = dr.GetString(0);
+                }
+
+                dr.Close();
+                dr.DisposeAsync();
+                cmd.Dispose();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Something went wrong. Error Code: ");
+            }
+            finally
+            {
+                CloseCon();
+            }
+
+            return s;
+        }
+        //---------------------------------------------------------------- Student Input grades form
     }
 }

@@ -63,9 +63,7 @@
             cbProgram = new ComboBox();
             label17 = new Label();
             tbStudentNum = new TextBox();
-            dataGridView1 = new DataGridView();
             tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -109,7 +107,6 @@
             tableLayoutPanel1.Controls.Add(cbProgram, 1, 2);
             tableLayoutPanel1.Controls.Add(label17, 1, 1);
             tableLayoutPanel1.Controls.Add(tbStudentNum, 0, 2);
-            tableLayoutPanel1.Controls.Add(dataGridView1, 2, 12);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -130,14 +127,14 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.Size = new Size(800, 555);
+            tableLayoutPanel1.Size = new Size(800, 447);
             tableLayoutPanel1.TabIndex = 0;
             // 
             // tbLastSchoolAt
             // 
             tableLayoutPanel1.SetColumnSpan(tbLastSchoolAt, 2);
             tbLastSchoolAt.Dock = DockStyle.Fill;
-            tbLastSchoolAt.Location = new Point(3, 518);
+            tbLastSchoolAt.Location = new Point(3, 406);
             tbLastSchoolAt.Margin = new Padding(3, 3, 3, 20);
             tbLastSchoolAt.Name = "tbLastSchoolAt";
             tbLastSchoolAt.Size = new Size(526, 21);
@@ -425,7 +422,7 @@
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(3, 500);
+            label12.Location = new Point(3, 388);
             label12.Name = "label12";
             label12.Size = new Size(122, 15);
             label12.TabIndex = 22;
@@ -438,7 +435,7 @@
             btnNext.BackColor = Color.ForestGreen;
             btnNext.FlatStyle = FlatStyle.Flat;
             btnNext.ForeColor = Color.White;
-            btnNext.Location = new Point(723, 518);
+            btnNext.Location = new Point(723, 406);
             btnNext.Name = "btnNext";
             btnNext.Size = new Size(74, 27);
             btnNext.TabIndex = 30;
@@ -489,21 +486,12 @@
             tbStudentNum.TabIndex = 39;
             tbStudentNum.Leave += tbStudentNum_Leave;
             // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(535, 347);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(240, 150);
-            dataGridView1.TabIndex = 40;
-            // 
             // frmStudentReg
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(800, 555);
+            ClientSize = new Size(800, 447);
             Controls.Add(tableLayoutPanel1);
             Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -514,7 +502,6 @@
             Load += frmStudentReg_Load;
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
 
@@ -555,6 +542,5 @@
         private ComboBox cbProgram;
         private Label label17;
         private TextBox tbStudentNum;
-        private DataGridView dataGridView1;
     }
 }

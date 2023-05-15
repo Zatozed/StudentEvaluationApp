@@ -29,22 +29,22 @@
         private void InitializeComponent()
         {
             tableLayoutPanel1 = new TableLayoutPanel();
-            label2 = new Label();
+            lbStudNo = new Label();
             label1 = new Label();
             label5 = new Label();
-            label4 = new Label();
+            lbl = new Label();
             label3 = new Label();
-            label6 = new Label();
-            label8 = new Label();
-            label7 = new Label();
+            lbFname = new Label();
+            lbMname = new Label();
+            lbLname = new Label();
             label9 = new Label();
             label10 = new Label();
             label11 = new Label();
-            label13 = new Label();
+            lbCv = new Label();
             label12 = new Label();
-            label14 = new Label();
-            label15 = new Label();
-            label16 = new Label();
+            lbProgram = new Label();
+            lbYear = new Label();
+            lbSS = new Label();
             dgvCourseGrade = new DataGridView();
             colID = new DataGridViewTextBoxColumn();
             colCourse = new DataGridViewTextBoxColumn();
@@ -52,7 +52,7 @@
             colGrade2 = new DataGridViewTextBoxColumn();
             colGrade3 = new DataGridViewTextBoxColumn();
             btnNext = new Button();
-            textBox1 = new TextBox();
+            tbSearch = new TextBox();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvCourseGrade).BeginInit();
             SuspendLayout();
@@ -64,25 +64,25 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.33333F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
-            tableLayoutPanel1.Controls.Add(label2, 1, 1);
+            tableLayoutPanel1.Controls.Add(lbStudNo, 1, 1);
             tableLayoutPanel1.Controls.Add(label1, 0, 1);
             tableLayoutPanel1.Controls.Add(label5, 2, 2);
-            tableLayoutPanel1.Controls.Add(label4, 1, 2);
+            tableLayoutPanel1.Controls.Add(lbl, 1, 2);
             tableLayoutPanel1.Controls.Add(label3, 0, 2);
-            tableLayoutPanel1.Controls.Add(label6, 0, 3);
-            tableLayoutPanel1.Controls.Add(label8, 2, 3);
-            tableLayoutPanel1.Controls.Add(label7, 1, 3);
+            tableLayoutPanel1.Controls.Add(lbFname, 0, 3);
+            tableLayoutPanel1.Controls.Add(lbMname, 2, 3);
+            tableLayoutPanel1.Controls.Add(lbLname, 1, 3);
             tableLayoutPanel1.Controls.Add(label9, 0, 4);
             tableLayoutPanel1.Controls.Add(label10, 1, 4);
             tableLayoutPanel1.Controls.Add(label11, 2, 4);
-            tableLayoutPanel1.Controls.Add(label13, 1, 6);
+            tableLayoutPanel1.Controls.Add(lbCv, 1, 6);
             tableLayoutPanel1.Controls.Add(label12, 0, 6);
-            tableLayoutPanel1.Controls.Add(label14, 0, 5);
-            tableLayoutPanel1.Controls.Add(label15, 1, 5);
-            tableLayoutPanel1.Controls.Add(label16, 2, 5);
+            tableLayoutPanel1.Controls.Add(lbProgram, 0, 5);
+            tableLayoutPanel1.Controls.Add(lbYear, 1, 5);
+            tableLayoutPanel1.Controls.Add(lbSS, 2, 5);
             tableLayoutPanel1.Controls.Add(dgvCourseGrade, 0, 7);
             tableLayoutPanel1.Controls.Add(btnNext, 2, 8);
-            tableLayoutPanel1.Controls.Add(textBox1, 0, 0);
+            tableLayoutPanel1.Controls.Add(tbSearch, 0, 0);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -99,15 +99,15 @@
             tableLayoutPanel1.Size = new Size(800, 450);
             tableLayoutPanel1.TabIndex = 0;
             // 
-            // label2
+            // lbStudNo
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(269, 29);
-            label2.Margin = new Padding(3, 0, 3, 10);
-            label2.Name = "label2";
-            label2.Size = new Size(84, 15);
-            label2.TabIndex = 1;
-            label2.Text = "###########";
+            lbStudNo.AutoSize = true;
+            lbStudNo.Location = new Point(269, 29);
+            lbStudNo.Margin = new Padding(3, 0, 3, 10);
+            lbStudNo.Name = "lbStudNo";
+            lbStudNo.Size = new Size(84, 15);
+            lbStudNo.TabIndex = 1;
+            lbStudNo.Text = "###########";
             // 
             // label1
             // 
@@ -131,16 +131,16 @@
             label5.TabIndex = 4;
             label5.Text = "Middle Name";
             // 
-            // label4
+            // lbl
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(269, 54);
-            label4.Margin = new Padding(3, 0, 3, 10);
-            label4.Name = "label4";
-            label4.Size = new Size(76, 15);
-            label4.TabIndex = 3;
-            label4.Text = "Last Name";
+            lbl.AutoSize = true;
+            lbl.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lbl.Location = new Point(269, 54);
+            lbl.Margin = new Padding(3, 0, 3, 10);
+            lbl.Name = "lbl";
+            lbl.Size = new Size(76, 15);
+            lbl.TabIndex = 3;
+            lbl.Text = "Last Name";
             // 
             // label3
             // 
@@ -153,35 +153,35 @@
             label3.TabIndex = 2;
             label3.Text = "First Name";
             // 
-            // label6
+            // lbFname
             // 
-            label6.AutoSize = true;
-            label6.Location = new Point(3, 79);
-            label6.Margin = new Padding(3, 0, 3, 10);
-            label6.Name = "label6";
-            label6.Size = new Size(49, 15);
-            label6.TabIndex = 5;
-            label6.Text = "FFFFFFF";
+            lbFname.AutoSize = true;
+            lbFname.Location = new Point(3, 79);
+            lbFname.Margin = new Padding(3, 0, 3, 10);
+            lbFname.Name = "lbFname";
+            lbFname.Size = new Size(49, 15);
+            lbFname.TabIndex = 5;
+            lbFname.Text = "FFFFFFF";
             // 
-            // label8
+            // lbMname
             // 
-            label8.AutoSize = true;
-            label8.Location = new Point(535, 79);
-            label8.Margin = new Padding(3, 0, 3, 10);
-            label8.Name = "label8";
-            label8.Size = new Size(62, 15);
-            label8.TabIndex = 7;
-            label8.Text = "MMMMM";
+            lbMname.AutoSize = true;
+            lbMname.Location = new Point(535, 79);
+            lbMname.Margin = new Padding(3, 0, 3, 10);
+            lbMname.Name = "lbMname";
+            lbMname.Size = new Size(62, 15);
+            lbMname.TabIndex = 7;
+            lbMname.Text = "MMMMM";
             // 
-            // label7
+            // lbLname
             // 
-            label7.AutoSize = true;
-            label7.Location = new Point(269, 79);
-            label7.Margin = new Padding(3, 0, 3, 10);
-            label7.Name = "label7";
-            label7.Size = new Size(49, 15);
-            label7.TabIndex = 6;
-            label7.Text = "LLLLLLL";
+            lbLname.AutoSize = true;
+            lbLname.Location = new Point(269, 79);
+            lbLname.Margin = new Padding(3, 0, 3, 10);
+            lbLname.Name = "lbLname";
+            lbLname.Size = new Size(49, 15);
+            lbLname.TabIndex = 6;
+            lbLname.Text = "LLLLLLL";
             // 
             // label9
             // 
@@ -216,15 +216,15 @@
             label11.TabIndex = 10;
             label11.Text = "Semester";
             // 
-            // label13
+            // lbCv
             // 
-            label13.AutoSize = true;
-            label13.Location = new Point(269, 154);
-            label13.Margin = new Padding(3, 0, 3, 10);
-            label13.Name = "label13";
-            label13.Size = new Size(49, 15);
-            label13.TabIndex = 12;
-            label13.Text = "VVVVVV";
+            lbCv.AutoSize = true;
+            lbCv.Location = new Point(269, 154);
+            lbCv.Margin = new Padding(3, 0, 3, 10);
+            lbCv.Name = "lbCv";
+            lbCv.Size = new Size(49, 15);
+            lbCv.TabIndex = 12;
+            lbCv.Text = "VVVVVV";
             // 
             // label12
             // 
@@ -237,35 +237,35 @@
             label12.TabIndex = 11;
             label12.Text = "Curriculum Version";
             // 
-            // label14
+            // lbProgram
             // 
-            label14.AutoSize = true;
-            label14.Location = new Point(3, 129);
-            label14.Margin = new Padding(3, 0, 3, 10);
-            label14.Name = "label14";
-            label14.Size = new Size(35, 15);
-            label14.TabIndex = 13;
-            label14.Text = "PPPP";
+            lbProgram.AutoSize = true;
+            lbProgram.Location = new Point(3, 129);
+            lbProgram.Margin = new Padding(3, 0, 3, 10);
+            lbProgram.Name = "lbProgram";
+            lbProgram.Size = new Size(35, 15);
+            lbProgram.TabIndex = 13;
+            lbProgram.Text = "PPPP";
             // 
-            // label15
+            // lbYear
             // 
-            label15.AutoSize = true;
-            label15.Location = new Point(269, 129);
-            label15.Margin = new Padding(3, 0, 3, 10);
-            label15.Name = "label15";
-            label15.Size = new Size(21, 15);
-            label15.TabIndex = 14;
-            label15.Text = "YY";
+            lbYear.AutoSize = true;
+            lbYear.Location = new Point(269, 129);
+            lbYear.Margin = new Padding(3, 0, 3, 10);
+            lbYear.Name = "lbYear";
+            lbYear.Size = new Size(21, 15);
+            lbYear.TabIndex = 14;
+            lbYear.Text = "YY";
             // 
-            // label16
+            // lbSS
             // 
-            label16.AutoSize = true;
-            label16.Location = new Point(535, 129);
-            label16.Margin = new Padding(3, 0, 3, 10);
-            label16.Name = "label16";
-            label16.Size = new Size(25, 15);
-            label16.TabIndex = 15;
-            label16.Text = "SSS";
+            lbSS.AutoSize = true;
+            lbSS.Location = new Point(535, 129);
+            lbSS.Margin = new Padding(3, 0, 3, 10);
+            lbSS.Name = "lbSS";
+            lbSS.Size = new Size(25, 15);
+            lbSS.TabIndex = 15;
+            lbSS.Text = "SSS";
             // 
             // dgvCourseGrade
             // 
@@ -329,12 +329,14 @@
             btnNext.UseVisualStyleBackColor = false;
             btnNext.Click += btnNext_Click;
             // 
-            // textBox1
+            // tbSearch
             // 
-            textBox1.Location = new Point(3, 3);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 23);
-            textBox1.TabIndex = 18;
+            tbSearch.Dock = DockStyle.Fill;
+            tbSearch.Location = new Point(3, 3);
+            tbSearch.Name = "tbSearch";
+            tbSearch.Size = new Size(260, 23);
+            tbSearch.TabIndex = 18;
+            tbSearch.Text = "Search by Student No.";
             // 
             // frmInputGrades
             // 
@@ -345,6 +347,7 @@
             Name = "frmInputGrades";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Input Grades";
+            Load += frmInputGrades_Load;
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvCourseGrade).EndInit();
@@ -354,22 +357,22 @@
         #endregion
 
         private TableLayoutPanel tableLayoutPanel1;
-        private Label label2;
+        private Label lbStudNo;
         private Label label1;
         private Label label5;
-        private Label label4;
+        private Label lbl;
         private Label label3;
-        private Label label6;
-        private Label label8;
-        private Label label7;
+        private Label lbFname;
+        private Label lbMname;
+        private Label lbLname;
         private Label label9;
         private Label label10;
         private Label label11;
         private Label label12;
-        private Label label13;
-        private Label label14;
-        private Label label15;
-        private Label label16;
+        private Label lbCv;
+        private Label lbProgram;
+        private Label lbYear;
+        private Label lbSS;
         private DataGridView dgvCourseGrade;
         private Button btnNext;
         private DataGridViewTextBoxColumn colID;
@@ -377,6 +380,6 @@
         private DataGridViewTextBoxColumn colGrade;
         private DataGridViewTextBoxColumn colGrade2;
         private DataGridViewTextBoxColumn colGrade3;
-        private TextBox textBox1;
+        private TextBox tbSearch;
     }
 }

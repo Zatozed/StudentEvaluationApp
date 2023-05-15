@@ -34,5 +34,17 @@ namespace StudentEvaluationApp.Properties {
                 this["ConString"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string currentStudentID {
+            get {
+                return ((string)(this["currentStudentID"]));
+            }
+            set {
+                this["currentStudentID"] = value;
+            }
+        }
     }
 }

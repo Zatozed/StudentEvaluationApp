@@ -40,24 +40,20 @@ namespace StudentEvaluationApp
                         cvID, programID, yearID, semID
                     );
 
-                string studID = dbh.GetStudID();
+                Properties.Settings.Default.currentStudentID = dbh.GetStudRecentID();
+
                 foreach (DataRow s in dbh.GetCourseCurricuVerIDList(cvID, programID, semID, yearID).Rows)
                 {
-                    dbh.InsertToStudentPermanentRecord(studID, s[0].ToString());
+                    dbh.InsertToStudentPermanentRecord(Properties.Settings.Default.currentStudentID, s[0].ToString());
                 }
 
-                //MessageBox.Show(dbh.GetStudID());
+                this.Hide();
 
-                //this.Hide();
-
-                //frmInputGrades frmInput = new frmInputGrades();
-                //frmInput.ShowDialog();
-                //frmInput.BringToFront();
-
+                frmInputGrades frmInput = new frmInputGrades(Properties.Settings.Default.currentStudentID);
+                frmInput.ShowDialog();
+                frmInput.BringToFront();
 
             }
-
-
 
         }
 

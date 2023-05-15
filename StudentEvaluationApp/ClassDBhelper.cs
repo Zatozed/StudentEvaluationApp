@@ -655,6 +655,40 @@ namespace StudentEvaluationApp
 
             return studID;
         }
+        public DataTable GetCourseCurricuVerIDList(string cvID, string programID, string semID, string yearID)
+        {
+            DataTable list = new DataTable();
+
+            try
+            {
+                OpenCon();
+
+                cmd = new OleDbCommand(
+                    "select ID from tblCourse_Curriculum where curricuVerID = "+ cvID
+                    + " and semID = " + semID
+                    + " and yearID = " + yearID
+                    + " and programID =" + programID
+                    , con);
+
+                dataAdapter = new OleDbDataAdapter(cmd);
+
+                dataAdapter.Fill(list);
+
+                dr.DisposeAsync();
+                dr.Close();
+                cmd.Dispose();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message.ToString());
+            }
+            finally
+            {
+                CloseCon();
+            }
+
+            return list;
+        }
         public void InsertToStudent
             (
                 string studNum, string fname, string lname, string mname,
@@ -718,7 +752,7 @@ namespace StudentEvaluationApp
                 CloseCon();
             }
         }
-        public void InsertToStudntPermanentRecord(string studID, string curricuID)
+        public void InsertToStudentPermanentRecord(string studID, string curricuID)
         {
             try
             {
@@ -728,9 +762,8 @@ namespace StudentEvaluationApp
                     (@"insert into tblStudentPermanentRecord
                     (studentID, course_curricuID)
                     values
-                    (
-                        @studID, (select ID from tblCourse_Curriculum where curricuVerID = @curricuID)
-                    )"
+                    (@studID, @curricuID)
+"
                     , con);
 
                 cmd.Parameters.AddWithValue("@studID", studID);

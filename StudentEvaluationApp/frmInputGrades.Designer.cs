@@ -44,15 +44,15 @@
             label12 = new Label();
             lbProgram = new Label();
             lbYear = new Label();
-            lbSS = new Label();
+            lbSem = new Label();
             dgvCourseGrade = new DataGridView();
+            btnNext = new Button();
+            tbSearch = new TextBox();
             colID = new DataGridViewTextBoxColumn();
             colCourse = new DataGridViewTextBoxColumn();
             colGrade = new DataGridViewTextBoxColumn();
             colGrade2 = new DataGridViewTextBoxColumn();
             colGrade3 = new DataGridViewTextBoxColumn();
-            btnNext = new Button();
-            tbSearch = new TextBox();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvCourseGrade).BeginInit();
             SuspendLayout();
@@ -79,7 +79,7 @@
             tableLayoutPanel1.Controls.Add(label12, 0, 6);
             tableLayoutPanel1.Controls.Add(lbProgram, 0, 5);
             tableLayoutPanel1.Controls.Add(lbYear, 1, 5);
-            tableLayoutPanel1.Controls.Add(lbSS, 2, 5);
+            tableLayoutPanel1.Controls.Add(lbSem, 2, 5);
             tableLayoutPanel1.Controls.Add(dgvCourseGrade, 0, 7);
             tableLayoutPanel1.Controls.Add(btnNext, 2, 8);
             tableLayoutPanel1.Controls.Add(tbSearch, 0, 0);
@@ -257,15 +257,15 @@
             lbYear.TabIndex = 14;
             lbYear.Text = "YY";
             // 
-            // lbSS
+            // lbSem
             // 
-            lbSS.AutoSize = true;
-            lbSS.Location = new Point(535, 129);
-            lbSS.Margin = new Padding(3, 0, 3, 10);
-            lbSS.Name = "lbSS";
-            lbSS.Size = new Size(25, 15);
-            lbSS.TabIndex = 15;
-            lbSS.Text = "SSS";
+            lbSem.AutoSize = true;
+            lbSem.Location = new Point(535, 129);
+            lbSem.Margin = new Padding(3, 0, 3, 10);
+            lbSem.Name = "lbSem";
+            lbSem.Size = new Size(25, 15);
+            lbSem.TabIndex = 15;
+            lbSem.Text = "SSS";
             // 
             // dgvCourseGrade
             // 
@@ -283,36 +283,6 @@
             dgvCourseGrade.RowTemplate.Height = 25;
             dgvCourseGrade.Size = new Size(794, 232);
             dgvCourseGrade.TabIndex = 16;
-            // 
-            // colID
-            // 
-            colID.HeaderText = "ID";
-            colID.Name = "colID";
-            colID.ReadOnly = true;
-            // 
-            // colCourse
-            // 
-            colCourse.HeaderText = "Course";
-            colCourse.Name = "colCourse";
-            colCourse.ReadOnly = true;
-            // 
-            // colGrade
-            // 
-            colGrade.HeaderText = "Grade/s";
-            colGrade.Name = "colGrade";
-            colGrade.ReadOnly = true;
-            // 
-            // colGrade2
-            // 
-            colGrade2.HeaderText = "";
-            colGrade2.Name = "colGrade2";
-            colGrade2.ReadOnly = true;
-            // 
-            // colGrade3
-            // 
-            colGrade3.HeaderText = "";
-            colGrade3.Name = "colGrade3";
-            colGrade3.ReadOnly = true;
             // 
             // btnNext
             // 
@@ -337,6 +307,41 @@
             tbSearch.Size = new Size(260, 23);
             tbSearch.TabIndex = 18;
             tbSearch.Text = "Search by Student No.";
+            // 
+            // colID
+            // 
+            colID.DataPropertyName = "recordID";
+            colID.HeaderText = "ID";
+            colID.Name = "colID";
+            colID.ReadOnly = true;
+            // 
+            // colCourse
+            // 
+            colCourse.DataPropertyName = "courseName";
+            colCourse.HeaderText = "Course";
+            colCourse.Name = "colCourse";
+            colCourse.ReadOnly = true;
+            // 
+            // colGrade
+            // 
+            colGrade.DataPropertyName = "grade1stTake";
+            colGrade.HeaderText = "Grade (1st Take)";
+            colGrade.Name = "colGrade";
+            colGrade.ReadOnly = true;
+            // 
+            // colGrade2
+            // 
+            colGrade2.DataPropertyName = "grade2ndTake";
+            colGrade2.HeaderText = "Grade (2nd Take)";
+            colGrade2.Name = "colGrade2";
+            colGrade2.ReadOnly = true;
+            // 
+            // colGrade3
+            // 
+            colGrade3.DataPropertyName = "grade3rdTake";
+            colGrade3.HeaderText = "Grade (3rd Take)";
+            colGrade3.Name = "colGrade3";
+            colGrade3.ReadOnly = true;
             // 
             // frmInputGrades
             // 
@@ -372,14 +377,14 @@
         private Label lbCv;
         private Label lbProgram;
         private Label lbYear;
-        private Label lbSS;
+        private Label lbSem;
         private DataGridView dgvCourseGrade;
         private Button btnNext;
+        private TextBox tbSearch;
         private DataGridViewTextBoxColumn colID;
         private DataGridViewTextBoxColumn colCourse;
         private DataGridViewTextBoxColumn colGrade;
         private DataGridViewTextBoxColumn colGrade2;
         private DataGridViewTextBoxColumn colGrade3;
-        private TextBox tbSearch;
     }
 }

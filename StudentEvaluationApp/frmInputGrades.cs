@@ -27,6 +27,8 @@ namespace StudentEvaluationApp
             InitializeComponent();
 
             studCurrent = dbh.GetStudInfo(studId);
+
+            dgvCourseGrade.DataSource = dbh.ShowCourseAndGrade(studId);
         }
 
         private void btnNext_Click(object sender, EventArgs e)
@@ -40,23 +42,23 @@ namespace StudentEvaluationApp
 
         private void frmInputGrades_Load(object sender, EventArgs e)
         {
-            //foreach (DataRow r in studCurrent.Rows) 
-            //{
-            //    lbStudNo.Text = r[0].ToString();
-            //    lbFname.Text = r[1].ToString();
-            //    lbLname.Text = r[2].ToString();
-            //    lbMname.Text = r[3].ToString();
+            foreach (DataRow r in studCurrent.Rows)
+            {
+                lbStudNo.Text = r[0].ToString();
+                lbFname.Text = r[1].ToString();
+                lbLname.Text = r[2].ToString();
+                lbMname.Text = r[3].ToString();
 
-            //    cvID = r[4].ToString();
-            //    programID = r[5].ToString();
-            //    yearID = r[6].ToString();
-            //    semID = r[7].ToString();
-            //}
+                cvID = r[4].ToString();
+                programID = r[5].ToString();
+                yearID = r[6].ToString();
+                semID = r[7].ToString();
+            }
 
-            //MessageBox.Show(dbh.GetCurriculumVersionByID("16"));
-            //MessageBox.Show(dbh.GetProgramDesByID("1"));
-            //MessageBox.Show(dbh.GetYearDesByID("1"));
-            //MessageBox.Show(dbh.GetYearDesByID("1"));
+            lbCv.Text = dbh.GetCurriculumVersionByID(cvID);
+            lbProgram.Text = dbh.GetProgramDesByID(programID);
+            lbYear.Text = dbh.GetYearDesByID(yearID);
+            lbSem.Text = dbh.GetSemDesByID(semID);
         }
     }
 }

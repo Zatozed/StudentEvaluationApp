@@ -965,20 +965,18 @@ namespace StudentEvaluationApp
                 cmd = new OleDbCommand(
                     @"SELECT 
                     tblStudentPermanentRecord.recordID, 
-                    tblStudentPermanentRecord.studentID, 
+                    tblStudentPermanentRecord.studentID,
                     tblCourse.courseName, 
-                    tblStudentPermanentRecord.grade1stTake,
+                    tblStudentPermanentRecord.grade1stTake, 
                     tblStudentPermanentRecord.grade2ndTake, 
                     tblStudentPermanentRecord.grade3rdTake
-                    FROM
+                    FROM 
                     (tblCourse 
                     INNER JOIN tblCourse_Curriculum 
                     ON tblCourse.[courseID] = tblCourse_Curriculum.[courseID]) 
                     INNER JOIN tblStudentPermanentRecord 
-                    ON tblCourse_Curriculum.[ID] = tblStudentPermanentRecord.[course_curricuID]
-                    where
-                    tblStudentPermanentRecord.studentID = " + studID
-                    + " and tblStudentPermanentRecord.grade1stTake = 0"
+                    ON tblCourse_Curriculum.[ID] = tblStudentPermanentRecord.[course_curricuID] where studentID = "
+                    + studID
                     , con);
 
                 dataAdapter = new OleDbDataAdapter(cmd);

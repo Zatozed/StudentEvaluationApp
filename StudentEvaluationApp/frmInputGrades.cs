@@ -53,6 +53,7 @@ namespace StudentEvaluationApp
                 programID = r[5].ToString();
                 yearID = r[6].ToString();
                 semID = r[7].ToString();
+
             }
 
             lbCv.Text = dbh.GetCurriculumVersionByID(cvID);

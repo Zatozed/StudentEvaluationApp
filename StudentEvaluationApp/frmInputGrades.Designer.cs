@@ -46,13 +46,13 @@
             lbYear = new Label();
             lbSem = new Label();
             dgvCourseGrade = new DataGridView();
-            btnNext = new Button();
-            tbSearch = new TextBox();
             colID = new DataGridViewTextBoxColumn();
             colCourse = new DataGridViewTextBoxColumn();
             colGrade = new DataGridViewTextBoxColumn();
             colGrade2 = new DataGridViewTextBoxColumn();
             colGrade3 = new DataGridViewTextBoxColumn();
+            btnNext = new Button();
+            tbSearch = new TextBox();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvCourseGrade).BeginInit();
             SuspendLayout();
@@ -284,30 +284,6 @@
             dgvCourseGrade.Size = new Size(794, 232);
             dgvCourseGrade.TabIndex = 16;
             // 
-            // btnNext
-            // 
-            btnNext.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnNext.AutoSize = true;
-            btnNext.BackColor = Color.ForestGreen;
-            btnNext.FlatStyle = FlatStyle.Flat;
-            btnNext.ForeColor = Color.White;
-            btnNext.Location = new Point(722, 420);
-            btnNext.Name = "btnNext";
-            btnNext.Size = new Size(75, 27);
-            btnNext.TabIndex = 17;
-            btnNext.Text = "Next";
-            btnNext.UseVisualStyleBackColor = false;
-            btnNext.Click += btnNext_Click;
-            // 
-            // tbSearch
-            // 
-            tbSearch.Dock = DockStyle.Fill;
-            tbSearch.Location = new Point(3, 3);
-            tbSearch.Name = "tbSearch";
-            tbSearch.Size = new Size(260, 23);
-            tbSearch.TabIndex = 18;
-            tbSearch.Text = "Search by Student No.";
-            // 
             // colID
             // 
             colID.DataPropertyName = "recordID";
@@ -343,6 +319,30 @@
             colGrade3.Name = "colGrade3";
             colGrade3.ReadOnly = true;
             // 
+            // btnNext
+            // 
+            btnNext.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnNext.AutoSize = true;
+            btnNext.BackColor = Color.ForestGreen;
+            btnNext.FlatStyle = FlatStyle.Flat;
+            btnNext.ForeColor = Color.White;
+            btnNext.Location = new Point(722, 420);
+            btnNext.Name = "btnNext";
+            btnNext.Size = new Size(75, 27);
+            btnNext.TabIndex = 17;
+            btnNext.Text = "Next";
+            btnNext.UseVisualStyleBackColor = false;
+            btnNext.Click += btnNext_Click;
+            // 
+            // tbSearch
+            // 
+            tbSearch.Dock = DockStyle.Fill;
+            tbSearch.Location = new Point(3, 3);
+            tbSearch.Name = "tbSearch";
+            tbSearch.Size = new Size(260, 23);
+            tbSearch.TabIndex = 18;
+            tbSearch.Text = "Search by Student No.";
+            // 
             // frmInputGrades
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -351,7 +351,7 @@
             Controls.Add(tableLayoutPanel1);
             Name = "frmInputGrades";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Input Grades";
+            Text = "p-";
             Load += frmInputGrades_Load;
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();

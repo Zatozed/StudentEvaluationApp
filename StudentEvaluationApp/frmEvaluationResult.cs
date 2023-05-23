@@ -16,5 +16,10 @@ namespace StudentEvaluationApp
         {
             InitializeComponent();
         }
+
+        private void frmEvaluationResult_Load(object sender, EventArgs e)
+        {
+            //if sem = sem1 do sem 2
+        }
     }
 }

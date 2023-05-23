@@ -33,6 +33,17 @@ namespace StudentEvaluationApp
 
         private void btnNext_Click(object sender, EventArgs e)
         {
+            dbh.bagsakGradeCourseList.Clear();
+
+            foreach (DataGridViewRow r in dgvCourseGrade.Rows)
+            {
+                if (Convert.ToDouble(r.Cells["colGrade"].Value) == 5)
+                {
+                    dbh.bagsakGradeCourseList.Add(r.Cells["colPrereqOf"].Value.ToString());
+                }
+
+            }
+
             this.Hide();
 
             frmEvaluationResult frmEvaluationRes = new frmEvaluationResult();

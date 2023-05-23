@@ -18,6 +18,8 @@ namespace StudentEvaluationApp
         private OleDbDataReader dr;
         private OleDbDataAdapter dataAdapter;
 
+        public ArrayList bagsakGradeCourseList = new ArrayList();
+
         public ClassDBhelper()
         {
             connectionStringBuilder = new OleDbConnectionStringBuilder(Properties.Settings.Default.ConString);
@@ -386,8 +388,38 @@ namespace StudentEvaluationApp
             }
         }
         //---------------------------------------------------------------- Curriculum form
+        //---------------------------------------------------------------- Manage Curriculum form
+        public DataTable ShowCourseListNoDes()
+        {
+            DataTable dt = new DataTable();
+
+            try
+            {
+                OpenCon();
+
+                cmd = new OleDbCommand
+                    (@"select courseID, courseCode, courseName, unit
+                    from tblCourse where isDel = false", con);
+                dataAdapter = new OleDbDataAdapter(cmd);
+                dataAdapter.Fill(dt);
+
+                dataAdapter.Dispose();
+                cmd.Dispose();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("show course list " + e.Message.ToString());
+            }
+            finally
+            {
+                CloseCon();
+            }
+
+            return dt;
+        }
+        //---------------------------------------------------------------- Manage Curriculum form
         //---------------------------------------------------------------- Course form
-        
+
         public DataTable ShowCourseList()
         {
             DataTable dt = new DataTable();
@@ -957,7 +989,6 @@ namespace StudentEvaluationApp
         public DataTable ShowCourseAndGrade(string studID) 
         {
             DataTable dt = new DataTable();
-
             try
             {
                 OpenCon();
@@ -965,17 +996,20 @@ namespace StudentEvaluationApp
                 cmd = new OleDbCommand(
                     @"SELECT 
                     tblStudentPermanentRecord.recordID, 
-                    tblStudentPermanentRecord.studentID,
+                    tblStudentPermanentRecord.studentID, 
+                    tblCourse.courseCode,
                     tblCourse.courseName, 
                     tblStudentPermanentRecord.grade1stTake, 
                     tblStudentPermanentRecord.grade2ndTake, 
-                    tblStudentPermanentRecord.grade3rdTake
+                    tblStudentPermanentRecord.grade3rdTake, 
+                    tblCourse_Curriculum.prereqID
                     FROM 
                     (tblCourse 
                     INNER JOIN tblCourse_Curriculum 
                     ON tblCourse.[courseID] = tblCourse_Curriculum.[courseID]) 
                     INNER JOIN tblStudentPermanentRecord 
-                    ON tblCourse_Curriculum.[ID] = tblStudentPermanentRecord.[course_curricuID] where studentID = "
+                    ON tblCourse_Curriculum.[ID] = tblStudentPermanentRecord.[course_curricuID]
+                    where studentID ="
                     + studID
                     , con);
 

@@ -46,13 +46,16 @@
             lbYear = new Label();
             lbSem = new Label();
             dgvCourseGrade = new DataGridView();
+            btnNext = new Button();
+            tbSearch = new TextBox();
             colID = new DataGridViewTextBoxColumn();
+            colCourseCode = new DataGridViewTextBoxColumn();
             colCourse = new DataGridViewTextBoxColumn();
             colGrade = new DataGridViewTextBoxColumn();
             colGrade2 = new DataGridViewTextBoxColumn();
             colGrade3 = new DataGridViewTextBoxColumn();
-            btnNext = new Button();
-            tbSearch = new TextBox();
+            colPrereqOf = new DataGridViewTextBoxColumn();
+            colStudentID = new DataGridViewTextBoxColumn();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvCourseGrade).BeginInit();
             SuspendLayout();
@@ -274,7 +277,7 @@
             dgvCourseGrade.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvCourseGrade.BackgroundColor = Color.White;
             dgvCourseGrade.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvCourseGrade.Columns.AddRange(new DataGridViewColumn[] { colID, colCourse, colGrade, colGrade2, colGrade3 });
+            dgvCourseGrade.Columns.AddRange(new DataGridViewColumn[] { colID, colCourseCode, colCourse, colGrade, colGrade2, colGrade3, colPrereqOf, colStudentID });
             tableLayoutPanel1.SetColumnSpan(dgvCourseGrade, 3);
             dgvCourseGrade.Dock = DockStyle.Fill;
             dgvCourseGrade.Location = new Point(3, 182);
@@ -284,12 +287,43 @@
             dgvCourseGrade.Size = new Size(794, 232);
             dgvCourseGrade.TabIndex = 16;
             // 
+            // btnNext
+            // 
+            btnNext.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnNext.AutoSize = true;
+            btnNext.BackColor = Color.ForestGreen;
+            btnNext.FlatStyle = FlatStyle.Flat;
+            btnNext.ForeColor = Color.White;
+            btnNext.Location = new Point(722, 420);
+            btnNext.Name = "btnNext";
+            btnNext.Size = new Size(75, 27);
+            btnNext.TabIndex = 17;
+            btnNext.Text = "Next";
+            btnNext.UseVisualStyleBackColor = false;
+            btnNext.Click += btnNext_Click;
+            // 
+            // tbSearch
+            // 
+            tbSearch.Dock = DockStyle.Fill;
+            tbSearch.Location = new Point(3, 3);
+            tbSearch.Name = "tbSearch";
+            tbSearch.Size = new Size(260, 23);
+            tbSearch.TabIndex = 18;
+            tbSearch.Text = "Search by Student No.";
+            // 
             // colID
             // 
             colID.DataPropertyName = "recordID";
             colID.HeaderText = "ID";
             colID.Name = "colID";
             colID.ReadOnly = true;
+            // 
+            // colCourseCode
+            // 
+            colCourseCode.DataPropertyName = "courseCode";
+            colCourseCode.HeaderText = "Course Code";
+            colCourseCode.Name = "colCourseCode";
+            colCourseCode.ReadOnly = true;
             // 
             // colCourse
             // 
@@ -319,29 +353,18 @@
             colGrade3.Name = "colGrade3";
             colGrade3.ReadOnly = true;
             // 
-            // btnNext
+            // colPrereqOf
             // 
-            btnNext.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnNext.AutoSize = true;
-            btnNext.BackColor = Color.ForestGreen;
-            btnNext.FlatStyle = FlatStyle.Flat;
-            btnNext.ForeColor = Color.White;
-            btnNext.Location = new Point(722, 420);
-            btnNext.Name = "btnNext";
-            btnNext.Size = new Size(75, 27);
-            btnNext.TabIndex = 17;
-            btnNext.Text = "Next";
-            btnNext.UseVisualStyleBackColor = false;
-            btnNext.Click += btnNext_Click;
+            colPrereqOf.DataPropertyName = "prereqID";
+            colPrereqOf.HeaderText = "PrereqOf";
+            colPrereqOf.Name = "colPrereqOf";
+            colPrereqOf.ReadOnly = true;
             // 
-            // tbSearch
+            // colStudentID
             // 
-            tbSearch.Dock = DockStyle.Fill;
-            tbSearch.Location = new Point(3, 3);
-            tbSearch.Name = "tbSearch";
-            tbSearch.Size = new Size(260, 23);
-            tbSearch.TabIndex = 18;
-            tbSearch.Text = "Search by Student No.";
+            colStudentID.HeaderText = "StudentID";
+            colStudentID.Name = "colStudentID";
+            colStudentID.ReadOnly = true;
             // 
             // frmInputGrades
             // 
@@ -382,9 +405,12 @@
         private Button btnNext;
         private TextBox tbSearch;
         private DataGridViewTextBoxColumn colID;
+        private DataGridViewTextBoxColumn colCourseCode;
         private DataGridViewTextBoxColumn colCourse;
         private DataGridViewTextBoxColumn colGrade;
         private DataGridViewTextBoxColumn colGrade2;
         private DataGridViewTextBoxColumn colGrade3;
+        private DataGridViewTextBoxColumn colPrereqOf;
+        private DataGridViewTextBoxColumn colStudentID;
     }
 }

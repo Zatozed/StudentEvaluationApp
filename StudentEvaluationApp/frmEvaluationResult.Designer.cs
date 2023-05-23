@@ -282,6 +282,7 @@
             Name = "frmEvaluationResult";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "frmEvaluationResult";
+            Load += frmEvaluationResult_Load;
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             ResumeLayout(false);

@@ -31,11 +31,12 @@
             tableLayoutPanel1 = new TableLayoutPanel();
             label1 = new Label();
             label3 = new Label();
-            dataGridView1 = new DataGridView();
+            dgvCourses = new DataGridView();
             colCourseID = new DataGridViewTextBoxColumn();
-            colCourseName = new DataGridViewTextBoxColumn();
-            colCourseDes = new DataGridViewTextBoxColumn();
+            colCourseCode = new DataGridViewTextBoxColumn();
+            colCourse = new DataGridViewTextBoxColumn();
             colUnits = new DataGridViewTextBoxColumn();
+            colToRight = new DataGridViewImageColumn();
             dataGridView2 = new DataGridView();
             colIDToCv = new DataGridViewTextBoxColumn();
             colCourseToCv = new DataGridViewTextBoxColumn();
@@ -45,34 +46,30 @@
             label5 = new Label();
             label4 = new Label();
             button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
             btnSearch = new Button();
             tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvCourses).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
-            tableLayoutPanel1.ColumnCount = 7;
+            tableLayoutPanel1.ColumnCount = 6;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.6666622F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.666666F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.666666F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle());
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.6666679F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.6666679F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.6666718F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.666666F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.666666F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.6666679F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.6666679F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
             tableLayoutPanel1.Controls.Add(label1, 0, 0);
             tableLayoutPanel1.Controls.Add(label3, 2, 1);
-            tableLayoutPanel1.Controls.Add(dataGridView1, 0, 2);
-            tableLayoutPanel1.Controls.Add(dataGridView2, 4, 2);
+            tableLayoutPanel1.Controls.Add(dgvCourses, 0, 2);
+            tableLayoutPanel1.Controls.Add(dataGridView2, 3, 2);
             tableLayoutPanel1.Controls.Add(textBox1, 0, 1);
-            tableLayoutPanel1.Controls.Add(label5, 5, 1);
-            tableLayoutPanel1.Controls.Add(label4, 4, 1);
-            tableLayoutPanel1.Controls.Add(button1, 6, 6);
-            tableLayoutPanel1.Controls.Add(button2, 3, 3);
-            tableLayoutPanel1.Controls.Add(button3, 3, 4);
+            tableLayoutPanel1.Controls.Add(label5, 4, 1);
+            tableLayoutPanel1.Controls.Add(label4, 3, 1);
+            tableLayoutPanel1.Controls.Add(button1, 5, 6);
             tableLayoutPanel1.Controls.Add(btnSearch, 1, 1);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
@@ -92,7 +89,7 @@
             // 
             label1.AutoSize = true;
             label1.BackColor = Color.SteelBlue;
-            tableLayoutPanel1.SetColumnSpan(label1, 7);
+            tableLayoutPanel1.SetColumnSpan(label1, 6);
             label1.Dock = DockStyle.Fill;
             label1.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = Color.White;
@@ -106,53 +103,78 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(259, 15);
+            label3.Location = new Point(269, 15);
             label3.Name = "label3";
             label3.Size = new Size(34, 15);
             label3.TabIndex = 2;
             label3.Text = "Filter";
             // 
-            // dataGridView1
+            // dgvCourses
             // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.AllowUserToOrderColumns = true;
-            dataGridView1.BackgroundColor = Color.White;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { colCourseID, colCourseName, colCourseDes, colUnits });
-            tableLayoutPanel1.SetColumnSpan(dataGridView1, 3);
-            dataGridView1.Dock = DockStyle.Fill;
-            dataGridView1.Location = new Point(3, 47);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            tableLayoutPanel1.SetRowSpan(dataGridView1, 4);
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(378, 366);
-            dataGridView1.TabIndex = 6;
+            dgvCourses.AllowUserToAddRows = false;
+            dgvCourses.AllowUserToDeleteRows = false;
+            dgvCourses.AllowUserToOrderColumns = true;
+            dgvCourses.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvCourses.BackgroundColor = Color.White;
+            dgvCourses.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvCourses.Columns.AddRange(new DataGridViewColumn[] { colCourseID, colCourseCode, colCourse, colUnits, colToRight });
+            tableLayoutPanel1.SetColumnSpan(dgvCourses, 3);
+            dgvCourses.Dock = DockStyle.Fill;
+            dgvCourses.Location = new Point(3, 47);
+            dgvCourses.Name = "dgvCourses";
+            dgvCourses.ReadOnly = true;
+            tableLayoutPanel1.SetRowSpan(dgvCourses, 4);
+            dgvCourses.RowTemplate.Height = 25;
+            dgvCourses.Size = new Size(393, 366);
+            dgvCourses.TabIndex = 6;
+            dgvCourses.CellContentClick += dgvCourses_CellContentClick;
             // 
             // colCourseID
             // 
+            colCourseID.DataPropertyName = "courseID";
             colCourseID.HeaderText = "ID";
             colCourseID.Name = "colCourseID";
             colCourseID.ReadOnly = true;
+            colCourseID.Visible = false;
             // 
-            // colCourseName
+            // colCourseCode
             // 
-            colCourseName.HeaderText = "Course";
-            colCourseName.Name = "colCourseName";
-            colCourseName.ReadOnly = true;
+            colCourseCode.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            colCourseCode.DataPropertyName = "courseCode";
+            colCourseCode.HeaderText = "Course Code";
+            colCourseCode.Name = "colCourseCode";
+            colCourseCode.ReadOnly = true;
+            colCourseCode.Width = 103;
             // 
-            // colCourseDes
+            // colCourse
             // 
-            colCourseDes.HeaderText = "Description";
-            colCourseDes.Name = "colCourseDes";
-            colCourseDes.ReadOnly = true;
+            colCourse.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            colCourse.DataPropertyName = "courseName";
+            colCourse.HeaderText = "Course";
+            colCourse.Name = "colCourse";
+            colCourse.ReadOnly = true;
+            colCourse.Width = 71;
             // 
             // colUnits
             // 
+            colUnits.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            colUnits.DataPropertyName = "unit";
             colUnits.HeaderText = "Units";
             colUnits.Name = "colUnits";
             colUnits.ReadOnly = true;
+            colUnits.Width = 60;
+            // 
+            // colToRight
+            // 
+            colToRight.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            colToRight.HeaderText = "";
+            colToRight.Image = R_icons1.icons8_arrow_right_24;
+            colToRight.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            colToRight.Name = "colToRight";
+            colToRight.ReadOnly = true;
+            colToRight.Resizable = DataGridViewTriState.True;
+            colToRight.SortMode = DataGridViewColumnSortMode.Automatic;
+            colToRight.Width = 19;
             // 
             // dataGridView2
             // 
@@ -164,12 +186,12 @@
             dataGridView2.Columns.AddRange(new DataGridViewColumn[] { colIDToCv, colCourseToCv, colDesToCv, colUnitsToCv });
             tableLayoutPanel1.SetColumnSpan(dataGridView2, 3);
             dataGridView2.Dock = DockStyle.Fill;
-            dataGridView2.Location = new Point(416, 47);
+            dataGridView2.Location = new Point(402, 47);
             dataGridView2.Name = "dataGridView2";
             dataGridView2.ReadOnly = true;
             tableLayoutPanel1.SetRowSpan(dataGridView2, 4);
             dataGridView2.RowTemplate.Height = 25;
-            dataGridView2.Size = new Size(381, 366);
+            dataGridView2.Size = new Size(395, 366);
             dataGridView2.TabIndex = 7;
             // 
             // colIDToCv
@@ -201,13 +223,13 @@
             textBox1.Dock = DockStyle.Fill;
             textBox1.Location = new Point(3, 18);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(122, 21);
+            textBox1.Size = new Size(127, 21);
             textBox1.TabIndex = 5;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(544, 15);
+            label5.Location = new Point(535, 15);
             label5.Name = "label5";
             label5.Size = new Size(25, 15);
             label5.TabIndex = 4;
@@ -216,7 +238,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(416, 15);
+            label4.Location = new Point(402, 15);
             label4.Name = "label4";
             label4.Size = new Size(114, 15);
             label4.TabIndex = 3;
@@ -236,32 +258,6 @@
             button1.Text = "Next";
             button1.UseVisualStyleBackColor = false;
             // 
-            // button2
-            // 
-            button2.AutoSize = true;
-            button2.BackgroundImage = R_icons1.icons8_arrow_right_24;
-            button2.BackgroundImageLayout = ImageLayout.Zoom;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.ForeColor = Color.White;
-            button2.Location = new Point(387, 202);
-            button2.Name = "button2";
-            button2.Size = new Size(23, 25);
-            button2.TabIndex = 9;
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            button3.AutoSize = true;
-            button3.BackgroundImage = R_icons1.icons8_arrow_left_24;
-            button3.BackgroundImageLayout = ImageLayout.Zoom;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.ForeColor = Color.White;
-            button3.Location = new Point(387, 233);
-            button3.Name = "button3";
-            button3.Size = new Size(23, 25);
-            button3.TabIndex = 10;
-            button3.UseVisualStyleBackColor = true;
-            // 
             // btnSearch
             // 
             btnSearch.AutoSize = true;
@@ -270,7 +266,7 @@
             btnSearch.BackgroundImageLayout = ImageLayout.Zoom;
             btnSearch.FlatStyle = FlatStyle.Flat;
             btnSearch.ForeColor = Color.White;
-            btnSearch.Location = new Point(131, 18);
+            btnSearch.Location = new Point(136, 18);
             btnSearch.Name = "btnSearch";
             btnSearch.Size = new Size(37, 23);
             btnSearch.TabIndex = 11;
@@ -286,9 +282,10 @@
             Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             Name = "frmManageCurriculum";
             StartPosition = FormStartPosition.CenterScreen;
+            Load += frmManageCurriculum_Load;
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvCourses).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             ResumeLayout(false);
         }
@@ -301,19 +298,18 @@
         private Label label5;
         private Label label3;
         private TextBox textBox1;
-        private DataGridView dataGridView1;
+        private DataGridView dgvCourses;
         private DataGridView dataGridView2;
         private Button button1;
-        private Button button2;
-        private Button button3;
         private Button btnSearch;
-        private DataGridViewTextBoxColumn colCourseID;
-        private DataGridViewTextBoxColumn colCourseName;
-        private DataGridViewTextBoxColumn colCourseDes;
-        private DataGridViewTextBoxColumn colUnits;
         private DataGridViewTextBoxColumn colIDToCv;
         private DataGridViewTextBoxColumn colCourseToCv;
         private DataGridViewTextBoxColumn colDesToCv;
         private DataGridViewTextBoxColumn colUnitsToCv;
+        private DataGridViewTextBoxColumn colCourseID;
+        private DataGridViewTextBoxColumn colCourseCode;
+        private DataGridViewTextBoxColumn colCourse;
+        private DataGridViewTextBoxColumn colUnits;
+        private DataGridViewImageColumn colToRight;
     }
 }

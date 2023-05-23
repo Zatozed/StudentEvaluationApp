@@ -25,13 +25,24 @@ namespace StudentEvaluationApp
         private void frmManageCurriculum_Load(object sender, EventArgs e)
         {
 
+
         }
 
         private void dgvCourses_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dgvCourses.Columns[e.ColumnIndex].Name.Equals("colToRight"))
             {
-                MessageBox.Show("mange");
+                if (dgvToCurriculum.Rows.Count == 0) 
+                {
+                    dgvToCurriculum.Rows.Add(
+                        dgvCourses.Rows[e.RowIndex].Cells["colCourseID"].Value,
+                        dgvCourses.Rows[e.RowIndex].Cells["colCourseCode"].Value,
+                        dgvCourses.Rows[e.RowIndex].Cells["colCourse"].Value,
+                        dgvCourses.Rows[e.RowIndex].Cells["colUnits"].Value
+                    );
+                }
+
+                
             }
         }
     }

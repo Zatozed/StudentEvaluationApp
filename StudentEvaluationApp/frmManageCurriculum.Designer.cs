@@ -37,7 +37,7 @@
             colCourse = new DataGridViewTextBoxColumn();
             colUnits = new DataGridViewTextBoxColumn();
             colToRight = new DataGridViewImageColumn();
-            dataGridView2 = new DataGridView();
+            dgvToCurriculum = new DataGridView();
             colIDToCv = new DataGridViewTextBoxColumn();
             colCourseToCv = new DataGridViewTextBoxColumn();
             colDesToCv = new DataGridViewTextBoxColumn();
@@ -49,7 +49,7 @@
             btnSearch = new Button();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvCourses).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvToCurriculum).BeginInit();
             SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -65,7 +65,7 @@
             tableLayoutPanel1.Controls.Add(label1, 0, 0);
             tableLayoutPanel1.Controls.Add(label3, 2, 1);
             tableLayoutPanel1.Controls.Add(dgvCourses, 0, 2);
-            tableLayoutPanel1.Controls.Add(dataGridView2, 3, 2);
+            tableLayoutPanel1.Controls.Add(dgvToCurriculum, 3, 2);
             tableLayoutPanel1.Controls.Add(textBox1, 0, 1);
             tableLayoutPanel1.Controls.Add(label5, 4, 1);
             tableLayoutPanel1.Controls.Add(label4, 3, 1);
@@ -176,23 +176,23 @@
             colToRight.SortMode = DataGridViewColumnSortMode.Automatic;
             colToRight.Width = 19;
             // 
-            // dataGridView2
+            // dgvToCurriculum
             // 
-            dataGridView2.AllowUserToAddRows = false;
-            dataGridView2.AllowUserToDeleteRows = false;
-            dataGridView2.AllowUserToOrderColumns = true;
-            dataGridView2.BackgroundColor = Color.White;
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Columns.AddRange(new DataGridViewColumn[] { colIDToCv, colCourseToCv, colDesToCv, colUnitsToCv });
-            tableLayoutPanel1.SetColumnSpan(dataGridView2, 3);
-            dataGridView2.Dock = DockStyle.Fill;
-            dataGridView2.Location = new Point(402, 47);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.ReadOnly = true;
-            tableLayoutPanel1.SetRowSpan(dataGridView2, 4);
-            dataGridView2.RowTemplate.Height = 25;
-            dataGridView2.Size = new Size(395, 366);
-            dataGridView2.TabIndex = 7;
+            dgvToCurriculum.AllowUserToAddRows = false;
+            dgvToCurriculum.AllowUserToDeleteRows = false;
+            dgvToCurriculum.AllowUserToOrderColumns = true;
+            dgvToCurriculum.BackgroundColor = Color.White;
+            dgvToCurriculum.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvToCurriculum.Columns.AddRange(new DataGridViewColumn[] { colIDToCv, colCourseToCv, colDesToCv, colUnitsToCv });
+            tableLayoutPanel1.SetColumnSpan(dgvToCurriculum, 3);
+            dgvToCurriculum.Dock = DockStyle.Fill;
+            dgvToCurriculum.Location = new Point(402, 47);
+            dgvToCurriculum.Name = "dgvToCurriculum";
+            dgvToCurriculum.ReadOnly = true;
+            tableLayoutPanel1.SetRowSpan(dgvToCurriculum, 4);
+            dgvToCurriculum.RowTemplate.Height = 25;
+            dgvToCurriculum.Size = new Size(395, 366);
+            dgvToCurriculum.TabIndex = 7;
             // 
             // colIDToCv
             // 
@@ -286,7 +286,7 @@
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvCourses).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvToCurriculum).EndInit();
             ResumeLayout(false);
         }
 
@@ -299,7 +299,7 @@
         private Label label3;
         private TextBox textBox1;
         private DataGridView dgvCourses;
-        private DataGridView dataGridView2;
+        private DataGridView dgvToCurriculum;
         private Button button1;
         private Button btnSearch;
         private DataGridViewTextBoxColumn colIDToCv;

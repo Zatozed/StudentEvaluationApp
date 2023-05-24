@@ -30,6 +30,11 @@
         {
             tableLayoutPanel1 = new TableLayoutPanel();
             label1 = new Label();
+            textBox1 = new TextBox();
+            label5 = new Label();
+            label4 = new Label();
+            btnSearch = new Button();
+            btnNext = new Button();
             dgvCourses = new DataGridView();
             colCourseID = new DataGridViewTextBoxColumn();
             colCourseCode = new DataGridViewTextBoxColumn();
@@ -42,13 +47,14 @@
             colCourseToCv = new DataGridViewTextBoxColumn();
             colUnitsToCv = new DataGridViewTextBoxColumn();
             colPrereq = new DataGridViewComboBoxColumn();
-            colCash = new DataGridViewComboBoxColumn();
-            colLowMonthly = new DataGridViewComboBoxColumn();
-            textBox1 = new TextBox();
-            label5 = new Label();
-            label4 = new Label();
-            btnSearch = new Button();
-            button1 = new Button();
+            colCash = new DataGridViewTextBoxColumn();
+            colLowMonthly = new DataGridViewTextBoxColumn();
+            label2 = new Label();
+            label3 = new Label();
+            label6 = new Label();
+            comboBox1 = new ComboBox();
+            comboBox2 = new ComboBox();
+            comboBox3 = new ComboBox();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvCourses).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvToCurriculum).BeginInit();
@@ -68,9 +74,15 @@
             tableLayoutPanel1.Controls.Add(label5, 4, 1);
             tableLayoutPanel1.Controls.Add(label4, 3, 1);
             tableLayoutPanel1.Controls.Add(btnSearch, 1, 1);
-            tableLayoutPanel1.Controls.Add(button1, 5, 8);
+            tableLayoutPanel1.Controls.Add(btnNext, 5, 8);
             tableLayoutPanel1.Controls.Add(dgvCourses, 0, 3);
             tableLayoutPanel1.Controls.Add(dgvToCurriculum, 0, 6);
+            tableLayoutPanel1.Controls.Add(label2, 0, 2);
+            tableLayoutPanel1.Controls.Add(label3, 2, 2);
+            tableLayoutPanel1.Controls.Add(label6, 4, 2);
+            tableLayoutPanel1.Controls.Add(comboBox1, 1, 2);
+            tableLayoutPanel1.Controls.Add(comboBox2, 3, 2);
+            tableLayoutPanel1.Controls.Add(comboBox3, 5, 2);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -102,6 +114,60 @@
             label1.Text = "Courses";
             label1.TextAlign = ContentAlignment.MiddleLeft;
             // 
+            // textBox1
+            // 
+            textBox1.Dock = DockStyle.Fill;
+            textBox1.Location = new Point(3, 18);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(127, 21);
+            textBox1.TabIndex = 5;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(535, 15);
+            label5.Name = "label5";
+            label5.Size = new Size(25, 15);
+            label5.TabIndex = 4;
+            label5.Text = "C V";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(402, 15);
+            label4.Name = "label4";
+            label4.Size = new Size(114, 15);
+            label4.TabIndex = 3;
+            label4.Text = "Curriculum Version:";
+            // 
+            // btnSearch
+            // 
+            btnSearch.AutoSize = true;
+            btnSearch.BackColor = Color.White;
+            btnSearch.BackgroundImage = R_icons1.icons8_search_50;
+            btnSearch.BackgroundImageLayout = ImageLayout.Zoom;
+            btnSearch.FlatStyle = FlatStyle.Flat;
+            btnSearch.ForeColor = Color.White;
+            btnSearch.Location = new Point(136, 18);
+            btnSearch.Name = "btnSearch";
+            btnSearch.Size = new Size(37, 14);
+            btnSearch.TabIndex = 11;
+            btnSearch.UseVisualStyleBackColor = false;
+            // 
+            // btnNext
+            // 
+            btnNext.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnNext.AutoSize = true;
+            btnNext.BackColor = Color.ForestGreen;
+            btnNext.FlatStyle = FlatStyle.Flat;
+            btnNext.ForeColor = Color.White;
+            btnNext.Location = new Point(722, 420);
+            btnNext.Name = "btnNext";
+            btnNext.Size = new Size(75, 27);
+            btnNext.TabIndex = 8;
+            btnNext.Text = "Next";
+            btnNext.UseVisualStyleBackColor = false;
+            // 
             // dgvCourses
             // 
             dgvCourses.AllowUserToAddRows = false;
@@ -112,11 +178,12 @@
             dgvCourses.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvCourses.Columns.AddRange(new DataGridViewColumn[] { colCourseID, colCourseCode, colCourse, colUnits, colToRight });
             tableLayoutPanel1.SetColumnSpan(dgvCourses, 6);
+            dgvCourses.Dock = DockStyle.Fill;
             dgvCourses.Location = new Point(3, 65);
             dgvCourses.Name = "dgvCourses";
             dgvCourses.ReadOnly = true;
             dgvCourses.RowTemplate.Height = 25;
-            dgvCourses.Size = new Size(794, 138);
+            dgvCourses.Size = new Size(794, 151);
             dgvCourses.TabIndex = 6;
             dgvCourses.CellContentClick += dgvCourses_CellContentClick;
             // 
@@ -130,21 +197,19 @@
             // 
             // colCourseCode
             // 
-            colCourseCode.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            colCourseCode.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             colCourseCode.DataPropertyName = "courseCode";
             colCourseCode.HeaderText = "Course Code";
             colCourseCode.Name = "colCourseCode";
             colCourseCode.ReadOnly = true;
-            colCourseCode.Width = 103;
             // 
             // colCourse
             // 
-            colCourse.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            colCourse.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             colCourse.DataPropertyName = "courseName";
             colCourse.HeaderText = "Course";
             colCourse.Name = "colCourse";
             colCourse.ReadOnly = true;
-            colCourse.Width = 71;
             // 
             // colUnits
             // 
@@ -193,9 +258,11 @@
             // 
             // colCourseCodeToCv
             // 
+            colCourseCodeToCv.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             colCourseCodeToCv.HeaderText = "Course Code";
             colCourseCodeToCv.Name = "colCourseCodeToCv";
             colCourseCodeToCv.ReadOnly = true;
+            colCourseCodeToCv.Width = 95;
             // 
             // colCourseToCv
             // 
@@ -205,9 +272,11 @@
             // 
             // colUnitsToCv
             // 
+            colUnitsToCv.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             colUnitsToCv.HeaderText = "Units";
             colUnitsToCv.Name = "colUnitsToCv";
             colUnitsToCv.ReadOnly = true;
+            colUnitsToCv.Width = 60;
             // 
             // colPrereq
             // 
@@ -220,66 +289,67 @@
             colCash.HeaderText = "Cash Payment";
             colCash.Name = "colCash";
             colCash.ReadOnly = true;
+            colCash.Resizable = DataGridViewTriState.True;
+            colCash.SortMode = DataGridViewColumnSortMode.NotSortable;
             // 
             // colLowMonthly
             // 
             colLowMonthly.HeaderText = "Low Monthly Payment";
             colLowMonthly.Name = "colLowMonthly";
             colLowMonthly.ReadOnly = true;
+            colLowMonthly.Resizable = DataGridViewTriState.True;
+            colLowMonthly.SortMode = DataGridViewColumnSortMode.NotSortable;
             // 
-            // textBox1
+            // label2
             // 
-            textBox1.Dock = DockStyle.Fill;
-            textBox1.Location = new Point(3, 18);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(127, 21);
-            textBox1.TabIndex = 5;
+            label2.AutoSize = true;
+            label2.Location = new Point(3, 42);
+            label2.Name = "label2";
+            label2.Size = new Size(58, 15);
+            label2.TabIndex = 12;
+            label2.Text = "Program:";
             // 
-            // label5
+            // label3
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(535, 15);
-            label5.Name = "label5";
-            label5.Size = new Size(25, 15);
-            label5.TabIndex = 4;
-            label5.Text = "C V";
+            label3.AutoSize = true;
+            label3.Location = new Point(269, 42);
+            label3.Name = "label3";
+            label3.Size = new Size(35, 15);
+            label3.TabIndex = 13;
+            label3.Text = "Year:";
             // 
-            // label4
+            // label6
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(402, 15);
-            label4.Name = "label4";
-            label4.Size = new Size(114, 15);
-            label4.TabIndex = 3;
-            label4.Text = "Curriculum Version:";
+            label6.AutoSize = true;
+            label6.Location = new Point(535, 42);
+            label6.Name = "label6";
+            label6.Size = new Size(39, 15);
+            label6.TabIndex = 14;
+            label6.Text = "Term:";
             // 
-            // btnSearch
+            // comboBox1
             // 
-            btnSearch.AutoSize = true;
-            btnSearch.BackColor = Color.White;
-            btnSearch.BackgroundImage = R_icons1.icons8_search_50;
-            btnSearch.BackgroundImageLayout = ImageLayout.Zoom;
-            btnSearch.FlatStyle = FlatStyle.Flat;
-            btnSearch.ForeColor = Color.White;
-            btnSearch.Location = new Point(136, 18);
-            btnSearch.Name = "btnSearch";
-            btnSearch.Size = new Size(37, 14);
-            btnSearch.TabIndex = 11;
-            btnSearch.UseVisualStyleBackColor = false;
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(136, 45);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(121, 23);
+            comboBox1.TabIndex = 15;
             // 
-            // button1
+            // comboBox2
             // 
-            button1.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            button1.AutoSize = true;
-            button1.BackColor = Color.ForestGreen;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(722, 420);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 27);
-            button1.TabIndex = 8;
-            button1.Text = "Next";
-            button1.UseVisualStyleBackColor = false;
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Location = new Point(402, 45);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(121, 23);
+            comboBox2.TabIndex = 16;
+            // 
+            // comboBox3
+            // 
+            comboBox3.FormattingEnabled = true;
+            comboBox3.Location = new Point(668, 45);
+            comboBox3.Name = "comboBox3";
+            comboBox3.Size = new Size(121, 23);
+            comboBox3.TabIndex = 17;
             // 
             // frmManageCurriculum
             // 
@@ -309,6 +379,13 @@
         private DataGridView dgvCourses;
         private DataGridView dgvToCurriculum;
         private Button btnSearch;
+        private Button btnNext;
+        private Label label2;
+        private Label label3;
+        private Label label6;
+        private ComboBox comboBox1;
+        private ComboBox comboBox2;
+        private ComboBox comboBox3;
         private DataGridViewTextBoxColumn colCourseID;
         private DataGridViewTextBoxColumn colCourseCode;
         private DataGridViewTextBoxColumn colCourse;
@@ -319,8 +396,7 @@
         private DataGridViewTextBoxColumn colCourseToCv;
         private DataGridViewTextBoxColumn colUnitsToCv;
         private DataGridViewComboBoxColumn colPrereq;
-        private DataGridViewComboBoxColumn colCash;
-        private DataGridViewComboBoxColumn colLowMonthly;
-        private Button button1;
+        private DataGridViewTextBoxColumn colCash;
+        private DataGridViewTextBoxColumn colLowMonthly;
     }
 }

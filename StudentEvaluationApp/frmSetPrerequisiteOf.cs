@@ -12,9 +12,12 @@ namespace StudentEvaluationApp
 {
     public partial class frmSetPrerequisiteOf : Form
     {
+        ClassDBhelper dbh = new ClassDBhelper();
         public frmSetPrerequisiteOf()
         {
             InitializeComponent();
+
+            dgvSelect.DataSource = dbh.ShowCourseList();
         }
     }
 }

@@ -29,48 +29,84 @@
         private void InitializeComponent()
         {
             tableLayoutPanel1 = new TableLayoutPanel();
-            dataGridView1 = new DataGridView();
-            button1 = new Button();
+            dgvSelect = new DataGridView();
+            btnDone = new Button();
+            textBox1 = new TextBox();
+            lbCourse = new Label();
+            label2 = new Label();
             tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvSelect).BeginInit();
             SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
-            tableLayoutPanel1.ColumnCount = 2;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.Controls.Add(dataGridView1, 0, 2);
-            tableLayoutPanel1.Controls.Add(button1, 1, 3);
+            tableLayoutPanel1.ColumnCount = 4;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel1.Controls.Add(dgvSelect, 0, 2);
+            tableLayoutPanel1.Controls.Add(textBox1, 0, 0);
+            tableLayoutPanel1.Controls.Add(lbCourse, 0, 1);
+            tableLayoutPanel1.Controls.Add(label2, 1, 1);
+            tableLayoutPanel1.Controls.Add(btnDone, 3, 3);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 4;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle());
+            tableLayoutPanel1.RowStyles.Add(new RowStyle());
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle());
             tableLayoutPanel1.Size = new Size(707, 244);
             tableLayoutPanel1.TabIndex = 0;
             // 
-            // dataGridView1
+            // dgvSelect
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(3, 43);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(240, 150);
-            dataGridView1.TabIndex = 0;
+            dgvSelect.BackgroundColor = Color.White;
+            dgvSelect.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            tableLayoutPanel1.SetColumnSpan(dgvSelect, 4);
+            dgvSelect.Dock = DockStyle.Fill;
+            dgvSelect.Location = new Point(3, 47);
+            dgvSelect.Name = "dgvSelect";
+            dgvSelect.RowTemplate.Height = 25;
+            dgvSelect.Size = new Size(701, 165);
+            dgvSelect.TabIndex = 0;
             // 
-            // button1
+            // btnDone
             // 
-            button1.Location = new Point(356, 227);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 14);
-            button1.TabIndex = 2;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
+            btnDone.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnDone.Location = new Point(629, 218);
+            btnDone.Name = "btnDone";
+            btnDone.Size = new Size(75, 23);
+            btnDone.TabIndex = 2;
+            btnDone.Text = "Done";
+            btnDone.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(3, 3);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(100, 23);
+            textBox1.TabIndex = 3;
+            // 
+            // lbCourse
+            // 
+            lbCourse.AutoSize = true;
+            lbCourse.Location = new Point(3, 29);
+            lbCourse.Name = "lbCourse";
+            lbCourse.Size = new Size(44, 15);
+            lbCourse.TabIndex = 4;
+            lbCourse.Text = "Course";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(179, 29);
+            label2.Name = "label2";
+            label2.Size = new Size(91, 15);
+            label2.TabIndex = 5;
+            label2.Text = "is Prerequisit of:";
             // 
             // frmSetPrerequisiteOf
             // 
@@ -80,14 +116,18 @@
             Controls.Add(tableLayoutPanel1);
             Name = "frmSetPrerequisiteOf";
             tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvSelect).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
         private TableLayoutPanel tableLayoutPanel1;
-        private DataGridView dataGridView1;
-        private Button button1;
+        private DataGridView dgvSelect;
+        private Button btnDone;
+        private TextBox textBox1;
+        private Label lbCourse;
+        private Label label2;
     }
 }

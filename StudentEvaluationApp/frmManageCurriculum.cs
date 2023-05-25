@@ -77,6 +77,7 @@ namespace StudentEvaluationApp
                 frmSetPrerequisiteOf frmSet = new frmSetPrerequisiteOf();
                 frmSet.ShowDialog();
 
+                dgvToCurriculum.Rows[e.RowIndex].Cells["colPrereqID"].Value = Properties.Settings.Default.SelectedCourseID;
                 dgvToCurriculum.Rows[e.RowIndex].Cells["colPrereq"].Value = Properties.Settings.Default.SelectedCourse;
             }
         }

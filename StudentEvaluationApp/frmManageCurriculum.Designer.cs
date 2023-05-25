@@ -42,19 +42,20 @@
             colUnits = new DataGridViewTextBoxColumn();
             colToRight = new DataGridViewImageColumn();
             dgvToCurriculum = new DataGridView();
-            colIDToCv = new DataGridViewTextBoxColumn();
-            colCourseCodeToCv = new DataGridViewTextBoxColumn();
-            colCourseToCv = new DataGridViewTextBoxColumn();
-            colUnitsToCv = new DataGridViewTextBoxColumn();
-            colPrereq = new DataGridViewTextBoxColumn();
-            colCash = new DataGridViewTextBoxColumn();
-            colLowMonthly = new DataGridViewTextBoxColumn();
             label2 = new Label();
             label3 = new Label();
             label6 = new Label();
             comboBox1 = new ComboBox();
             comboBox2 = new ComboBox();
             comboBox3 = new ComboBox();
+            colIDToCv = new DataGridViewTextBoxColumn();
+            colCourseCodeToCv = new DataGridViewTextBoxColumn();
+            colCourseToCv = new DataGridViewTextBoxColumn();
+            colUnitsToCv = new DataGridViewTextBoxColumn();
+            colPrereq = new DataGridViewTextBoxColumn();
+            colPrereqID = new DataGridViewTextBoxColumn();
+            colCash = new DataGridViewTextBoxColumn();
+            colLowMonthly = new DataGridViewTextBoxColumn();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvCourses).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvToCurriculum).BeginInit();
@@ -240,7 +241,7 @@
             dgvToCurriculum.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvToCurriculum.BackgroundColor = Color.White;
             dgvToCurriculum.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvToCurriculum.Columns.AddRange(new DataGridViewColumn[] { colIDToCv, colCourseCodeToCv, colCourseToCv, colUnitsToCv, colPrereq, colCash, colLowMonthly });
+            dgvToCurriculum.Columns.AddRange(new DataGridViewColumn[] { colIDToCv, colCourseCodeToCv, colCourseToCv, colUnitsToCv, colPrereq, colPrereqID, colCash, colLowMonthly });
             tableLayoutPanel1.SetColumnSpan(dgvToCurriculum, 6);
             dgvToCurriculum.Dock = DockStyle.Fill;
             dgvToCurriculum.Location = new Point(3, 242);
@@ -250,58 +251,6 @@
             dgvToCurriculum.Size = new Size(794, 151);
             dgvToCurriculum.TabIndex = 7;
             dgvToCurriculum.CellContentClick += dgvToCurriculum_CellContentClick;
-            // 
-            // colIDToCv
-            // 
-            colIDToCv.HeaderText = "ID";
-            colIDToCv.Name = "colIDToCv";
-            colIDToCv.ReadOnly = true;
-            // 
-            // colCourseCodeToCv
-            // 
-            colCourseCodeToCv.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            colCourseCodeToCv.HeaderText = "Course Code";
-            colCourseCodeToCv.Name = "colCourseCodeToCv";
-            colCourseCodeToCv.ReadOnly = true;
-            colCourseCodeToCv.Width = 95;
-            // 
-            // colCourseToCv
-            // 
-            colCourseToCv.HeaderText = "Course";
-            colCourseToCv.Name = "colCourseToCv";
-            colCourseToCv.ReadOnly = true;
-            // 
-            // colUnitsToCv
-            // 
-            colUnitsToCv.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            colUnitsToCv.HeaderText = "Units";
-            colUnitsToCv.Name = "colUnitsToCv";
-            colUnitsToCv.ReadOnly = true;
-            colUnitsToCv.Width = 60;
-            // 
-            // colPrereq
-            // 
-            colPrereq.HeaderText = "Prerequisite Of:";
-            colPrereq.Name = "colPrereq";
-            colPrereq.ReadOnly = true;
-            colPrereq.Resizable = DataGridViewTriState.True;
-            colPrereq.SortMode = DataGridViewColumnSortMode.NotSortable;
-            // 
-            // colCash
-            // 
-            colCash.HeaderText = "Cash Payment";
-            colCash.Name = "colCash";
-            colCash.ReadOnly = true;
-            colCash.Resizable = DataGridViewTriState.True;
-            colCash.SortMode = DataGridViewColumnSortMode.NotSortable;
-            // 
-            // colLowMonthly
-            // 
-            colLowMonthly.HeaderText = "Low Monthly Payment";
-            colLowMonthly.Name = "colLowMonthly";
-            colLowMonthly.ReadOnly = true;
-            colLowMonthly.Resizable = DataGridViewTriState.True;
-            colLowMonthly.SortMode = DataGridViewColumnSortMode.NotSortable;
             // 
             // label2
             // 
@@ -354,6 +303,64 @@
             comboBox3.Size = new Size(121, 23);
             comboBox3.TabIndex = 17;
             // 
+            // colIDToCv
+            // 
+            colIDToCv.HeaderText = "ID";
+            colIDToCv.Name = "colIDToCv";
+            colIDToCv.ReadOnly = true;
+            // 
+            // colCourseCodeToCv
+            // 
+            colCourseCodeToCv.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            colCourseCodeToCv.HeaderText = "Course Code";
+            colCourseCodeToCv.Name = "colCourseCodeToCv";
+            colCourseCodeToCv.ReadOnly = true;
+            colCourseCodeToCv.Width = 103;
+            // 
+            // colCourseToCv
+            // 
+            colCourseToCv.HeaderText = "Course";
+            colCourseToCv.Name = "colCourseToCv";
+            colCourseToCv.ReadOnly = true;
+            // 
+            // colUnitsToCv
+            // 
+            colUnitsToCv.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            colUnitsToCv.HeaderText = "Units";
+            colUnitsToCv.Name = "colUnitsToCv";
+            colUnitsToCv.ReadOnly = true;
+            colUnitsToCv.Width = 60;
+            // 
+            // colPrereq
+            // 
+            colPrereq.HeaderText = "Prerequisite Of:";
+            colPrereq.Name = "colPrereq";
+            colPrereq.ReadOnly = true;
+            colPrereq.Resizable = DataGridViewTriState.True;
+            colPrereq.SortMode = DataGridViewColumnSortMode.NotSortable;
+            // 
+            // colPrereqID
+            // 
+            colPrereqID.HeaderText = "PrereqID";
+            colPrereqID.Name = "colPrereqID";
+            colPrereqID.ReadOnly = true;
+            // 
+            // colCash
+            // 
+            colCash.HeaderText = "Cash Payment";
+            colCash.Name = "colCash";
+            colCash.ReadOnly = true;
+            colCash.Resizable = DataGridViewTriState.True;
+            colCash.SortMode = DataGridViewColumnSortMode.NotSortable;
+            // 
+            // colLowMonthly
+            // 
+            colLowMonthly.HeaderText = "Low Monthly Payment";
+            colLowMonthly.Name = "colLowMonthly";
+            colLowMonthly.ReadOnly = true;
+            colLowMonthly.Resizable = DataGridViewTriState.True;
+            colLowMonthly.SortMode = DataGridViewColumnSortMode.NotSortable;
+            // 
             // frmManageCurriculum
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -399,6 +406,7 @@
         private DataGridViewTextBoxColumn colCourseToCv;
         private DataGridViewTextBoxColumn colUnitsToCv;
         private DataGridViewTextBoxColumn colPrereq;
+        private DataGridViewTextBoxColumn colPrereqID;
         private DataGridViewTextBoxColumn colCash;
         private DataGridViewTextBoxColumn colLowMonthly;
     }

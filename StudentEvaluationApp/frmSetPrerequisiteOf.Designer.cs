@@ -30,10 +30,15 @@
         {
             tableLayoutPanel1 = new TableLayoutPanel();
             dgvSelect = new DataGridView();
-            btnDone = new Button();
+            colID = new DataGridViewTextBoxColumn();
+            colCourseCode = new DataGridViewTextBoxColumn();
+            colCourseName = new DataGridViewTextBoxColumn();
+            colCourseDes = new DataGridViewTextBoxColumn();
+            colCourseUnits = new DataGridViewTextBoxColumn();
             textBox1 = new TextBox();
             lbCourse = new Label();
             label2 = new Label();
+            btnSelect = new Button();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvSelect).BeginInit();
             SuspendLayout();
@@ -49,7 +54,7 @@
             tableLayoutPanel1.Controls.Add(textBox1, 0, 0);
             tableLayoutPanel1.Controls.Add(lbCourse, 0, 1);
             tableLayoutPanel1.Controls.Add(label2, 1, 1);
-            tableLayoutPanel1.Controls.Add(btnDone, 3, 3);
+            tableLayoutPanel1.Controls.Add(btnSelect, 3, 3);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -63,25 +68,60 @@
             // 
             // dgvSelect
             // 
+            dgvSelect.AllowUserToAddRows = false;
+            dgvSelect.AllowUserToDeleteRows = false;
+            dgvSelect.AllowUserToOrderColumns = true;
+            dgvSelect.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvSelect.BackgroundColor = Color.White;
             dgvSelect.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvSelect.Columns.AddRange(new DataGridViewColumn[] { colID, colCourseCode, colCourseName, colCourseDes, colCourseUnits });
             tableLayoutPanel1.SetColumnSpan(dgvSelect, 4);
             dgvSelect.Dock = DockStyle.Fill;
             dgvSelect.Location = new Point(3, 47);
             dgvSelect.Name = "dgvSelect";
+            dgvSelect.ReadOnly = true;
             dgvSelect.RowTemplate.Height = 25;
+            dgvSelect.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvSelect.Size = new Size(701, 165);
             dgvSelect.TabIndex = 0;
             // 
-            // btnDone
+            // colID
             // 
-            btnDone.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnDone.Location = new Point(629, 218);
-            btnDone.Name = "btnDone";
-            btnDone.Size = new Size(75, 23);
-            btnDone.TabIndex = 2;
-            btnDone.Text = "Done";
-            btnDone.UseVisualStyleBackColor = true;
+            colID.DataPropertyName = "courseID";
+            colID.HeaderText = "ID";
+            colID.Name = "colID";
+            colID.ReadOnly = true;
+            colID.Visible = false;
+            // 
+            // colCourseCode
+            // 
+            colCourseCode.DataPropertyName = "courseCode";
+            colCourseCode.HeaderText = "Course Code";
+            colCourseCode.Name = "colCourseCode";
+            colCourseCode.ReadOnly = true;
+            // 
+            // colCourseName
+            // 
+            colCourseName.DataPropertyName = "courseName";
+            colCourseName.HeaderText = "Course";
+            colCourseName.Name = "colCourseName";
+            colCourseName.ReadOnly = true;
+            // 
+            // colCourseDes
+            // 
+            colCourseDes.DataPropertyName = "courseDes";
+            colCourseDes.HeaderText = "Description";
+            colCourseDes.Name = "colCourseDes";
+            colCourseDes.ReadOnly = true;
+            // 
+            // colCourseUnits
+            // 
+            colCourseUnits.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            colCourseUnits.DataPropertyName = "unit";
+            colCourseUnits.HeaderText = "Units";
+            colCourseUnits.Name = "colCourseUnits";
+            colCourseUnits.ReadOnly = true;
+            colCourseUnits.Width = 59;
             // 
             // textBox1
             // 
@@ -108,6 +148,17 @@
             label2.TabIndex = 5;
             label2.Text = "is Prerequisit of:";
             // 
+            // btnSelect
+            // 
+            btnSelect.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnSelect.Location = new Point(629, 218);
+            btnSelect.Name = "btnSelect";
+            btnSelect.Size = new Size(75, 23);
+            btnSelect.TabIndex = 6;
+            btnSelect.Text = "Select";
+            btnSelect.UseVisualStyleBackColor = true;
+            btnSelect.Click += btnSelect_Click;
+            // 
             // frmSetPrerequisiteOf
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -125,9 +176,14 @@
 
         private TableLayoutPanel tableLayoutPanel1;
         private DataGridView dgvSelect;
-        private Button btnDone;
         private TextBox textBox1;
         private Label lbCourse;
         private Label label2;
+        private DataGridViewTextBoxColumn colID;
+        private DataGridViewTextBoxColumn colCourseCode;
+        private DataGridViewTextBoxColumn colCourseName;
+        private DataGridViewTextBoxColumn colCourseDes;
+        private DataGridViewTextBoxColumn colCourseUnits;
+        private Button btnSelect;
     }
 }

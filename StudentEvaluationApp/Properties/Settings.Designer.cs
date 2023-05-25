@@ -46,5 +46,29 @@ namespace StudentEvaluationApp.Properties {
                 this["currentStudentID"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SelectedCourseID {
+            get {
+                return ((string)(this["SelectedCourseID"]));
+            }
+            set {
+                this["SelectedCourseID"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SelectedCourse {
+            get {
+                return ((string)(this["SelectedCourse"]));
+            }
+            set {
+                this["SelectedCourse"] = value;
+            }
+        }
     }
 }

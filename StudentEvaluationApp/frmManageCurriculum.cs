@@ -38,7 +38,8 @@ namespace StudentEvaluationApp
                         dgvCourses.Rows[e.RowIndex].Cells["colCourseID"].Value,
                         dgvCourses.Rows[e.RowIndex].Cells["colCourseCode"].Value,
                         dgvCourses.Rows[e.RowIndex].Cells["colCourse"].Value,
-                        dgvCourses.Rows[e.RowIndex].Cells["colUnits"].Value);
+                        dgvCourses.Rows[e.RowIndex].Cells["colUnits"].Value,
+                        "Click to Select");
                 }
                 else
                 {
@@ -62,13 +63,21 @@ namespace StudentEvaluationApp
                             dgvCourses.Rows[e.RowIndex].Cells["colCourseID"].Value,
                             dgvCourses.Rows[e.RowIndex].Cells["colCourseCode"].Value,
                             dgvCourses.Rows[e.RowIndex].Cells["colCourse"].Value,
-                            dgvCourses.Rows[e.RowIndex].Cells["colUnits"].Value);
+                            dgvCourses.Rows[e.RowIndex].Cells["colUnits"].Value,
+                            "Click to Select");
                     }
-
                 }
+            }
+        }
 
+        private void dgvToCurriculum_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvToCurriculum.Columns["colPrereq"].Name.Equals("colPrereq"))
+            {
+                frmSetPrerequisiteOf frmSet = new frmSetPrerequisiteOf();
+                frmSet.ShowDialog();
 
-
+                dgvToCurriculum.Rows[e.RowIndex].Cells["colPrereq"].Value = Properties.Settings.Default.SelectedCourse;
             }
         }
     }

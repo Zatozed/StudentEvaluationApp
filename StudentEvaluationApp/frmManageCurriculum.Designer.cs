@@ -46,7 +46,7 @@
             colCourseCodeToCv = new DataGridViewTextBoxColumn();
             colCourseToCv = new DataGridViewTextBoxColumn();
             colUnitsToCv = new DataGridViewTextBoxColumn();
-            colPrereq = new DataGridViewComboBoxColumn();
+            colPrereq = new DataGridViewTextBoxColumn();
             colCash = new DataGridViewTextBoxColumn();
             colLowMonthly = new DataGridViewTextBoxColumn();
             label2 = new Label();
@@ -249,6 +249,7 @@
             dgvToCurriculum.RowTemplate.Height = 25;
             dgvToCurriculum.Size = new Size(794, 151);
             dgvToCurriculum.TabIndex = 7;
+            dgvToCurriculum.CellContentClick += dgvToCurriculum_CellContentClick;
             // 
             // colIDToCv
             // 
@@ -283,6 +284,8 @@
             colPrereq.HeaderText = "Prerequisite Of:";
             colPrereq.Name = "colPrereq";
             colPrereq.ReadOnly = true;
+            colPrereq.Resizable = DataGridViewTriState.True;
+            colPrereq.SortMode = DataGridViewColumnSortMode.NotSortable;
             // 
             // colCash
             // 
@@ -395,7 +398,7 @@
         private DataGridViewTextBoxColumn colCourseCodeToCv;
         private DataGridViewTextBoxColumn colCourseToCv;
         private DataGridViewTextBoxColumn colUnitsToCv;
-        private DataGridViewComboBoxColumn colPrereq;
+        private DataGridViewTextBoxColumn colPrereq;
         private DataGridViewTextBoxColumn colCash;
         private DataGridViewTextBoxColumn colLowMonthly;
     }

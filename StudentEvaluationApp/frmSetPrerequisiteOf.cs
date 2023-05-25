@@ -22,13 +22,10 @@ namespace StudentEvaluationApp
 
         private void btnSelect_Click(object sender, EventArgs e)
         {
-            //Properties.Settings.Default.SelectedCourseID = dgvSelect.CurrentCell.RowIndex.ce;
-            //    [e.RowIndex].Cells["colID"].Value.ToString();
-            //Properties.Settings.Default.SelectedCourse = dgvSelect.Rows[e.RowIndex].Cells["colCourseName"].Value.ToString();
+            Properties.Settings.Default.SelectedCourse = dgvSelect.CurrentRow.Cells["colCourseName"].Value.ToString();
+            Properties.Settings.Default.SelectedCourseID = dgvSelect.CurrentRow.Cells["colID"].Value.ToString();
 
-            MessageBox.Show(dgvSelect.CurrentRow.Cells["colCourseName"].Value.ToString());
-
-            MessageBox.Show(dgvSelect.CurrentRow.Cells["colID"].Value.ToString());
+            this.Hide();
         }
     }
 }

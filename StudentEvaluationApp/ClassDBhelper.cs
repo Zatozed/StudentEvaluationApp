@@ -150,11 +150,11 @@ namespace StudentEvaluationApp
             {
                 OpenCon();
 
-                cmd = new OleDbCommand("select yearDes from tblYear where isDel = false", con);
+                cmd = new OleDbCommand("select year from tblYear", con);
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                    list.Add(dr.GetString(0));
+                    list.Add(dr.GetInt32(0));
                 }
 
                 dr.DisposeAsync();
@@ -163,7 +163,7 @@ namespace StudentEvaluationApp
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.Message.ToString());
+                MessageBox.Show("Error code: YL166");
             }
             finally
             {
@@ -180,11 +180,11 @@ namespace StudentEvaluationApp
             {
                 OpenCon();
 
-                cmd = new OleDbCommand("select semDes from tblSem where isDel = false", con);
+                cmd = new OleDbCommand("select sem from tblSem", con);
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                    list.Add(dr.GetString(0));
+                    list.Add(dr.GetInt32(0));
                 }
 
                 dr.DisposeAsync();
@@ -193,7 +193,7 @@ namespace StudentEvaluationApp
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.Message.ToString());
+                MessageBox.Show("Error code: SL175");
             }
             finally
             {
@@ -599,7 +599,7 @@ namespace StudentEvaluationApp
             {
                 OpenCon();
 
-                cmd = new OleDbCommand("select yearID from tblYear where yearDes = '" + yearDes + "'", con);
+                cmd = new OleDbCommand("select yearID from tblYear where year = " + yearDes + "", con);
 
                 dr = cmd.ExecuteReader();
 
@@ -614,7 +614,7 @@ namespace StudentEvaluationApp
             }
             catch (Exception e)
             {
-                MessageBox.Show("Something went wrong when selecting the year level.");
+                MessageBox.Show("Something went wrong when selecting the year level. Error code: GYI594");
             }
             finally
             {
@@ -631,7 +631,7 @@ namespace StudentEvaluationApp
             {
                 OpenCon();
 
-                cmd = new OleDbCommand("select semID from tblSem where semDes = '" + semDes + "'", con);
+                cmd = new OleDbCommand("select semID from tblSem where sem = " + semDes + "", con);
 
                 dr = cmd.ExecuteReader();
 
@@ -646,7 +646,7 @@ namespace StudentEvaluationApp
             }
             catch (Exception e)
             {
-                MessageBox.Show("Something went wrong when selecting the sem.");
+                MessageBox.Show("Something went wrong when selecting the sem. Error code: GSI626");
             }
             finally
             {

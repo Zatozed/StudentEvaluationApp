@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             tableLayoutPanel1 = new TableLayoutPanel();
             lbStudNo = new Label();
             label1 = new Label();
@@ -282,7 +283,6 @@
             dgvCourseGrade.Dock = DockStyle.Fill;
             dgvCourseGrade.Location = new Point(3, 182);
             dgvCourseGrade.Name = "dgvCourseGrade";
-            dgvCourseGrade.ReadOnly = true;
             dgvCourseGrade.RowTemplate.Height = 25;
             dgvCourseGrade.Size = new Size(794, 232);
             dgvCourseGrade.TabIndex = 16;
@@ -335,23 +335,22 @@
             // colGrade
             // 
             colGrade.DataPropertyName = "grade1stTake";
+            dataGridViewCellStyle1.BackColor = Color.SteelBlue;
+            colGrade.DefaultCellStyle = dataGridViewCellStyle1;
             colGrade.HeaderText = "Grade (1st Take)";
             colGrade.Name = "colGrade";
-            colGrade.ReadOnly = true;
             // 
             // colGrade2
             // 
             colGrade2.DataPropertyName = "grade2ndTake";
             colGrade2.HeaderText = "Grade (2nd Take)";
             colGrade2.Name = "colGrade2";
-            colGrade2.ReadOnly = true;
             // 
             // colGrade3
             // 
             colGrade3.DataPropertyName = "grade3rdTake";
             colGrade3.HeaderText = "Grade (3rd Take)";
             colGrade3.Name = "colGrade3";
-            colGrade3.ReadOnly = true;
             // 
             // colPrereqOf
             // 

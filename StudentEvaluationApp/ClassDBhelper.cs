@@ -18,7 +18,7 @@ namespace StudentEvaluationApp
         private OleDbDataReader dr;
         private OleDbDataAdapter dataAdapter;
 
-        public ArrayList bagsakGradeCourseList = new ArrayList();
+        public ArrayList bagsakGradeCourseArrList = new ArrayList();
 
         public ClassDBhelper()
         {
@@ -150,7 +150,7 @@ namespace StudentEvaluationApp
             {
                 OpenCon();
 
-                cmd = new OleDbCommand("select year from tblYear", con);
+                cmd = new OleDbCommand("select yearLvl from tblYear", con);
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
@@ -163,7 +163,7 @@ namespace StudentEvaluationApp
             }
             catch (Exception e)
             {
-                MessageBox.Show("Error code: YL166");
+                MessageBox.Show(e.ToString()+"Something went wrong. Error code: FSR20-CDBHYL145");
             }
             finally
             {
@@ -599,7 +599,7 @@ namespace StudentEvaluationApp
             {
                 OpenCon();
 
-                cmd = new OleDbCommand("select yearID from tblYear where year = " + yearDes + "", con);
+                cmd = new OleDbCommand("select yearID from tblYear where yearLvl = " + yearDes + "", con);
 
                 dr = cmd.ExecuteReader();
 
@@ -918,23 +918,23 @@ namespace StudentEvaluationApp
 
             return s;
         }
-        public string GetYearDesByID(string yearID)
+        public int GetYearByID(string yearID)
         {
-            string s = "";
+            int s = 0;
 
             try
             {
                 OpenCon();
 
                 cmd = new OleDbCommand
-                    ("select top 1 yearDes from tblyear where yearID = "
+                    ("select top 1 yearLvl from tblyear where yearID = "
                     + yearID, con);
 
                 dr = cmd.ExecuteReader();
 
                 if (dr.Read())
                 {
-                    s = dr.GetString(0);
+                    s = dr.GetInt32(0);
                 }
 
                 dr.Close();
@@ -943,7 +943,7 @@ namespace StudentEvaluationApp
             }
             catch (Exception e)
             {
-                MessageBox.Show("Something went wrong. Error Code: GTYDES01");
+                MessageBox.Show("Something went wrong. Error Code: GYBI921");
             }
             finally
             {
@@ -952,23 +952,23 @@ namespace StudentEvaluationApp
 
             return s;
         }
-        public string GetSemDesByID(string semID)
+        public int GetSemByID(string semID)
         {
-            string s = "";
+            int s = 0;
 
             try
             {
                 OpenCon();
 
                 cmd = new OleDbCommand
-                    ("select top 1 semDes from tblSem where semID = "
+                    ("select top 1 sem from tblSem where semID = "
                     + semID, con);
 
                 dr = cmd.ExecuteReader();
 
                 if (dr.Read())
                 {
-                    s = dr.GetString(0);
+                    s = dr.GetInt32(0);
                 }
 
                 dr.Close();
@@ -977,7 +977,7 @@ namespace StudentEvaluationApp
             }
             catch (Exception e)
             {
-                MessageBox.Show("Something went wrong. Error Code: ");
+                MessageBox.Show("Something went wrong. Error Code: GSBI955");
             }
             finally
             {
@@ -1029,6 +1029,61 @@ namespace StudentEvaluationApp
             }
 
             return dt;
+        }
+        public void UpdateStudentPermanentRecord(string recordID, double g1, double g2, double g3)
+        {
+            try
+            {
+                OpenCon();
+
+                cmd = new OleDbCommand
+                    (@"update tblStudentPermanentRecord 
+                    set 
+                    grade1stTake = " + g1
+                    + ",grade2ndTake = " + g2
+                    + ",grade3rdTake = " + g3
+                    + " where recordID = " + recordID
+                    , con);
+
+                cmd.ExecuteNonQuery();
+
+                cmd.Dispose();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Something went wrong. Error code: USPR1033");
+            }
+            finally
+            {
+                CloseCon();
+            }
+        }
+        public void UpdateStudentSemYear(string studID, string yearID, string semID)
+        {
+            try
+            {
+                OpenCon();
+
+                cmd = new OleDbCommand
+                    (@"update tblStudentInfo
+                    set yearID = " + yearID
+                    +", semID = " + semID
+                    +" where studentID = " + studID
+
+                    , con) ;
+
+                cmd.ExecuteNonQuery();
+
+                cmd.Dispose();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Something went wrong. Error code: USSY1061");
+            }
+            finally
+            {
+                CloseCon();
+            }
         }
         //---------------------------------------------------------------- Student Input grades form
     }

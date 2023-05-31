@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Runtime.CompilerServices;
 
 namespace StudentEvaluationApp
 {
@@ -10,7 +11,8 @@ namespace StudentEvaluationApp
 
         private DataTable studCurrent;
 
-        private string cvID, programID, yearID, semID;
+        private string studentID, cvID, programID, yearID, semID;
+        private int currentYear, currentSem;
 
         public frmInputGrades()
         {
@@ -20,6 +22,8 @@ namespace StudentEvaluationApp
         {
             InitializeComponent();
 
+            studentID = studId;
+
             studCurrent = dbh.GetStudInfo(studId);
 
             dgvCourseGrade.DataSource = dbh.ShowCourseAndGrade(studId);
@@ -27,22 +31,65 @@ namespace StudentEvaluationApp
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            dbh.bagsakGradeCourseList.Clear();
+            dbh.bagsakGradeCourseArrList.Clear();
 
-            foreach (DataGridViewRow r in dgvCourseGrade.Rows)
+            if (dgvCourseGrade.RowCount != 0)
             {
-                if (Convert.ToDouble(r.Cells["colGrade"].Value) == 5)
+                foreach (DataGridViewRow r in dgvCourseGrade.Rows)
                 {
-                    dbh.bagsakGradeCourseList.Add(r.Cells["colPrereqOf"].Value.ToString());
+                    if (Convert.ToDouble(r.Cells["colGrade3"].Value) != 0)
+                    {
+                        if (Convert.ToDouble(r.Cells["colGrade3"].Value) == 5)
+                        {
+                            dbh.bagsakGradeCourseArrList.Add(r.Cells["colPrereqOf"].Value.ToString());
+                        }
+                    }
+                    else if (Convert.ToDouble(r.Cells["colGrade2"].Value) != 0)
+                    {
+                        if (Convert.ToDouble(r.Cells["colGrade2"].Value) == 5)
+                        {
+                            dbh.bagsakGradeCourseArrList.Add(r.Cells["colPrereqOf"].Value.ToString());
+                        }
+                    }
+                    else if (Convert.ToDouble(r.Cells["colGrade"].Value) != 0)
+                    {
+                        if (Convert.ToDouble(r.Cells["colGrade"].Value) == 5)
+                        {
+                            dbh.bagsakGradeCourseArrList.Add(r.Cells["colPrereqOf"].Value.ToString());
+                        }
+                    }
+
+                    dbh.UpdateStudentPermanentRecord(
+                        r.Cells["colID"].Value.ToString(),
+                        Convert.ToDouble(r.Cells["colGrade"].Value),
+                        Convert.ToDouble(r.Cells["colGrade2"].Value),
+                        Convert.ToDouble(r.Cells["colGrade3"].Value)
+                        );
                 }
 
+                if (currentSem == 1)
+                {
+                    ++currentSem;
+                }
+                else if(currentSem == 2 && currentYear <= 4)
+                {
+                    --currentSem;
+                    ++currentYear;
+                }
+
+                dbh.UpdateStudentSemYear(studentID, dbh.GetYearID(currentYear.ToString()), dbh.GetSemID(currentSem.ToString()));
+
+                foreach (string s in dbh.bagsakGradeCourseArrList)
+                {
+
+                }
             }
 
-            this.Hide();
+            //this.Hide();
 
-            frmEvaluationResult frmEvaluationRes = new frmEvaluationResult();
-            frmEvaluationRes.ShowDialog();
-            frmEvaluationRes.BringToFront();
+            //frmEvaluationResult frmEvaluationRes = new frmEvaluationResult();
+            //frmEvaluationRes.ShowDialog();
+            //frmEvaluationRes.BringToFront();
         }
 
         private void frmInputGrades_Load(object sender, EventArgs e)
@@ -59,12 +106,14 @@ namespace StudentEvaluationApp
                 yearID = r[6].ToString();
                 semID = r[7].ToString();
 
+                currentSem = dbh.GetSemByID(semID);
+                currentYear = dbh.GetYearByID(yearID);
             }
 
             lbCv.Text = dbh.GetCurriculumVersionByID(cvID);
             lbProgram.Text = dbh.GetProgramDesByID(programID);
-            lbYear.Text = dbh.GetYearDesByID(yearID);
-            lbSem.Text = dbh.GetSemDesByID(semID);
+            lbYear.Text = dbh.GetYearByID(yearID).ToString();
+            lbSem.Text = dbh.GetSemByID(semID).ToString();
         }
     }
 }

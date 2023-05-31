@@ -9,7 +9,6 @@ namespace StudentEvaluationApp
     {
         ClassDBhelper dbh = new ClassDBhelper();
 
-        string cvID, programID, yearID, semID;
 
         public frmStudentReg()
         {
@@ -32,19 +31,26 @@ namespace StudentEvaluationApp
                         tbStudentNum.Text, tbFname.Text, tbLname.Text, tbMname.Text,
                         cbSuffix.Text, cbGender.Text, tbAddress.Text, tbContactNum.Text,
                         tbPgName.Text, tbPgConNum.Text, tbLastSchoolAt.Text, dtpBdate.Text.ToString(),
-                        cvID, programID, yearID, semID
+                        Properties.Settings.Default.CurrentCV,
+                        Properties.Settings.Default.CurrentProgram,
+                        Properties.Settings.Default.CurrentYearID,
+                        Properties.Settings.Default.CurrentSemID
                     );
 
-                Properties.Settings.Default.currentStudentID = dbh.GetStudRecentID();
+                Properties.Settings.Default.CurrentStudentID = dbh.GetStudRecentID();
 
-                foreach (DataRow s in dbh.GetCourseCurricuVerIDList(cvID, programID, semID, yearID).Rows)
+                foreach (DataRow s in dbh.GetCourseCurricuVerIDList
+                    (Properties.Settings.Default.CurrentCV,
+                    Properties.Settings.Default.CurrentProgram,
+                    Properties.Settings.Default.CurrentSemID,
+                    Properties.Settings.Default.CurrentYearID).Rows)
                 {
-                    dbh.InsertToStudentPermanentRecord(Properties.Settings.Default.currentStudentID, s[0].ToString());
+                    dbh.InsertToStudentPermanentRecord(Properties.Settings.Default.CurrentStudentID, s[0].ToString());
                 }
 
                 this.Hide();
 
-                frmInputGrades frmInput = new frmInputGrades(Properties.Settings.Default.currentStudentID);
+                frmInputGrades frmInput = new frmInputGrades(Properties.Settings.Default.CurrentStudentID);
                 frmInput.ShowDialog();
                 frmInput.BringToFront();
 
@@ -54,22 +60,22 @@ namespace StudentEvaluationApp
 
         private void cbCurricuVer_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cvID = dbh.GetCvID(cbCurricuVer.Text);
+            Properties.Settings.Default.CurrentCV = dbh.GetCvID(cbCurricuVer.Text);
         }
 
         private void cbYear_SelectedIndexChanged(object sender, EventArgs e)
         {
-            yearID = dbh.GetYearID(cbYear.Text);
+            Properties.Settings.Default.CurrentYearID = dbh.GetYearID(cbYear.Text);
         }
 
         private void cbProgram_SelectedIndexChanged(object sender, EventArgs e)
         {
-            programID = dbh.GetProgramID(cbProgram.Text);
+            Properties.Settings.Default.CurrentProgram = dbh.GetProgramID(cbProgram.Text);
         }
 
         private void cbSem_SelectedIndexChanged(object sender, EventArgs e)
         {
-            semID = dbh.GetSemID(cbSem.Text);
+            Properties.Settings.Default.CurrentSemID = dbh.GetSemID(cbSem.Text);
         }
 
         private void tbFname_Leave(object sender, EventArgs e)

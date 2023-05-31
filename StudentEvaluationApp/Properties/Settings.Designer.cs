@@ -38,12 +38,12 @@ namespace StudentEvaluationApp.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string currentStudentID {
+        public string CurrentStudentID {
             get {
-                return ((string)(this["currentStudentID"]));
+                return ((string)(this["CurrentStudentID"]));
             }
             set {
-                this["currentStudentID"] = value;
+                this["CurrentStudentID"] = value;
             }
         }
         
@@ -68,6 +68,54 @@ namespace StudentEvaluationApp.Properties {
             }
             set {
                 this["SelectedCourse"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string CurrentSemID {
+            get {
+                return ((string)(this["CurrentSemID"]));
+            }
+            set {
+                this["CurrentSemID"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string CurrentYearID {
+            get {
+                return ((string)(this["CurrentYearID"]));
+            }
+            set {
+                this["CurrentYearID"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string CurrentCV {
+            get {
+                return ((string)(this["CurrentCV"]));
+            }
+            set {
+                this["CurrentCV"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string CurrentProgram {
+            get {
+                return ((string)(this["CurrentProgram"]));
+            }
+            set {
+                this["CurrentProgram"] = value;
             }
         }
     }

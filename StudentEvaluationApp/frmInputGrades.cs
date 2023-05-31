@@ -85,17 +85,13 @@ namespace StudentEvaluationApp
                     dbh.InsertToStudentPermanentRecord(Properties.Settings.Default.currentStudentID, s[0].ToString());
                 }
 
-                foreach (string s in dbh.bagsakGradeCourseArrList)
-                {
-
-                }
             }
 
-            //this.Hide();
+            this.Hide();
 
-            //frmEvaluationResult frmEvaluationRes = new frmEvaluationResult();
-            //frmEvaluationRes.ShowDialog();
-            //frmEvaluationRes.BringToFront();
+            frmEvaluationResult frmEvaluationRes = new frmEvaluationResult();
+            frmEvaluationRes.ShowDialog();
+            frmEvaluationRes.BringToFront();
         }
 
         private void frmInputGrades_Load(object sender, EventArgs e)

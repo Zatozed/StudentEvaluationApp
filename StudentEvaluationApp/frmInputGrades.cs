@@ -79,6 +79,12 @@ namespace StudentEvaluationApp
 
                 dbh.UpdateStudentSemYear(studentID, dbh.GetYearID(currentYear.ToString()), dbh.GetSemID(currentSem.ToString()));
 
+
+                foreach (DataRow s in dbh.GetCourseCurricuVerIDList(cvID, programID, dbh.GetSemID(currentSem.ToString()), dbh.GetYearID(currentYear.ToString())).Rows)
+                {
+                    dbh.InsertToStudentPermanentRecord(Properties.Settings.Default.currentStudentID, s[0].ToString());
+                }
+
                 foreach (string s in dbh.bagsakGradeCourseArrList)
                 {
 

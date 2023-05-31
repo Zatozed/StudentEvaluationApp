@@ -815,6 +815,36 @@ namespace StudentEvaluationApp
                 CloseCon();
             }
         }
+//        public void InsertToStudentPermanentRecord(string studID, string curricuID)
+//        {
+//            try
+//            {
+//                OpenCon();
+
+//                cmd = new OleDbCommand
+//                    (@"insert into tblStudentPermanentRecord
+//                    (studentID, course_curricuID)
+//                    values
+//                    (@studID, @curricuID)
+//"
+//                    , con);
+
+//                cmd.Parameters.AddWithValue("@studID", studID);
+//                cmd.Parameters.AddWithValue("@curricuID", curricuID);
+
+//                cmd.ExecuteNonQuery();
+
+//                cmd.Dispose();
+//            }
+//            catch (Exception e)
+//            {
+//                MessageBox.Show("insert curriculum" + e.Message.ToString());
+//            }
+//            finally
+//            {
+//                CloseCon();
+//            }
+//        }
         //---------------------------------------------------------------- Student Reg form
         //---------------------------------------------------------------- Student Input grades form
         public DataTable GetStudInfo(string studId)

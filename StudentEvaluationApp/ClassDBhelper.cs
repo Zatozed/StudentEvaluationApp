@@ -1116,5 +1116,75 @@ namespace StudentEvaluationApp
             }
         }
         //---------------------------------------------------------------- Student Input grades form
+        //---------------------------------------------------------------- Evaluation Result form
+        public string GetFullName(string studID)
+        {
+            string fn = "";
+
+            try
+            {
+                OpenCon();
+
+                cmd = new OleDbCommand
+                    ("select top 1 lastName, firstName, middleName where studentID = " + studID
+                    , con);
+
+                dr = cmd.ExecuteReader();
+
+                if (dr.Read())
+                {
+                    fn = dr.GetString(0) +", " +dr.GetString(1) + " " + dr.GetString(2);
+                }
+
+                dr.Close();
+                dr.DisposeAsync();
+                cmd.Dispose();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Something went wrong. Error Code: CDBH1120-");
+            }
+            finally
+            {
+                CloseCon();
+            }
+
+            return fn;
+        }
+        public string GetStudNum(string studID)
+        {
+            string sn = "";
+
+            try
+            {
+                OpenCon();
+
+                cmd = new OleDbCommand
+                    ("select top 1 studentNum where studentID = " + studID
+                    , con);
+
+                dr = cmd.ExecuteReader();
+
+                if (dr.Read())
+                {
+                    sn = dr.GetString(0);
+                }
+
+                dr.Close();
+                dr.DisposeAsync();
+                cmd.Dispose();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Something went wrong. Error Code: CDBHGSN1120-");
+            }
+            finally
+            {
+                CloseCon();
+            }
+
+            return sn;
+        }
+        //---------------------------------------------------------------- Evaluation Result form
     }
 }

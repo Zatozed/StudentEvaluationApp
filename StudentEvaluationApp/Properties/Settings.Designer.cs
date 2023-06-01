@@ -98,12 +98,60 @@ namespace StudentEvaluationApp.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string CurrentCV {
+        public string CurrentCvID {
             get {
-                return ((string)(this["CurrentCV"]));
+                return ((string)(this["CurrentCvID"]));
             }
             set {
-                this["CurrentCV"] = value;
+                this["CurrentCvID"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string CurrentProgramID {
+            get {
+                return ((string)(this["CurrentProgramID"]));
+            }
+            set {
+                this["CurrentProgramID"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int CurrentSem {
+            get {
+                return ((int)(this["CurrentSem"]));
+            }
+            set {
+                this["CurrentSem"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int CurrentYear {
+            get {
+                return ((int)(this["CurrentYear"]));
+            }
+            set {
+                this["CurrentYear"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string CurrentCv {
+            get {
+                return ((string)(this["CurrentCv"]));
+            }
+            set {
+                this["CurrentCv"] = value;
             }
         }
         
@@ -116,6 +164,30 @@ namespace StudentEvaluationApp.Properties {
             }
             set {
                 this["CurrentProgram"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string CurrentStudFname {
+            get {
+                return ((string)(this["CurrentStudFname"]));
+            }
+            set {
+                this["CurrentStudFname"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string CurrentStudNum {
+            get {
+                return ((string)(this["CurrentStudNum"]));
+            }
+            set {
+                this["CurrentStudNum"] = value;
             }
         }
     }

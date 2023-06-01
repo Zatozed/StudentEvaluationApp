@@ -33,17 +33,17 @@
             button1 = new Button();
             label1 = new Label();
             label2 = new Label();
-            label3 = new Label();
+            lbStudName = new Label();
             label4 = new Label();
-            label5 = new Label();
+            lbStudNum = new Label();
             label6 = new Label();
-            label7 = new Label();
+            lbProgram = new Label();
             label8 = new Label();
-            label9 = new Label();
+            lbCv = new Label();
             label10 = new Label();
-            label11 = new Label();
+            lbYear = new Label();
             label12 = new Label();
-            label13 = new Label();
+            lbSem = new Label();
             tableLayoutPanel2 = new TableLayoutPanel();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
@@ -60,17 +60,17 @@
             tableLayoutPanel1.Controls.Add(button1, 3, 7);
             tableLayoutPanel1.Controls.Add(label1, 2, 0);
             tableLayoutPanel1.Controls.Add(label2, 0, 1);
-            tableLayoutPanel1.Controls.Add(label3, 1, 1);
+            tableLayoutPanel1.Controls.Add(lbStudName, 1, 1);
             tableLayoutPanel1.Controls.Add(label4, 0, 2);
-            tableLayoutPanel1.Controls.Add(label5, 1, 2);
+            tableLayoutPanel1.Controls.Add(lbStudNum, 1, 2);
             tableLayoutPanel1.Controls.Add(label6, 0, 3);
-            tableLayoutPanel1.Controls.Add(label7, 1, 3);
+            tableLayoutPanel1.Controls.Add(lbProgram, 1, 3);
             tableLayoutPanel1.Controls.Add(label8, 3, 1);
-            tableLayoutPanel1.Controls.Add(label9, 4, 1);
+            tableLayoutPanel1.Controls.Add(lbCv, 4, 1);
             tableLayoutPanel1.Controls.Add(label10, 3, 2);
-            tableLayoutPanel1.Controls.Add(label11, 4, 2);
+            tableLayoutPanel1.Controls.Add(lbYear, 4, 2);
             tableLayoutPanel1.Controls.Add(label12, 3, 3);
-            tableLayoutPanel1.Controls.Add(label13, 4, 3);
+            tableLayoutPanel1.Controls.Add(lbSem, 4, 3);
             tableLayoutPanel1.Controls.Add(tableLayoutPanel2, 0, 4);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
@@ -138,16 +138,16 @@
             label2.TabIndex = 6;
             label2.Text = "Student Name:";
             // 
-            // label3
+            // lbStudName
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(155, 25);
-            label3.Margin = new Padding(3, 0, 3, 10);
-            label3.Name = "label3";
-            label3.Size = new Size(41, 15);
-            label3.TabIndex = 7;
-            label3.Text = "label3";
+            lbStudName.AutoSize = true;
+            lbStudName.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lbStudName.Location = new Point(155, 25);
+            lbStudName.Margin = new Padding(3, 0, 3, 10);
+            lbStudName.Name = "lbStudName";
+            lbStudName.Size = new Size(41, 15);
+            lbStudName.TabIndex = 7;
+            lbStudName.Text = "label3";
             // 
             // label4
             // 
@@ -160,16 +160,16 @@
             label4.TabIndex = 8;
             label4.Text = "Student #:";
             // 
-            // label5
+            // lbStudNum
             // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(155, 50);
-            label5.Margin = new Padding(3, 0, 3, 10);
-            label5.Name = "label5";
-            label5.Size = new Size(41, 15);
-            label5.TabIndex = 9;
-            label5.Text = "label5";
+            lbStudNum.AutoSize = true;
+            lbStudNum.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lbStudNum.Location = new Point(155, 50);
+            lbStudNum.Margin = new Padding(3, 0, 3, 10);
+            lbStudNum.Name = "lbStudNum";
+            lbStudNum.Size = new Size(41, 15);
+            lbStudNum.TabIndex = 9;
+            lbStudNum.Text = "label5";
             // 
             // label6
             // 
@@ -182,16 +182,16 @@
             label6.TabIndex = 10;
             label6.Text = "Program:";
             // 
-            // label7
+            // lbProgram
             // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label7.Location = new Point(155, 75);
-            label7.Margin = new Padding(3, 0, 3, 10);
-            label7.Name = "label7";
-            label7.Size = new Size(41, 15);
-            label7.TabIndex = 11;
-            label7.Text = "label7";
+            lbProgram.AutoSize = true;
+            lbProgram.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lbProgram.Location = new Point(155, 75);
+            lbProgram.Margin = new Padding(3, 0, 3, 10);
+            lbProgram.Name = "lbProgram";
+            lbProgram.Size = new Size(41, 15);
+            lbProgram.TabIndex = 11;
+            lbProgram.Text = "label7";
             // 
             // label8
             // 
@@ -204,16 +204,16 @@
             label8.TabIndex = 12;
             label8.Text = "Curriculum Version:";
             // 
-            // label9
+            // lbCv
             // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label9.Location = new Point(651, 25);
-            label9.Margin = new Padding(3, 0, 3, 10);
-            label9.Name = "label9";
-            label9.Size = new Size(41, 15);
-            label9.TabIndex = 13;
-            label9.Text = "label9";
+            lbCv.AutoSize = true;
+            lbCv.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lbCv.Location = new Point(651, 25);
+            lbCv.Margin = new Padding(3, 0, 3, 10);
+            lbCv.Name = "lbCv";
+            lbCv.Size = new Size(41, 15);
+            lbCv.TabIndex = 13;
+            lbCv.Text = "label9";
             // 
             // label10
             // 
@@ -226,16 +226,16 @@
             label10.TabIndex = 14;
             label10.Text = "Year:";
             // 
-            // label11
+            // lbYear
             // 
-            label11.AutoSize = true;
-            label11.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label11.Location = new Point(651, 50);
-            label11.Margin = new Padding(3, 0, 3, 10);
-            label11.Name = "label11";
-            label11.Size = new Size(48, 15);
-            label11.TabIndex = 15;
-            label11.Text = "label11";
+            lbYear.AutoSize = true;
+            lbYear.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lbYear.Location = new Point(651, 50);
+            lbYear.Margin = new Padding(3, 0, 3, 10);
+            lbYear.Name = "lbYear";
+            lbYear.Size = new Size(48, 15);
+            lbYear.TabIndex = 15;
+            lbYear.Text = "label11";
             // 
             // label12
             // 
@@ -248,16 +248,16 @@
             label12.TabIndex = 16;
             label12.Text = "Semester:";
             // 
-            // label13
+            // lbSem
             // 
-            label13.AutoSize = true;
-            label13.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label13.Location = new Point(651, 75);
-            label13.Margin = new Padding(3, 0, 3, 10);
-            label13.Name = "label13";
-            label13.Size = new Size(48, 15);
-            label13.TabIndex = 17;
-            label13.Text = "label13";
+            lbSem.AutoSize = true;
+            lbSem.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lbSem.Location = new Point(651, 75);
+            lbSem.Margin = new Padding(3, 0, 3, 10);
+            lbSem.Name = "lbSem";
+            lbSem.Size = new Size(48, 15);
+            lbSem.TabIndex = 17;
+            lbSem.Text = "label13";
             // 
             // tableLayoutPanel2
             // 
@@ -295,17 +295,17 @@
         private Button button2;
         private Label label1;
         private Label label2;
-        private Label label3;
+        private Label lbStudName;
         private Label label4;
-        private Label label5;
+        private Label lbStudNum;
         private Label label6;
-        private Label label7;
+        private Label lbProgram;
         private Label label8;
-        private Label label9;
+        private Label lbCv;
         private Label label10;
-        private Label label11;
+        private Label lbYear;
         private Label label12;
-        private Label label13;
+        private Label lbSem;
         private TableLayoutPanel tableLayoutPanel2;
     }
 }

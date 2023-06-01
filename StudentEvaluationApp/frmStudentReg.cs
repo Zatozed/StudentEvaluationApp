@@ -31,17 +31,19 @@ namespace StudentEvaluationApp
                         tbStudentNum.Text, tbFname.Text, tbLname.Text, tbMname.Text,
                         cbSuffix.Text, cbGender.Text, tbAddress.Text, tbContactNum.Text,
                         tbPgName.Text, tbPgConNum.Text, tbLastSchoolAt.Text, dtpBdate.Text.ToString(),
-                        Properties.Settings.Default.CurrentCV,
-                        Properties.Settings.Default.CurrentProgram,
+                        Properties.Settings.Default.CurrentCvID,
+                        Properties.Settings.Default.CurrentProgramID,
                         Properties.Settings.Default.CurrentYearID,
                         Properties.Settings.Default.CurrentSemID
                     );
 
                 Properties.Settings.Default.CurrentStudentID = dbh.GetStudRecentID();
+                Properties.Settings.Default.CurrentStudFname = dbh.GetFullName(Properties.Settings.Default.CurrentStudentID);
+                Properties.Settings.Default.CurrentStudNum = dbh.GetStudNum(Properties.Settings.Default.CurrentStudentID);
 
                 foreach (DataRow s in dbh.GetCourseCurricuVerIDList
-                    (Properties.Settings.Default.CurrentCV,
-                    Properties.Settings.Default.CurrentProgram,
+                    (Properties.Settings.Default.CurrentCvID,
+                    Properties.Settings.Default.CurrentProgramID,
                     Properties.Settings.Default.CurrentSemID,
                     Properties.Settings.Default.CurrentYearID).Rows)
                 {
@@ -60,22 +62,26 @@ namespace StudentEvaluationApp
 
         private void cbCurricuVer_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Properties.Settings.Default.CurrentCV = dbh.GetCvID(cbCurricuVer.Text);
+            Properties.Settings.Default.CurrentCvID = dbh.GetCvID(cbCurricuVer.Text);
+            Properties.Settings.Default.CurrentCv = cbCurricuVer.Text;
         }
 
         private void cbYear_SelectedIndexChanged(object sender, EventArgs e)
         {
             Properties.Settings.Default.CurrentYearID = dbh.GetYearID(cbYear.Text);
+            Properties.Settings.Default.CurrentYear = Convert.ToInt32(cbYear.Text);
         }
 
         private void cbProgram_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Properties.Settings.Default.CurrentProgram = dbh.GetProgramID(cbProgram.Text);
+            Properties.Settings.Default.CurrentProgramID = dbh.GetProgramID(cbProgram.Text);
+            Properties.Settings.Default.CurrentProgram = cbProgram.Text;
         }
 
         private void cbSem_SelectedIndexChanged(object sender, EventArgs e)
         {
             Properties.Settings.Default.CurrentSemID = dbh.GetSemID(cbSem.Text);
+            Properties.Settings.Default.CurrentSem = Convert.ToInt32(cbSem.Text);
         }
 
         private void tbFname_Leave(object sender, EventArgs e)

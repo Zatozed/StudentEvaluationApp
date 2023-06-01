@@ -82,7 +82,7 @@ namespace StudentEvaluationApp
 
                 foreach (DataRow s in dbh.GetCourseCurricuVerIDList(cvID, programID, dbh.GetSemID(currentSem.ToString()), dbh.GetYearID(currentYear.ToString())).Rows)
                 {
-                    dbh.InsertToStudentPermanentRecord(Properties.Settings.Default.currentStudentID, s[0].ToString());
+                    dbh.InsertToStudentPermanentRecord(Properties.Settings.Default.CurrentStudentID, s[0].ToString());
                 }
 
             }

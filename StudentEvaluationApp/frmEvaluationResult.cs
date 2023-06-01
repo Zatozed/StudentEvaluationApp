@@ -12,9 +12,13 @@ namespace StudentEvaluationApp
 {
     public partial class frmEvaluationResult : Form
     {
+        ClassDBhelper dbh = new ClassDBhelper();
         public frmEvaluationResult()
         {
             InitializeComponent();
+
+            lbStudName.Text = dbh.GetFullName(Properties.Settings.Default.CurrentStudentID);
+            lbStudNum.Text = dbh.GetStudNum(Properties.Settings.Default.CurrentStudentID);
         }
 
         private void frmEvaluationResult_Load(object sender, EventArgs e)

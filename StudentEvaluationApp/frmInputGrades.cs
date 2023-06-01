@@ -81,7 +81,7 @@ namespace StudentEvaluationApp
 
                 ;
                 ;
-                foreach (DataRow s in dbh.GetCourseCurricuVerIDList(
+                foreach (DataRow s in dbh.GetCourseWithCurricuVerIDListWhereCvProgramSemYearMatch(
                     Properties.Settings.Default.CurrentCvID,
                     Properties.Settings.Default.CurrentProgramID,
                     Properties.Settings.Default.CurrentSemID,

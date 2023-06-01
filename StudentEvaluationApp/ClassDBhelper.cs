@@ -687,7 +687,7 @@ namespace StudentEvaluationApp
 
             return studID;
         }
-        public DataTable GetCourseCurricuVerIDList
+        public DataTable GetCourseWithCurricuVerIDListWhereCvProgramSemYearMatch
             (string cvID, string programID, string semID, string yearID)
         {
             DataTable list = new DataTable();
@@ -1051,7 +1051,7 @@ namespace StudentEvaluationApp
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.Message.ToString());
+                MessageBox.Show("Something went wrong. Error code: CDBH1019");
             }
             finally
             {
@@ -1126,7 +1126,7 @@ namespace StudentEvaluationApp
                 OpenCon();
 
                 cmd = new OleDbCommand
-                    ("select top 1 lastName, firstName, middleName where studentID = " + studID
+                    ("select top 1 lastName, firstName, middleName from tblStudentInfo where studentID = " + studID
                     , con);
 
                 dr = cmd.ExecuteReader();
@@ -1142,7 +1142,7 @@ namespace StudentEvaluationApp
             }
             catch (Exception e)
             {
-                MessageBox.Show("Something went wrong. Error Code: CDBH1120-");
+                MessageBox.Show( e.Message.ToString()+ "Something went wrong. Error Code: CDBH1120-");
             }
             finally
             {
@@ -1160,7 +1160,7 @@ namespace StudentEvaluationApp
                 OpenCon();
 
                 cmd = new OleDbCommand
-                    ("select top 1 studentNum where studentID = " + studID
+                    ("select top 1 studentNum from tblStudentInfo where studentID = " + studID
                     , con);
 
                 dr = cmd.ExecuteReader();

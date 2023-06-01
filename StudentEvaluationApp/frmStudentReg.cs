@@ -41,7 +41,7 @@ namespace StudentEvaluationApp
                 Properties.Settings.Default.CurrentStudFname = dbh.GetFullName(Properties.Settings.Default.CurrentStudentID);
                 Properties.Settings.Default.CurrentStudNum = dbh.GetStudNum(Properties.Settings.Default.CurrentStudentID);
 
-                foreach (DataRow s in dbh.GetCourseCurricuVerIDList
+                foreach (DataRow s in dbh.GetCourseWithCurricuVerIDListWhereCvProgramSemYearMatch
                     (Properties.Settings.Default.CurrentCvID,
                     Properties.Settings.Default.CurrentProgramID,
                     Properties.Settings.Default.CurrentSemID,

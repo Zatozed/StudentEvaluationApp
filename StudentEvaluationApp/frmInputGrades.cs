@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Runtime.CompilerServices;
 
@@ -9,9 +10,9 @@ namespace StudentEvaluationApp
     {
         private ClassDBhelper dbh = new ClassDBhelper();
 
-        private DataTable studCurrent;
+        //private DataTable studCurrent;
 
-        private string studentID, cvID, programID, yearID, semID;
+        //private string cvID, programID, yearID, semID;
         private int currentYear, currentSem;
 
         public frmInputGrades()
@@ -22,9 +23,7 @@ namespace StudentEvaluationApp
         {
             InitializeComponent();
 
-            studentID = studId;
-
-            studCurrent = dbh.GetStudInfo(studId);
+            //studCurrent = dbh.GetStudInfo(studId);
 
             dgvCourseGrade.DataSource = dbh.ShowCourseAndGrade(studId);
         }
@@ -71,16 +70,22 @@ namespace StudentEvaluationApp
                 {
                     ++currentSem;
                 }
-                else if(currentSem == 2 && currentYear <= 4)
+                else if (currentSem == 2 && currentYear <= 4)
                 {
                     --currentSem;
                     ++currentYear;
                 }
+                dbh.UpdateStudentSemYear(Properties.Settings.Default.CurrentStudentID,
+                    Properties.Settings.Default.CurrentYearID,
+                    Properties.Settings.Default.CurrentSemID);
 
-                dbh.UpdateStudentSemYear(studentID, dbh.GetYearID(currentYear.ToString()), dbh.GetSemID(currentSem.ToString()));
-
-
-                foreach (DataRow s in dbh.GetCourseCurricuVerIDList(cvID, programID, dbh.GetSemID(currentSem.ToString()), dbh.GetYearID(currentYear.ToString())).Rows)
+                ;
+                ;
+                foreach (DataRow s in dbh.GetCourseCurricuVerIDList(
+                    Properties.Settings.Default.CurrentCvID,
+                    Properties.Settings.Default.CurrentProgramID,
+                    Properties.Settings.Default.CurrentSemID,
+                    Properties.Settings.Default.CurrentYearID).Rows)
                 {
                     dbh.InsertToStudentPermanentRecord(Properties.Settings.Default.CurrentStudentID, s[0].ToString());
                 }
@@ -96,26 +101,13 @@ namespace StudentEvaluationApp
 
         private void frmInputGrades_Load(object sender, EventArgs e)
         {
-            foreach (DataRow r in studCurrent.Rows)
-            {
-                lbStudNo.Text = r[0].ToString();
-                lbFname.Text = r[1].ToString();
-                lbLname.Text = r[2].ToString();
-                lbMname.Text = r[3].ToString();
+            lbStudNo.Text = Properties.Settings.Default.CurrentStudNum;
+            lbFname.Text = Properties.Settings.Default.CurrentStudFname;
 
-                cvID = r[4].ToString();
-                programID = r[5].ToString();
-                yearID = r[6].ToString();
-                semID = r[7].ToString();
-
-                currentSem = dbh.GetSemByID(semID);
-                currentYear = dbh.GetYearByID(yearID);
-            }
-
-            lbCv.Text = dbh.GetCurriculumVersionByID(cvID);
-            lbProgram.Text = dbh.GetProgramDesByID(programID);
-            lbYear.Text = dbh.GetYearByID(yearID).ToString();
-            lbSem.Text = dbh.GetSemByID(semID).ToString();
+            lbCv.Text = dbh.GetCurriculumVersionByID(Properties.Settings.Default.CurrentCvID);
+            lbProgram.Text = dbh.GetProgramDesByID(Properties.Settings.Default.CurrentProgramID);
+            lbYear.Text = dbh.GetYearByID(Properties.Settings.Default.CurrentYearID).ToString();
+            lbSem.Text = dbh.GetSemByID(Properties.Settings.Default.CurrentSemID).ToString();
         }
     }
 }

@@ -44,10 +44,10 @@
             label12 = new Label();
             lbSem = new Label();
             flowLayoutPanel1 = new FlowLayoutPanel();
-            dataGridView1 = new DataGridView();
+            dgvCourses = new DataGridView();
             tableLayoutPanel1.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvCourses).BeginInit();
             SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -252,26 +252,28 @@
             flowLayoutPanel1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             flowLayoutPanel1.BackColor = Color.DarkSeaGreen;
             tableLayoutPanel1.SetColumnSpan(flowLayoutPanel1, 5);
-            flowLayoutPanel1.Controls.Add(dataGridView1);
+            flowLayoutPanel1.Controls.Add(dgvCourses);
             flowLayoutPanel1.Dock = DockStyle.Fill;
             flowLayoutPanel1.Location = new Point(3, 103);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(793, 312);
             flowLayoutPanel1.TabIndex = 18;
             // 
-            // dataGridView1
+            // dgvCourses
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(3, 3);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(787, 309);
-            dataGridView1.TabIndex = 0;
+            dgvCourses.BackgroundColor = Color.White;
+            dgvCourses.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvCourses.Location = new Point(3, 3);
+            dgvCourses.Name = "dgvCourses";
+            dgvCourses.RowTemplate.Height = 25;
+            dgvCourses.Size = new Size(787, 309);
+            dgvCourses.TabIndex = 1;
             // 
             // frmEvaluationResult
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoScroll = true;
             BackColor = Color.White;
             ClientSize = new Size(799, 451);
             Controls.Add(tableLayoutPanel1);
@@ -284,7 +286,7 @@
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             flowLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvCourses).EndInit();
             ResumeLayout(false);
         }
 
@@ -306,6 +308,6 @@
         private Label label12;
         private Label lbSem;
         private FlowLayoutPanel flowLayoutPanel1;
-        private DataGridView dataGridView1;
+        private DataGridView dgvCourses;
     }
 }

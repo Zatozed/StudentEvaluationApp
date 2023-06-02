@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Data;
-using System.Data.Common;
 using System.Data.OleDb;
-using System.Xml.Linq;
 
 namespace StudentEvaluationApp
 {
@@ -419,7 +416,6 @@ namespace StudentEvaluationApp
         }
         //---------------------------------------------------------------- Manage Curriculum form
         //---------------------------------------------------------------- Course form
-
         public DataTable ShowCourseList()
         {
             DataTable dt = new DataTable();
@@ -1088,19 +1084,15 @@ namespace StudentEvaluationApp
                 CloseCon();
             }
         }
-        public void UpdateStudentSemYear(string studID, string yearID, string semID)
+        public void UpdateStudentSemYearStudentInfo(string studID, string yearID, string semID)
         {
             try
             {
                 OpenCon();
 
                 cmd = new OleDbCommand
-                    (@"update tblStudentInfo
-                    set yearID = " + yearID
-                    +", semID = " + semID
-                    +" where studentID = " + studID
-
-                    , con) ;
+                    ("update tblStudentInfo set yearID = "+yearID+", semID = " +semID+ " where studentID = "+studID
+                    , con);
 
                 cmd.ExecuteNonQuery();
 
@@ -1108,7 +1100,7 @@ namespace StudentEvaluationApp
             }
             catch (Exception e)
             {
-                MessageBox.Show("Something went wrong. Error code: USSY1061");
+                MessageBox.Show(e.ToString() + "Something went wrong. Error code: USSY1061");
             }
             finally
             {
@@ -1184,6 +1176,91 @@ namespace StudentEvaluationApp
             }
 
             return sn;
+        }
+        public DataTable ShowCourseWithCurricuVerListWhereCvProgramSemYearMatch
+            (string cvID, string programID, string semID, string yearID)
+        {
+            DataTable list = new DataTable();
+
+            try
+            {
+                OpenCon();
+
+                cmd = new OleDbCommand(
+                    @"SELECT 
+                    tblCourse.courseCode, 
+                    tblCourse.courseName, 
+                    tblCourse.courseDes, 
+                    tblCourse.unit, 
+                    tblCourse_Curriculum.cash, 
+                    tblCourse_Curriculum.lowMonthly, 
+                    tblCourse_Curriculum.curricuVerID, 
+                    tblCourse_Curriculum.programID, 
+                    tblCourse_Curriculum.semID, 
+                    tblCourse_Curriculum.yearID
+                    FROM 
+                    tblCourse 
+                    INNER JOIN 
+                    tblCourse_Curriculum 
+                    ON tblCourse.[courseID] = tblCourse_Curriculum.[courseID]
+                    where
+                    tblCourse_Curriculum.curricuVerID = " + cvID
+                    + " and tblCourse_Curriculum.semID = " + semID
+                    + " and tblCourse_Curriculum.yearID = " + yearID
+                    + " and tblCourse_Curriculum.programID = " + programID
+                    , con);
+
+                dataAdapter = new OleDbDataAdapter(cmd);
+
+                dataAdapter.Fill(list);
+
+                dr.DisposeAsync();
+                dr.Close();
+                cmd.Dispose();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message.ToString());
+            }
+            finally
+            {
+                CloseCon();
+            }
+
+            return list;
+        }
+        public DataTable GetSemYearFromStudentInfo(string studID)
+        {
+            {
+                DataTable list = new DataTable();
+
+                try
+                {
+                    OpenCon();
+
+                    cmd = new OleDbCommand(
+                        "select top 1 semID, yearID from tblStudentInfo where studentID = " + studID
+                        , con);
+
+                    dataAdapter = new OleDbDataAdapter(cmd);
+
+                    dataAdapter.Fill(list);
+
+                    dr.DisposeAsync();
+                    dr.Close();
+                    cmd.Dispose();
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.Message.ToString());
+                }
+                finally
+                {
+                    CloseCon();
+                }
+
+                return list;
+            }
         }
         //---------------------------------------------------------------- Evaluation Result form
     }

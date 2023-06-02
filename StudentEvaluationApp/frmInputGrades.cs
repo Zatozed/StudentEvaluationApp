@@ -10,11 +10,6 @@ namespace StudentEvaluationApp
     {
         private ClassDBhelper dbh = new ClassDBhelper();
 
-        //private DataTable studCurrent;
-
-        //private string cvID, programID, yearID, semID;
-        private int currentYear, currentSem;
-
         public frmInputGrades()
         {
             InitializeComponent();
@@ -22,8 +17,6 @@ namespace StudentEvaluationApp
         public frmInputGrades(string studId)
         {
             InitializeComponent();
-
-            //studCurrent = dbh.GetStudInfo(studId);
 
             dgvCourseGrade.DataSource = dbh.ShowCourseAndGrade(studId);
         }
@@ -66,21 +59,31 @@ namespace StudentEvaluationApp
                         );
                 }
 
-                if (currentSem == 1)
+                if (Properties.Settings.Default.CurrentSem == 1)
                 {
-                    ++currentSem;
+                    Properties.Settings.Default.CurrentSem += 1;
+                    
                 }
-                else if (currentSem == 2 && currentYear <= 4)
+                else if (Properties.Settings.Default.CurrentSem == 2 && Properties.Settings.Default.CurrentYear < 4)
                 {
-                    --currentSem;
-                    ++currentYear;
+                    Properties.Settings.Default.CurrentSem -= 1;
+                    Properties.Settings.Default.CurrentYear += 1;
                 }
-                dbh.UpdateStudentSemYear(Properties.Settings.Default.CurrentStudentID,
-                    Properties.Settings.Default.CurrentYearID,
-                    Properties.Settings.Default.CurrentSemID);
 
-                ;
-                ;
+                dbh.UpdateStudentSemYearStudentInfo(
+                    Properties.Settings.Default.CurrentStudentID,
+                    dbh.GetSemID(Properties.Settings.Default.CurrentSem.ToString()),
+                    dbh.GetYearID(Properties.Settings.Default.CurrentYear.ToString()));
+
+                Properties.Settings.Default.CurrentSemID = dbh.GetSemID(Properties.Settings.Default.CurrentSem.ToString());
+                Properties.Settings.Default.CurrentYearID = dbh.GetSemID(Properties.Settings.Default.CurrentYear.ToString());
+
+                foreach (DataRow s in dbh.GetSemYearFromStudentInfo(Properties.Settings.Default.CurrentStudentID).Rows) 
+                {
+                    Properties.Settings.Default.CurrentSemID = s[0].ToString();
+                    Properties.Settings.Default.CurrentYearID = s[1].ToString();
+                }
+
                 foreach (DataRow s in dbh.GetCourseWithCurricuVerIDListWhereCvProgramSemYearMatch(
                     Properties.Settings.Default.CurrentCvID,
                     Properties.Settings.Default.CurrentProgramID,
@@ -89,7 +92,6 @@ namespace StudentEvaluationApp
                 {
                     dbh.InsertToStudentPermanentRecord(Properties.Settings.Default.CurrentStudentID, s[0].ToString());
                 }
-
             }
 
             this.Hide();
@@ -106,8 +108,12 @@ namespace StudentEvaluationApp
 
             lbCv.Text = dbh.GetCurriculumVersionByID(Properties.Settings.Default.CurrentCvID);
             lbProgram.Text = dbh.GetProgramDesByID(Properties.Settings.Default.CurrentProgramID);
-            lbYear.Text = dbh.GetYearByID(Properties.Settings.Default.CurrentYearID).ToString();
-            lbSem.Text = dbh.GetSemByID(Properties.Settings.Default.CurrentSemID).ToString();
+
+            Properties.Settings.Default.CurrentSem = dbh.GetSemByID(Properties.Settings.Default.CurrentSemID);
+            Properties.Settings.Default.CurrentYear = dbh.GetYearByID(Properties.Settings.Default.CurrentYearID);
+
+            lbYear.Text = Properties.Settings.Default.CurrentYear.ToString();
+            lbSem.Text = Properties.Settings.Default.CurrentSem.ToString();
         }
     }
 }

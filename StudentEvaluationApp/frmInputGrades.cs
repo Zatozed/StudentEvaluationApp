@@ -66,17 +66,18 @@ namespace StudentEvaluationApp
                 }
                 else if (Properties.Settings.Default.CurrentSem == 2 && Properties.Settings.Default.CurrentYear < 4)
                 {
-                    Properties.Settings.Default.CurrentSem -= 1;
+                    Properties.Settings.Default.CurrentSem = 1;
                     Properties.Settings.Default.CurrentYear += 1;
                 }
 
-                dbh.UpdateStudentSemYearStudentInfo(
-                    Properties.Settings.Default.CurrentStudentID,
-                    dbh.GetSemID(Properties.Settings.Default.CurrentSem.ToString()),
-                    dbh.GetYearID(Properties.Settings.Default.CurrentYear.ToString()));
-
                 Properties.Settings.Default.CurrentSemID = dbh.GetSemID(Properties.Settings.Default.CurrentSem.ToString());
                 Properties.Settings.Default.CurrentYearID = dbh.GetSemID(Properties.Settings.Default.CurrentYear.ToString());
+
+                dbh.UpdateStudentSemYearStudentInfo(
+                    Properties.Settings.Default.CurrentStudentID,
+                    Properties.Settings.Default.CurrentYearID,
+                    Properties.Settings.Default.CurrentSemID
+                    );
 
                 foreach (DataRow s in dbh.GetSemYearFromStudentInfo(Properties.Settings.Default.CurrentStudentID).Rows) 
                 {
